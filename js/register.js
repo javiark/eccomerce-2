@@ -140,9 +140,14 @@ function showAlert(text, type){
 
     document.querySelector("body").appendChild(alertDialog)
 
+    setTimeout(()=>
+    alertDialog.classList.add("show"),10)
+
     setTimeout(()=>{
         // alertDialog.remove();
-        alertDialog.classList.add("hidden")
+        alertDialog.classList.remove("show")
+        setTimeout(()=>
+        alertDialog.remove())
         // window.location.href="/page/login/login.html"
     },3000) // a los tres segundos se le agrega la clase hidden y se oculta
 }
