@@ -120,7 +120,36 @@ function checkIfUserExist(users, emailToSearch){
 
 }
 
-function showAlert(text, type){
+function showAlert(text, type = 'sucess') {
+    // * VAMOS A HACER NUESTRO ALERT CUSTOM
+    // Crea unm elemento HTML Node
+    
+    const alertDialog = document.createElement('div');
+    // Añade una clase
+    alertDialog.classList.add('alert-dialog');
+    alertDialog.innerText = text;
+    document.body.appendChild(alertDialog);
+    
+    if(type === 'error') {
+        alertDialog.style.backgroundColor = 'red';
+    }
+    if(type === 'warning') {
+        alertDialog.style.backgroundColor =  'orangered'
+    }
+    // Para demorar su aparición luego de haberlo creado lineas anterior con document createElement
+    setTimeout(() => alertDialog.classList.add('show'), 10)
+
+    setTimeout(() => {
+        alertDialog.classList.remove('show');
+
+        setTimeout(() => {
+            alertDialog.remove();
+        }, 1000)
+        // window.location.href = '/pages/login/login.html'     
+    }, 3000);
+}
+
+/*function showAlert(text, type){
     //*VAMOS A HACER NUESTRO ALERT
     const alertDialog = document.createElement("div");
     //crea un elemento HTML node
@@ -134,12 +163,12 @@ function showAlert(text, type){
         alertDialog.style.backgroundColor="orange";
     }
 
-    alertDialog.innerText=text;
+    // alertDialog.innerText=text;
     
-    alertDialog.innerText = "Se agrego el usuario correctamente!";
+    // alertDialog.innerText = "Se agrego el usuario correctamente!";
 
-    document.querySelector("body").appendChild(alertDialog)
-
+    // document.querySelector("body").appendChild(alertDialog)
+// para demorar su aparicion luego de aberlo creado lineas anterior con documento createElemnt
     setTimeout(()=>
     alertDialog.classList.add("show"),10)
 
@@ -150,6 +179,21 @@ function showAlert(text, type){
         alertDialog.remove())
         // window.location.href="/page/login/login.html"
     },3000) // a los tres segundos se le agrega la clase hidden y se oculta
+}*/
+
+
+//Funciones con parametros nombrados
+/*
+function customFont({color, size, weight}){
+    const divTexto = document.createElement("p");
+    divTexto.innerText="Un texto a modificar";
+
+    divTexto.style.color = color ? color:"blue"; //le aplico por defecto un azul sino viene el color
+    divTexto.style.fontSize = size || "16px"; // otra forma de hacerlo
+    divTexto.style.fontWeight = weight ? weight:500;
+
+    document.body.appendChild(divTexto)
+
 }
 
 
@@ -202,7 +246,4 @@ function showAlert(text, type){
             //    }
               
 
-
-
-
-
+*/
