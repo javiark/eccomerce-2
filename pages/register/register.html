@@ -53,10 +53,10 @@
  <!-- =================INFO=================  -->
  <main class="main1">
     <section class="register">
-        <form class="register__form">
+        <form class="register__form" id="registerForm" >
             <div class="register__casillero">
                 <label for="idInputName" class="register__text1">Nombre Completo</label><br>
-                <input type="text" name="name" id="idInputName" required class="register__box" minlength="8" maxlength="40" size="50" autofocus >
+                <input type="text" name="fullName" id="idInputName" required class="register__box" minlength="8" maxlength="40" size="50" autofocus >
             </div>
 
             <div class="register__casillero1">
@@ -72,7 +72,7 @@
 
             <div class="register__casillero">
                 <label for="passwordInput2" class="register__text1"> Repetir Contraseña</label> <br>
-                <input type="password" name="passwordRepetir" id="passwordInput2" required class="register__password" minlength="8" maxlength="45"> 
+                <input type="password" name="password2" id="passwordInput2" required class="register__password" minlength="8" maxlength="45"> 
             </div>
 
             <div class="register__casillero">
@@ -347,9 +347,9 @@
                 <label for="" class="register__text1">Sexo</label> <br>
                 <div class="register__check">
                    <div class="register__gender">
-                      <input type="radio" name="gender" value="female" class="register__gender1" > Femenino <br>
-                        <input type="radio" name="gender" value="male" class="register__gender1" > Masculino <br>
-                     <input type="radio" name="gender" value="other" class="register__gender1"> Otro
+                      <input type="radio" name="gender" value="female" class="register__gender1" id="genderF"> Femenino <br>
+                        <input type="radio" name="gender" value="male" class="register__gender1" id="genderM"> Masculino <br>
+                     <input type="radio" name="gender" value="other" class="register__gender1" id="other"> Otro
                  </div>
                 </div>
             </div>
@@ -359,7 +359,7 @@
 
            </div>
            <div class="button">
-                <button type="submit" class="button__send">Enviar</button>
+                <button type="submit" class="button__send" id="registerSubmit">Enviar</button>
             </div>
         </form>
     </section>
@@ -448,6 +448,8 @@
         </ul>
     </div>
 </footer>
+
+<script src="/js/register.js"></script>
     
     
 </body>
