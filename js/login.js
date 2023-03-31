@@ -12,8 +12,28 @@ loginForm.addEventListener("submit",(event)=>{
     //2- Checkear datos ingresdos con los usuarios que tengo
     //2a-Obtener los usuarios almacenados
     const users=JSON.parse(localStorage.getItem("user")) || [];
-    console.log(users)
-    users.forEach(u=>console.log(u))
+    const user = user.find((usr)=>{
+        if (usr.email ===email.value){
+            return true;        
+        }
+        return false;
+    }) //objeto { name, password, email}
+    if(!user ){
+        alert("Los Datos ingresados no son correctos")
+    }
+
+    if(user.password ===password.value){
+        localStorage.setItem("currentUser", JSON.stringify(user));
+        alert("Login correcto")
+    } else {
+        alert("Los Datos ingresados no son correctos")
+        return;
+        
+    }
+
+    
+    // console.log(users)
+    // users.forEach(u=>console.log(u))
 });
 
 
