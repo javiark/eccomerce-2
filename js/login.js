@@ -38,6 +38,13 @@ loginForm.addEventListener("submit",(event)=>{
         return;}
     });
 
+    // function cambiarColorLogo(){
+    //     document.getElementById("loginLogo").classList.add('loginColor')
+
+    // }
+
+    
+
 
 
 
