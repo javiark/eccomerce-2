@@ -14,6 +14,10 @@ loginForm.addEventListener("submit",(event)=>{
     //2a-Obtener los usuarios almacenados
     const users=JSON.parse(localStorage.getItem("users")) || []; // las comillas verticales son por si no encuentra nada, toma un array vacio y no va a ser null. Un array vacio es null
     console.log(users)
+    const elements1 = users.elements;
+    console.dir(elements1)
+    // const elements1 = elements.value;
+    // console.dir(elements1.age)
 
     const user = users.find((usr)=>{
         if (usr.email ===email.value){
@@ -29,19 +33,18 @@ loginForm.addEventListener("submit",(event)=>{
 
     if(user.password ===password.value){
         localStorage.setItem("currentUser", JSON.stringify(user));
-
-
-        alert("Login correcto")
+        document.getElementById("loginLogo").classList.add('loginColor')
+        alert(`Bienvenido ${user.fullName} `)
+        document.getElementById("loginName").innerHTML=(`${user.fullName}`)
+        
+        console.log(user.fullName)
     } 
     else {
         alert("El password es incorrecto")
         return;}
     });
 
-    // function cambiarColorLogo(){
-    //     document.getElementById("loginLogo").classList.add('loginColor')
 
-    // }
 
     
 

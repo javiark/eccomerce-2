@@ -122,6 +122,11 @@ body {
   top: 0;
 }
 
+.loginName {
+  color: black;
+  font-size: 0.7rem;
+}
+
 .navbar {
   height: 50px;
   background-color: rgb(245, 245, 245);
@@ -249,7 +254,6 @@ body {
   flex-direction: column;
   background-color: rgb(168, 165, 165);
   justify-content: space-between;
-  padding-right: 5rem;
   width: 100%;
 }
 .footer__logo {
@@ -273,7 +277,7 @@ body {
   color: #535353;
 }
 .footer__contact-link:hover {
-  font-weight: 600;
+  font-weight: 300;
 }
 .footer__contact-icon {
   font-size: 1.75rem;
@@ -416,8 +420,9 @@ body {
 .main2 {
   background-color: rgb(235, 234, 234);
   margin-top: 50px;
-  padding: 1.5rem 0;
-  padding-bottom: 9.8rem;
+  padding-bottom: 11.3rem;
+  display: flex;
+  width: 100%;
 }
 
 .main3 {
@@ -459,15 +464,10 @@ body {
   padding-left: 5px;
 }
 
-.main2 {
-  display: flex;
-}
-
 .Contact {
-  justify-content: space-evenly;
+  justify-content: end;
   padding: 30px;
   padding-top: 20px;
-  background-color: rgb(235, 234, 234);
 }
 .Contact__Iframe {
   width: 900px;
@@ -492,7 +492,11 @@ body {
 
 @media screen and (max-width: 500px) {
   .main2 {
+    background-color: rgb(235, 234, 234);
+    margin-top: 50px;
     padding-bottom: 3rem;
+    display: flex;
+    justify-content: center;
   }
   .form {
     padding: 15px;
@@ -534,11 +538,12 @@ body {
 .loginLogo {
   color: black;
   opacity: 0.3;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 .loginColor {
   color: orange;
+  opacity: 1;
 }
 
 .headerCard {
@@ -805,6 +810,12 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
+.Contact {
+  width: 100rem;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 .imageAboutUs {
   padding-top: 2rem;
   height: 45rem;
@@ -830,6 +841,9 @@ body {
   }
   .Contact {
     flex-direction: row;
+    justify-content: center;
+    padding: 1.3rem;
+    width: auto;
   }
   .Contact__Iframe {
     width: 330px;

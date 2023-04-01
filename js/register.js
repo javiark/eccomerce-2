@@ -31,6 +31,7 @@ registerForm.addEventListener("submit",(event)=>{ // con addEventListener escuch
     //d-Verificar que los datos ingresados de password y password2 son exactamente iguales.
     if(el.password.value!==el.password2.value){
         console.warn("El password no coincide", "warning");
+        alert("El password no coincide")
         return;
     }
 
@@ -89,7 +90,7 @@ users.push(user)
     setTimeout(()=>{
     window.location.href = "/index.html"
 
-    },3000) 
+    },5000) 
 })
 
 function checkIfUserExist(users, emailToSearch){

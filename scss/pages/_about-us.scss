@@ -29,6 +29,13 @@
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 
+    .Contact {
+        width: 100rem;
+        // background-color: brown;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
         
       
 
@@ -63,9 +70,14 @@
         }
     }
     .Contact {
+
         
         // background-color: brown;
         flex-direction: row;
+        justify-content: center;
+        padding: 1.3rem;
+        width: auto;
+
         &__Iframe{  
             width:330px;
             height:350px;

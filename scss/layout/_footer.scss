@@ -3,7 +3,7 @@
     flex-direction: column;
     background-color: $color-dark-gray;
     justify-content: space-between;
-    padding-right:5rem;  
+    // padding-right:5rem;  
     
     width: 100%;
    
@@ -37,7 +37,7 @@
     }
 
     &__contact-link:hover{
-       font-weight: 600;
+       font-weight: 300;
     //    background-color: #003fee;
     }
 
