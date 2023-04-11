@@ -1,120 +1,6 @@
-// localStorage.setItem("Products", JSON.stringify([  
-    
-//             {
-//                 name: 'PS5',
-//                 description: 'La consola más potente de Sony al día de la fecha',
-//                 price: 290000,
-//                 stock: true,
-//                 image: 'https://as.com/meristation/imagenes/2020/11/06/reportajes/1604654372_894608_1604656126_noticia_normal.jpg',
-//                 games: {viewValue:"God of War Origin", value:"gow_origin"}
-//             },
-//             {
-//                 name: 'PS4',
-//                 description: 'La consola anterior de Sony',
-//                 price: 140000,
-//                 stock: true,
-//                 image: 'https://live.mrf.io/statics/i/ps/www.muycomputer.com/wp-content/uploads/2019/07/PS4-PS5.jpg'
-//             },
-//             {
-//                 name: 'PS3',
-//                 description: 'La consola anterior de Sony',
-//                 price: 70000,
-//                 stock: false,
-//                 image: 'https://live.mrf.io/statics/i/ps/www.muycomputer.com/wp-content/uploads/2019/07/PS4-PS5.jpg',
-//                 joystick: true,
-//                 games: {viewValue:'Uncharted 3', value:"uncharted_3"}
-//             },
-        
-//             {
-//                 name: 'PS2',
-//                 description: 'La consola anterior de Sony',
-//                 price: 30000,
-//                 stock: false,
-//             },
-//             {
-//                 name: 'XBOX Series X',
-//                 description: 'La consola más potente de Microsoft al día de la fecha',
-//                 price: 279000,
-//                 stock: true,
-//                 image: 'https://www.atajo.com.ar/images/0000000RRT-0000234357RRT-00002-Consola-Xbox-Series-X-01.jpg',
-//                 games: {viewValue:'Halo Infinite', value:"halo_infinite"},
-//                 joystick: true,
-        
-//             },
-//             {
-//                 name: 'XBOX One',
-//                 description: 'La consola anterior de Microsoft',
-//                 price: 115000,
-//                 stock: false,
-//                 image: 'https://i.blogs.es/a7dc9c/fc7174d71089999f6a7e15c1d16/1366_2000.png'
-//             },
-//             {
-//                 name: 'XBOX 360',
-//                 description: 'La consola de Microsoft que compite con la PS3',
-//                 price: 60000,
-//                 stock: true,
-//                 image: 'https://http2.mlstatic.com/D_NQ_NP_686099-MLA32731207921_112019-O.webp',
-//             }]));
 
-// let Products = [
-//     {
-//         name: 'PS5',
-//         description: 'La consola más potente de Sony al día de la fecha',
-//         price: 290000,
-//         stock: true,
-//         image: 'https://as.com/meristation/imagenes/2020/11/06/reportajes/1604654372_894608_1604656126_noticia_normal.jpg',
-//         games: {viewValue:"God of War Origin", value:"gow_origin"}
-//     },
-//     {
-//         name: 'PS4',
-//         description: 'La consola anterior de Sony',
-//         price: 140000,
-//         stock: true,
-//         image: 'https://live.mrf.io/statics/i/ps/www.muycomputer.com/wp-content/uploads/2019/07/PS4-PS5.jpg'
-//     },
-//     {
-//         name: 'PS3',
-//         description: 'La consola anterior de Sony',
-//         price: 70000,
-//         stock: false,
-//         image: 'https://live.mrf.io/statics/i/ps/www.muycomputer.com/wp-content/uploads/2019/07/PS4-PS5.jpg',
-//         joystick: true,
-//         games: {viewValue:'Uncharted 3', value:"uncharted_3"}
-//     },
 
-//     {
-//         name: 'PS2',
-//         description: 'La consola anterior de Sony',
-//         price: 30000,
-//         stock: false,
-//     },
-//     {
-//         name: 'XBOX Series X',
-//         description: 'La consola más potente de Microsoft al día de la fecha',
-//         price: 279000,
-//         stock: true,
-//         image: 'https://www.atajo.com.ar/images/0000000RRT-0000234357RRT-00002-Consola-Xbox-Series-X-01.jpg',
-//         games: {viewValue:'Halo Infinite', value:"halo_infinite"},
-//         joystick: true,
-
-//     },
-//     {
-//         name: 'XBOX One',
-//         description: 'La consola anterior de Microsoft',
-//         price: 115000,
-//         stock: false,
-//         image: 'https://i.blogs.es/a7dc9c/fc7174d71089999f6a7e15c1d16/1366_2000.png'
-//     },
-//     {
-//         name: 'XBOX 360',
-//         description: 'La consola de Microsoft que compite con la PS3',
-//         price: 60000,
-//         stock: true,
-//         image: 'https://http2.mlstatic.com/D_NQ_NP_686099-MLA32731207921_112019-O.webp',
-//     },
-// ];
-
-let products =JSON.parse(localStorage.getItem('Products')) || [];
+let products =JSON.parse(localStorage.getItem('products')) || [];
 let favorites = [];
 
 console.log(products)
@@ -124,7 +10,7 @@ console.log(products)
 // productForm.addEventListener("click", ()=> {
 // console.log(" se hizo click en el formulario") })
 // swal({
-//     title: localStorage.getItem("Products")
+//     title: localStorage.getItem("products")
 // })
 
 const productForm=document.getElementById("add-product");
@@ -212,7 +98,7 @@ function addProduct(evt) {
 
 
     if (editIndex >= 0) { //el indice 0 sino lo toma falso, el 0 es undifaned (falso)
-        Products[editIndex]=newProduct
+        products[editIndex]=newProduct
         swal ({
             title:"el producto se edito correctamente",
             icon:"info"
@@ -226,7 +112,7 @@ function addProduct(evt) {
   
 
     //Guardarlo en el localStorage
-    localStorage.setItem('Products', JSON.stringify(products))
+    localStorage.setItem('products', JSON.stringify(products))
                         //(nombreKey, dataValue)
 
     editIndex=undefined; // para que se vacie
@@ -244,7 +130,7 @@ function addProduct(evt) {
 function deleteProduct(indice) {
     swal({
         title: "Borrar producto",
-        text: `Esta seguro que desea borrar el producto ${Products[indice].name}`,
+        text: `Esta seguro que desea borrar el producto ${products[indice].name}`,
         icon: `warning`,
         buttons: {
             cancel:"Cancelar",
@@ -275,7 +161,7 @@ function editProduct(idx){
     submitBtn.classList.add("edit-btn");
     submitBtn.innerText = "Modificar Producto"
 
-    let product = Products[idx];
+    let product = products[idx];
     console.log("indice:",idx)
     console.log("product:",product)
     
@@ -305,7 +191,7 @@ function setFavoriteProduct(index) {
 
     //--------------------------------------------------------
     // const favCount = 0;
-    // const prodFiltradosFavoritos= Products.forEach(prod => {
+    // const prodFiltradosFavoritos= products.forEach(prod => {
     //     if(prod.favorite) {
     //         favCount++
     //     }
