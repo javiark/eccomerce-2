@@ -907,13 +907,15 @@ body {
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgb(4, 98, 20);
+  background-color: #c3a343;
   padding: 2rem 3rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: white;
   text-align: center;
   visibility: hidden;
   opacity: 0;
+  border-radius: 1rem;
+  margin-bottom: 10rem;
   transition: visibility linear 0.5s, opacity 0.5s linear;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }

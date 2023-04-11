@@ -27,25 +27,36 @@ loginForm.addEventListener("submit",(event)=>{
     }) //objeto { name, password, email}
 
     if(!user){ //sino existe usuario
-        alert("El usuario ingresado es incorrecto");
+        alert("Los datos ingresados son incorrectos");
         return;
     }
 
     if(user.password ===password.value){
         localStorage.setItem("currentUser", JSON.stringify(user));
-        document.getElementById("loginLogo").classList.add('loginColor')
-        alert(`Bienvenido ${user.fullName} `)
-        document.getElementById("loginName").innerHTML=(`${user.fullName}`)
+        // document.getElementById("loginLogo").classList.add('loginColor')
+        showAlert(`Bienvenido ${user.fullName} `, "succes" )
+        // alert(`Bienvenido ${user.fullName} `)
+        // document.getElementById("loginName").innerHTML=(`${user.fullName}`)
+        setTimeout(()=>{
+            window.location.href="/index.html"
+        }, 2000)
         
-        console.log(user.fullName)
+        // console.log(user.fullName)
     } 
     else {
-        alert("El password es incorrecto")
+        showAlert("Login incorrecto", "error" )
         return;}
     });
 
 
 
+
+    //a-Email que me ingreso lo tiene algun usuario de mi array
+    //b-password deberian ser las mismas
+//3- Vamos a guardar en el localStorage un registro que va a ser currentUser - user
+
+// function logout
+//1- Borramos el registro del localStorage
     
 
 
@@ -70,9 +81,3 @@ loginForm.addEventListener("submit",(event)=>{
 
 
 
-    //a-Email que me ingreso lo tiene algun usuario de mi arra
-    //b-password deberian ser las mismas
-//3- Vamos a guardar en el localStorage un registro que va a ser currentUser - user
-
-// function logout
-//1- Borramos el registro del localStorage

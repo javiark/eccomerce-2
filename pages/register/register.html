@@ -20,8 +20,8 @@
                     <i class="fa-solid fa-cart-shopping"></i>
                 </div>
                 <a href="/pages/login/login.html"> <div class="user-navbar__user-avatar-container">
-                    <i class="fa-solid fa-user loginLogo" class="user-navbar__user-avatar" alt="Imagen de usuario" id="loginLogo"></i></i>
-                    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario"> -->
+                    <!-- <i class="fa-solid fa-user loginLogo" class="user-navbar__user-avatar" alt="Imagen de usuario" id="loginLogo"></i></i> -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
                 </div>
                 </a>
                 <div class="loginName" id="loginName"></div>
@@ -47,6 +47,9 @@
                 </li>
                 <li class="navbar__nav-item">
                     <a href="/pages/register/register.html" class="navbar__nav-link" target="_blank">Registro</a>
+                </li>
+                <li class="navbar__nav-item" id="sign-in">
+                    <a href="/pages/login/login.html" class="navbar__nav-link" target="_blank">Login</a>
                 </li>
             </ul>
         </nav>
@@ -86,6 +89,10 @@
             <div  class="register__casillero">
                 <label for="bornDateInput" class="register__text1">Fecha Nacimiento</label>
                 <input type="date" name="bornDate" id="bornDateInput" class="register__borndate">
+            </div>
+            <div class="register__casillero">
+                <label for="ageInput" class="register__text1"> Cargar imagen de Usuario</label> <br>
+                <input type="number" name="age" id="ageInput"  class="register__age" min="12" max="130"> 
             </div>
 
             <div class="register__casillero">
@@ -452,6 +459,8 @@
     </div>
 </footer>
 
+<script src="/js/alert.js"></script>
+<script src="/js/header.js"></script>
 <script src="/js/register.js"></script>
 <script src="/js/login.js"></script>
     
