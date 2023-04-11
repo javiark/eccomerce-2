@@ -9,10 +9,10 @@ function showAlert(text, type = 'sucess') {
     document.body.appendChild(alertDialog);
     
     if(type === 'error') {
-        alertDialog.style.backgroundColor = 'red';
+        alertDialog.style.backgroundColor = '#c04641';
     }
     if(type === 'warning') {
-        alertDialog.style.backgroundColor =  'orangered'
+        alertDialog.style.backgroundColor =  '#ff9944'
     }
     // Para demorar su aparición luego de haberlo creado lineas anterior con document createElement
     setTimeout(() => alertDialog.classList.add('show'), 10)
