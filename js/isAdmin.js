@@ -1,3 +1,5 @@
+// protege q no entre copiando la url
+
 const user = JSON.parse(localStorage.getItem("currentUser"))
 
 if(!user || user.role !=="ADMIN_ROLE"){

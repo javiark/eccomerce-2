@@ -18,15 +18,14 @@
                 <img class="navbar__logo" src="/assets/images/logo1.abascay-sin fondo.png" alt="Logo del ecommerce">
             </a>
             <div class="user-navbar">
-                <div class="user-navbar__cart-icon-container">
+                <div class="__cart-icon-container">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </div>
                 <a href="/pages/login/login.html"> <div class="user-navbar__user-avatar-container">
-                    <!-- <i class="fa-solid fa-user loginLogo" class="user-navbar__user-avatar" alt="Imagen de usuario"></i> -->
+                    <!-- <i class="fa-solid fa-user loginLogo" class="user-navbar__user-avatar" alt="Imagen de usuario" id="loginLogo"></i> -->
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
                 </div>
                 </a>
-                <div class="loginName" id="loginName"></div>
                 <!-- TODO: avatar de la persona logueada o nombre -->
             </div>
             
@@ -37,7 +36,7 @@
             </label>
 
 
-            <ul class="navbar__nav-links-container">
+            <ul class="navbar__nav-links-container" id="navbar-list">
                 <li class="navbar__nav-item">
                     <a href="/index.html" class="navbar__nav-link">Inicio</a>
                 </li>
@@ -48,7 +47,7 @@
                     <a href="/pages/about-us/about-us.html" class="navbar__nav-link">Nosotros</a>
                 </li>
                 <li class="navbar__nav-item">
-                    <a href="/pages/register/register.html" class="navbar__nav-link" target="_blank">Registro</a>
+                    <a href="/pages/register/register.html" class="navbar__nav-link" target="_self">Registro</a>
                 </li>
                 <li class="navbar__nav-item" id="sign-in">
                     <a href="/pages/login/login.html" class="navbar__nav-link" target="_blank">Login</a>
