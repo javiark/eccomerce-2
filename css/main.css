@@ -44,7 +44,8 @@ body {
 .card__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .card__body {
   display: flex;
@@ -255,6 +256,21 @@ body {
 .user-navbar__cart-icon-container {
   color: orange;
   font-size: 1.5rem;
+  margin-right: 0.5rem;
+  position: relative;
+}
+.user-navbar__cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  top: 0;
+  right: 0;
+  height: 8px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  text-align: center;
 }
 
 @media screen and (min-width: 600px) {
@@ -350,7 +366,8 @@ body {
     width: 12rem;
     display: flex;
     justify-content: space-evenly;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 .main {
@@ -878,7 +895,8 @@ body {
   .imageAboutUs {
     height: 15.4rem;
     justify-content: center;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .section-info__header {
     font-size: 1rem;
@@ -926,4 +944,4 @@ body {
   padding-top: 2rem;
   margin: 10px auto;
   height: 70rem;
-}
+}/*# sourceMappingURL=main.css.map */

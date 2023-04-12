@@ -135,6 +135,23 @@
     &__cart-icon-container {
         color: orange;
         font-size: 1.5rem;
+        margin-right: .5rem;
+        position: relative;
+    }
+    &__cart-badge{
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        top: 0;
+        right: 0;
+        height: 8px;
+        border-radius: 50%;
+        background-color: red;
+        color: white;
+        font-size: 12px;
+        text-align: center;
+
+
     }
 }
 

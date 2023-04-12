@@ -70,7 +70,8 @@ registerForm.addEventListener("submit",(event)=>{ // con addEventListener escuch
         age: el.age.value,
         bornDate: el.bornDate.value,
         country:el.country.value,
-        gender: el.gender.value
+        gender: el.gender.value,
+        role:"USER_ROLE",
     }
 //e-insertar mi array de usuarios el nuevo user(lista de usuarios)
 users.push(user)
