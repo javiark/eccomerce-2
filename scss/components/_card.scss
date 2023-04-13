@@ -1,5 +1,8 @@
 
-
+.mainDetail{
+    padding-top: 3rem;
+    background-color: rgb(235, 234, 234);
+}
 .card {
     display: flex;
     flex-direction: column;
@@ -118,6 +121,14 @@
 
  
     &__footerCard{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        padding-bottom: 0;
+        padding: 0.5rem;
+        margin-bottom:1;
+    }
+    &__footerCardDetail{
         display: flex;
         justify-content: space-between;
         flex-direction: row;

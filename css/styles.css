@@ -7,14 +7,18 @@
 body {
     font-family: Helvetica, sans-serif;
 }
+.header1{
+    font-size: 1.2rem;
+    padding-left: 2rem;
+}
 .inputBox{
     width: 20rem;
 
 }
 .product-form {
     padding: 2rem;
-    border: 3px solid salmon;
-    margin: 10px;
+    border: 0px solid salmon;
+    margin:     3px;
 }
 
 
@@ -100,17 +104,21 @@ body {
 }
 
 
-.product__action-btn {
+
+.product__action-btnDetail {
     background-color: rgb(254, 33, 33);
     border: none;
     padding: 0.25rem;
     border-radius: 2px;
+    
     color: white;
 }
 
-.product__action-btn:hover {
+.product__action-btnDetail:hover {
     background-color: rgb(199, 1, 1);
 }
+
+
 
 .btn-edit {
     background-color: rgb(73, 162, 250); 

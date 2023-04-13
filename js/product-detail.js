@@ -74,20 +74,20 @@ document.body.innerHTML = `
 
 </header>
 
-<main class="main">
-<section class="section-cards">
-    <div class="cards-container" id="card-container">
+<main class="mainDetail">
+<section class="section-cards-detail">
+    <div class="cards-container-detail" id="card-container">
   
         <article class="card">
             <div class="card__header">
-                <img src="/assets/images/Imagen3.webp" alt="Product Image" class="card__img">
+                <img src=${product.image} alt=${product.name} class="card__img">
             </div>
             <div class="card__body">
                 <div class="card__title">
-                <p>${JSON.stringify(product.name)}</p>
+                <p>${product.name}</p>
                 </div>
                 <div class="card__description">
-                    <p class="card__texto">Huevos de gallinas libres de jaula</p> 
+                    <p class="card__texto">${product.detail}</p> 
                     
                 </div>
                 <div class="card__info">
@@ -95,24 +95,23 @@ document.body.innerHTML = `
                     12/01/2023
                     </div>
                     <div class="card__price">
-                    $900,00
+                    $ ${JSON.stringify(product.price)}
                     </div>
                 </div>
             </div>
-            <div class="card__footerCard">
+            <div class="card__footerCardDetail">
                 <a class="card__btn-buy" href="#">
                     Comprar
                 </a>
-                <div class="card__btn-container">
-                    <a class="card__btn" href="#">
-                        Detalle
-                    </a>
-                </div>
+
             </div>
         </article> 
         </main>
     </div>
 </section>
+
+
+
 <footer class="footer">
 <div class="footer__column">
     <ul class="footer__contact-container">

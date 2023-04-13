@@ -48,14 +48,14 @@ function renderizarTabla() {
                             <td class="product__desc">${producto.detail}</td>
 
                             <td class="product__actions">
-                                <button class="product__action-btn" onclick="deleteProduct(${index})">
+                                <button class="product__action-btnDetail" onclick="deleteProduct(${index})">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                            
-                                <button class="product__action-btn btn-edit"  onclick="editProduct(${index})">
+                                <button class="product__action-btn1 btn-edit"  onclick="editProduct(${index})">
                                     <i class="fa-solid fa-pencil"></i>
                                 </button>
-                                <button class="product__action-btn btn-favorite ${producto.favorite===true ? 'active':''}" onclick="setFavoriteProduct(${index})">
+                                <button class="product__action-btn1 btn-favorite ${producto.favorite===true ? 'active':''}" onclick="setFavoriteProduct(${index})">
                                     <i class="fa-regular fa-star"></i>
                                 </button>
                             

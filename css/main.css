@@ -30,6 +30,11 @@ body {
   font-family: "Inter", Arial, sans-serif;
 }
 
+.mainDetail {
+  padding-top: 3rem;
+  background-color: rgb(235, 234, 234);
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -110,6 +115,14 @@ body {
   transition: all 0.5s ease;
 }
 .card__footerCard {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-bottom: 0;
+  padding: 0.5rem;
+  margin-bottom: 1;
+}
+.card__footerCardDetail {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -237,7 +250,7 @@ body {
 .navbar__nav-link {
   color: black;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 .navbar__nav-link:hover {
   color: #C3A343;
@@ -448,6 +461,16 @@ body {
   display: flex;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.section-cards-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards-container-detail {
+  width: 25rem;
 }
 
 .fa-magnifying-glass {
