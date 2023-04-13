@@ -44,7 +44,7 @@ function renderizarTabla() {
                             <td class="product__img-cell"><img class="product__img" src="${imageSrc}" alt="${producto.name}"></td>
                             <td class="product__name" onclick="editName(${index}")>${producto.name}</td>
                             <td class="product__desc">${producto.description}</td>
-                            <td class="product__price">$ ${producto.price}</td>
+                            <td class="product__price">"$ ${producto.price}"</td>
 
                             <td class="product__actions">
                                 <button class="product__action-btn" onclick="deleteProduct(${index})">

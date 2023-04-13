@@ -7,6 +7,10 @@
 body {
     font-family: Helvetica, sans-serif;
 }
+.inputBox{
+    width: 20rem;
+
+}
 .product-form {
     padding: 2rem;
     border: 3px solid salmon;

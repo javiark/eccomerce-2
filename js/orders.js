@@ -3,7 +3,7 @@ let order = { // usuario
     product: [ //array de productos
         {
         productName:"XBOX",
-        cantidad: 2,
+        cantidad: 5,
         price:1000 // el precio no se actualiza con la inflacion. Es el valor en ese momento
     },
     {
@@ -19,9 +19,9 @@ let order = { // usuario
 }
 
 function actualizarBadge(){
-    // // badgeHTML.innerText=order.products.length
+    // badgeHTML.innerText=order.products.length
     // badgeHTML.innerText=order.products.reduce((acc,producto)=> {
-    //     //con reduce itera. Recibe dos productos, en cuanto empieza mi acumulador. acc empieza en 0
+    //     //con reduce itera. Recibe dos productos, en cuanto empieza mi acumulador. acc empieza en 0. acc es el acumulado y el valor a iterar es el producto
     //     acc = acc + producto.cantidad;
     //     return acc
     // },0)

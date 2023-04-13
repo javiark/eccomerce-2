@@ -270,15 +270,14 @@ body {
 }
 .user-navbar__cart-badge {
   position: absolute;
-  top: -8px;
-  right: -8px;
-  top: 0;
-  right: 0;
-  height: 8px;
+  top: -5px;
+  right: -3px;
+  height: 16px;
+  width: 16px;
   border-radius: 50%;
   background-color: red;
   color: white;
-  font-size: 12px;
+  font-size: 0.7rem;
   text-align: center;
 }
 

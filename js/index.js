@@ -68,7 +68,7 @@ function renderizarProductos(products){
             12/01/2023
             </div>
             <div class="card__price">
-            ${product.price}
+            $ ${product.price}
             </div>
         </div>
     </div>
