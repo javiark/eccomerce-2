@@ -18,7 +18,7 @@ const products = JSON.parse(localStorage.getItem("products"));
 
 const product = products[indice];
 
-// document.body.innerHTML = `<p>${JSON.stringify(product)}</p>
+// document.body.innerHTML = `<p>${JSON.stringify(product)}</p>`
 //     <img src = ${product.image}>`
 
 document.body.innerHTML = ` 
@@ -84,7 +84,7 @@ document.body.innerHTML = `
             </div>
             <div class="card__body">
                 <div class="card__title">
-                    MAPLE POR 30 HUEVOS
+                <p>${JSON.stringify(product.name)}</p>
                 </div>
                 <div class="card__description">
                     <p class="card__texto">Huevos de gallinas libres de jaula</p> 
