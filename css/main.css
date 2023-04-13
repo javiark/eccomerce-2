@@ -102,6 +102,8 @@ body {
   background-color: #c3a343;
   color: white;
   border-radius: 8px;
+  border: 0;
+  cursor: pointer;
 }
 .card__btn-buy:hover {
   box-shadow: 0 0 5px #858585;

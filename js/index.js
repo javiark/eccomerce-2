@@ -38,10 +38,11 @@
 </article>    */}
 
 // 
+const user = JSON.parse(localStorage.getItem("currentUser"))
 
 const cardContainer=document.querySelector("#card-container");
 
-const productsLS = JSON.parse(localStorage.getItem("products")) || [];4
+const productsLS = JSON.parse(localStorage.getItem("products")) || [];
 
 function renderizarProductos(products){
 
@@ -73,9 +74,9 @@ function renderizarProductos(products){
         </div>
     </div>
     <div class="card__footerCard">
-        <a class="card__btn-buy" href="#">
+        <button class="card__btn-buy" href="#" onclick="addToOrder(${index}" ${user ? "": "disabled"}) >
             Comprar
-        </a>
+        </button>
         <div class="card__btn-container">
             <a class="card__btn" href="/pages/product-detail/product-detail.html?id=${index}">
                 Detalle

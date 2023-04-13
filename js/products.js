@@ -44,7 +44,8 @@ function renderizarTabla() {
                             <td class="product__img-cell"><img class="product__img" src="${imageSrc}" alt="${producto.name}"></td>
                             <td class="product__name" onclick="editName(${index}")>${producto.name}</td>
                             <td class="product__desc">${producto.description}</td>
-                            <td class="product__price">"$ ${producto.price}"</td>
+                            <td class="product__price">$ ${producto.price}</td>
+                            <td class="product__desc">${producto.detail}</td>
 
                             <td class="product__actions">
                                 <button class="product__action-btn" onclick="deleteProduct(${index})">
@@ -84,6 +85,7 @@ function addProduct(evt) {
         description: elements.description.value,
         price: elements.price.valueAsNumber,
         image: elements.image.value,
+        detail:elements.detail.value,
         stock: elements.stock.checked,
     };
 
@@ -173,6 +175,7 @@ function editProduct(idx){
     el.name.value=product.name;
     el.price.value=product.price;
     el.image.value=product.image;
+    el.detail.value=product.detail;
     el.stock.checked=product.stock;
     // console.log("indice", idx)
     // console.log("product:", product)
