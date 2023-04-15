@@ -52,10 +52,10 @@ function renderizarTabla() {
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                            
-                                <button class="product__action-btn1 btn-edit"  onclick="editProduct(${index})">
-                                    <i class="fa-solid fa-pencil"></i>
+                                <button class="product__action-btn product__btn-edit"  onclick="editProduct(${index})">
+                                    <i class="fa-solid fa-pencil " ></i>
                                 </button>
-                                <button class="product__action-btn1 btn-favorite ${producto.favorite===true ? 'active':''}" onclick="setFavoriteProduct(${index})">
+                                <button class="product__action-btn btn-favorite ${producto.favorite===true ? 'active':''}" onclick="setFavoriteProduct(${index})">
                                     <i class="fa-regular fa-star"></i>
                                 </button>
                             

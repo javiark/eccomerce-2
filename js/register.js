@@ -121,6 +121,9 @@ function checkIfUserExist(users, emailToSearch){
         console.log("sigue")
 
 }
+const avatar=document.getElementById("avatar")
+console.log(avatar)
+// function avatar{}
 
 
 

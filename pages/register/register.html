@@ -10,14 +10,18 @@
 </head>
 <body >
     <!-- =================HEADER=================  -->
-  <header id="home" class="header">
+    <header id="home" class="header">
         <nav class="navbar">
             <a href="/index.html" class="navbar__nav-link">
                 <img class="navbar__logo" src="/assets/images/logo1.abascay-sin fondo.png" alt="Logo del ecommerce">
             </a>
             <div class="user-navbar">
-                <div class="__cart-icon-container">
+                <a href="/pages/order/order.html" class="user-navbar__cart-icon-container">
                     <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="user-navbar__cart-badge" id="cart-count">0</div>
+                </a>
+                <div class="__cart-icon-container">
+
                 </div>
                 <a href="/pages/login/login.html"> <div class="user-navbar__user-avatar-container">
                     <!-- <i class="fa-solid fa-user loginLogo" class="user-navbar__user-avatar" alt="Imagen de usuario" id="loginLogo"></i> -->
@@ -54,11 +58,10 @@
         </nav>
         
     </header>
-
  <!-- =================INFO=================  -->
  <main class="main1">
     <section class="register">
-        <form class="register__form" id="registerForm" >
+        <form class="register__form" id="registerForm" enctype="multipart/form-data">
             <div class="register__casillero">
                 <label for="idInputName" class="register__text1">Nombre Completo</label><br>
                 <input type="text" name="fullName" id="idInputName" required class="register__box" minlength="8" maxlength="40" size="50" autofocus >
@@ -90,8 +93,8 @@
                 <input type="date" name="bornDate" id="bornDateInput" class="register__borndate">
             </div>
             <div class="register__casillero">
-                <label for="ageInput" class="register__text1"> Cargar imagen de Usuario</label> <br>
-                <input type="number" name="age" id="ageInput"  class="register__age" min="12" max="130"> 
+                <label for="avatar" class="register__text1"> Avatar:</label> <br>
+                <input type="file" name="avatar" id="avatar"  class="register__age" min="12" max="130"> 
             </div>
 
             <div class="register__casillero">
@@ -461,6 +464,7 @@
 <script src="/js/alert.js"></script>
 <script src="/js/header.js"></script>
 <script src="/js/register.js"></script>
+<script src="/js/orders.js"></script>
 
 
 <!-- <script src="/js/login.js"></script> -->
