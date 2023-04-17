@@ -36,11 +36,16 @@ loginForm.addEventListener("submit",(event)=>{
         // document.getElementById("loginLogo").classList.add('loginColor')
         showAlert(`Bienvenido ${user.fullName} `, "succes" )
         // alert(`Bienvenido ${user.fullName} `)
-        // document.getElementById("loginName").innerHTML=(`${user.fullName}`)
+
+
         setTimeout(()=>{
             window.location.href="/index.html"
         }, 2000)
-        
+        const loginUser= document.getElementById("loginName")
+
+        // console.log(`${user.fullName}`)
+        loginUser.innerHTML = `${user.fullName}`
+
         // console.log(user.fullName)
     } 
     else {
