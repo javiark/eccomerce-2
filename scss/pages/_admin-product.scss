@@ -177,6 +177,19 @@ body {
         display: flex;
         flex-direction: column;
     }
+    &__imageContainer{
+        border: solid 1px red;
+        width: 25rem;
+        height: 30rem;
+        margin-left: 5rem;
+        margin-top: 5rem;
+    }
+    &__image{
+        width: 30rem;
+        overflow: hidden;
+
+
+    }
 }
 
 

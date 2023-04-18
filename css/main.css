@@ -1149,6 +1149,17 @@ body {
   display: flex;
   flex-direction: column;
 }
+.containerDetail__imageContainer {
+  border: solid 1px red;
+  width: 25rem;
+  height: 30rem;
+  margin-left: 5rem;
+  margin-top: 5rem;
+}
+.containerDetail__image {
+  width: 30rem;
+  overflow: hidden;
+}
 
 @media screen and (min-width: 1000px) {
   .container {
