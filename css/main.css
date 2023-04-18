@@ -1141,6 +1141,15 @@ body {
   background-color: rgb(218, 147, 6);
 }
 
+.containerDetail {
+  display: flex;
+  flex-direction: row;
+}
+.containerDetail__descrititon {
+  display: flex;
+  flex-direction: column;
+}
+
 @media screen and (min-width: 1000px) {
   .container {
     flex-direction: row;
