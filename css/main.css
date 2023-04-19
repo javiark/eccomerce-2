@@ -28,6 +28,8 @@ html {
 }
 body {
   font-family: "Inter", Arial, sans-serif;
+  position: relative;
+  min-height: 100vh;
 }
 
 .mainDetail {
@@ -317,6 +319,8 @@ body {
   background-color: rgb(168, 165, 165);
   justify-content: space-between;
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 .footer__logo {
   display: flex;
@@ -398,6 +402,7 @@ body {
   padding: 1.5rem 0;
   background-color: rgb(235, 234, 234);
   padding-bottom: 11rem;
+  position: relative;
 }
 
 .section-cards__title-container h1 {
@@ -1141,24 +1146,84 @@ body {
   background-color: rgb(218, 147, 6);
 }
 
+.mainDetail {
+  background-color: rgb(235, 234, 234);
+  flex-grow: 1;
+}
+
 .containerDetail {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
-.containerDetail__descrititon {
+.containerDetail__description {
   display: flex;
   flex-direction: column;
+  margin-top: 5rem;
+  margin-left: 2rem;
 }
 .containerDetail__imageContainer {
-  border: solid 1px red;
   width: 25rem;
   height: 30rem;
   margin-left: 5rem;
   margin-top: 5rem;
+  text-align: center;
+  overflow: hidden;
 }
 .containerDetail__image {
-  width: 30rem;
+  width: 25rem;
   overflow: hidden;
+  background-size: cover;
+}
+.containerDetail__container {
+  flex-grow: 1;
+  width: 30rem;
+}
+.containerDetail__descriptionLarge {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  width: 54rem;
+}
+.containerDetail__title {
+  justify-content: center;
+  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.containerDetail__btn-add {
+  background-color: rgba(0, 0, 0, 0.2039215686);
+  color: white;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  height: 1.8rem;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+.containerDetail__btn-add:hover {
+  box-shadow: 0 0 4px #858585;
+  transition: all 0.5s ease;
+}
+.containerDetail__btn-buy {
+  background-color: #c3a343;
+  color: white;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  height: 1.8rem;
+  text-align: center;
+}
+.containerDetail__btn-buy:hover {
+  box-shadow: 0 0 5px #858585;
+  transition: all 0.5s ease;
+}
+.containerDetail__detail {
+  padding-bottom: 1rem;
 }
 
 @media screen and (min-width: 1000px) {
