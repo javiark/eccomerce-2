@@ -25,38 +25,40 @@ const cardContainer=document.querySelector("#card-detail");
 
 function renderizarDetail(){
 cardContainer.innerHTML = ` 
-<div class="mainDetail">
-    <div class="containerDetail">
-    <div class="containerDetail__imageContainer">
-        <img src=${product.image} alt=${product.name} class="containerDetail__image">
-    </div>
+<main class="main1">
+    <div class="mainDetail">
+        <div class="containerDetail">
+        <div class="containerDetail__imageContainer">
+            <img src=${product.image} alt=${product.name} class="containerDetail__image">
+        </div>
 
-    <div class="containerDetail__description">
-        <div class="containerDetail__container">
-            <div class="card__title">
-                <p>${product.name}</p>
+        <div class="containerDetail__description">
+            <div class="containerDetail__container">
+                <div class="card__title">
+                    <p>${product.name}</p>
+                </div>
+                <div class="card__price">
+                $ ${JSON.stringify(product.price)}
+                </div>
+                <div class="card__detail">
+                    <p class="card__texto">${product.description}</p> 
+                </div>
             </div>
-            <div class="card__price">
-            $ ${JSON.stringify(product.price)}
-            </div>
-            <div class="card__detail">
-                <p class="card__texto">${product.description}</p> 
+            <button class="containerDetail__btn-add">
+                Añadir a carrito
+            </button>
+            <button class="containerDetail__btn-buy">Comprar Ahora</button>
+        </div>
+        </div>
+
+        <div class="containerDetail">
+            <div class="containerDetail__descriptionLarge">
+                <h1 class="containerDetail__title">DESCRIPCION</h1>
+                    <div class="containerDetail__detail">${product.detail}</div>
             </div>
         </div>
-        <button class="containerDetail__btn-add">
-            Añadir a carrito
-        </button>
-        <button class="containerDetail__btn-buy">Comprar Ahora</button>
-    </div>
-    </div>
-
-    <div class="containerDetail">
-        <div class="containerDetail__descriptionLarge">
-            <h1 class="containerDetail__title">DESCRIPCION</h1>
-                <div class="containerDetail__detail">${product.detail}</div>
-        </div>
-    </div>
-</div> `
+    </div> 
+</main>`
 
 }
 

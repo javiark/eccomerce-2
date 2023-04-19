@@ -15,6 +15,7 @@ function renderHeaderLinks(){
 
         const adminProductLink = createListItemElement("admin-product", "Adm Product");
         const adminUserLink =createListItemElement("admin-user", "Adm User");
+ 
         // const productListItem= document.createElement("li");
         // const userListItem=document.createElement("li");
 
@@ -26,6 +27,7 @@ function renderHeaderLinks(){
 
         navbarList.appendChild(adminProductLink)
         navbarList.appendChild(adminUserLink)
+        
     }
 
 
@@ -56,7 +58,7 @@ function createLinkElement(path, text){ // el texto es el que veo en el link. //
     // let li;
 
     const link=document.createElement("a"); //
-    link.classList.add("navbar__nav-link"); //le agrego una clasecreo un elemento a
+    link.classList.add("navbar__nav-link1"); //le agrego una clasecreo un elemento a
     link.href =`/pages/${path}/${path}.html`;
     link.innerText =text; //le inserto un texto
     

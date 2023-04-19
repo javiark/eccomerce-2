@@ -24,7 +24,6 @@
                     <div class="user-navbar__cart-badge" id="cart-count">0</div>
                 </a>
                 <div class="__cart-icon-container" >
-
                 </div>
                 <div id="loginName" class="navbar__nav-link">
                 </div>
@@ -41,8 +40,7 @@
             <label for="menu-btn" class="navbar__menu-label">
                 <span class="navbar__menu-icon"></span>
             </label>
-
-
+            
             <ul class="navbar__nav-links-container" id="navbar-list">
                 <li class="navbar__nav-item">
                     <a href="/index.html" class="navbar__nav-link">Inicio</a>
@@ -82,16 +80,17 @@
                     <div class="product-search">
                         <label for="" ></label>
                         <div>
-                            <input type="text" class="product-search__input" placeholder="Buscar..." autofocus  >
+                            <input type="text" class="product-search__input" placeholder="Buscar..." autofocus  onkeyup="metodoFilter(event)" >
+
                             <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
                         </div>
-                        <div class="product-search__btnDiv">
-                            <button class="product-search__btn">Buscar</button>
-                        </div>
+                        <!-- <div class="product-search__btnDiv">
+                            <button class="product-search__btn" >Buscar</button>
+                        </div> -->
                     </div>
 
-                    <div class="section-cards__products-count">
-                        Se encontraron X productos
+                    <div class="section-cards__products-count" id="productsCount">
+
                     </div>
                 </div>
             </header>
@@ -470,11 +469,13 @@
             <img src="https://cdn3.iconfinder.com/data/icons/social-media-logos-flat-colorful/2048/5302_-_Whatsapp-512.png" alt="whatsapp logo" class="logoWP">
         </a>
     </div> -->
-    <script src="/js/login.js"></script>
+    <!-- <script src="/js/login.js"></script> -->
     <script src="/js/header.js"></script>
     <script src="/js/alert.js"></script>
     <script src="/js/index.js"></script>
     <script src="/js/orders.js"></script>
+    <script src="/js/loginUserAvatar.js"></script>
+    <script src="/js/filter.js"></script>
     <!-- <script src="/js/orders.js"></script> -->
     
 </body>

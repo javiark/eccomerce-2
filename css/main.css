@@ -43,6 +43,9 @@ body {
   margin: 1rem;
   border: 1px solid rgb(247, 247, 247);
 }
+.card__products-count {
+  font-size: 1rem;
+}
 .card__header {
   height: 400px;
   background-color: orange;
@@ -255,6 +258,12 @@ body {
   cursor: pointer;
   font-size: 1rem;
 }
+.navbar__nav-link1 {
+  color: rgb(223, 9, 9);
+  cursor: pointer;
+  font-size: 1rem;
+  padding-left: 10rem;
+}
 .navbar__nav-link:hover {
   color: #C3A343;
   font-weight: 400;
@@ -297,6 +306,10 @@ body {
   color: white;
   font-size: 0.7rem;
   text-align: center;
+}
+
+.rojo {
+  color: red;
 }
 
 @media screen and (min-width: 600px) {
@@ -402,7 +415,7 @@ body {
   padding: 1.5rem 0;
   background-color: rgb(235, 234, 234);
   padding-bottom: 11rem;
-  position: relative;
+  min-height: 100vh;
 }
 
 .section-cards__title-container h1 {
@@ -444,6 +457,10 @@ body {
   opacity: 0;
 }
 
+.section-cards__products-count {
+  padding-top: 1rem;
+  font-size: 1rem;
+}
 .section-cards__header {
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -492,7 +509,19 @@ body {
   border-radius: 0.3rem;
   padding-left: 1rem;
   color: #b4b4b4;
+  font-size: 0.8rem;
   width: 23rem;
+}
+.product-search__input1 {
+  border: none;
+  height: 1.8rem;
+  font-weight: 500;
+  border-radius: 0.3rem;
+  padding-left: 1rem;
+  color: #504f4f;
+  font-size: 0.8rem;
+  width: 23rem;
+  padding-top: 1rem;
 }
 .product-search__btnDiv {
   padding: 0.5rem;
@@ -531,10 +560,10 @@ body {
 }
 .main2 {
   background-color: rgb(235, 234, 234);
-  margin-top: 50px;
-  padding-bottom: 11.3rem;
   display: flex;
+  min-height: 100vh;
   width: 100%;
+  padding-top: 50px;
 }
 
 .main3 {
@@ -542,6 +571,7 @@ body {
   padding: 1.5rem 0;
   padding-bottom: 23.2rem;
   display: flex;
+  min-height: 100vh;
 }
 
 .form {
@@ -677,6 +707,8 @@ body {
 .main1 {
   display: flex;
   background-color: #EBEAEA;
+  min-height: 100vh;
+  padding-bottom: 8rem;
 }
 
 .register {
@@ -1005,7 +1037,7 @@ body {
 .product-form {
   padding: 2rem;
   border: 0px solid salmon;
-  margin: 3px;
+  margin: 1px;
 }
 
 .container {

@@ -1,10 +1,12 @@
 .main2 {
     background-color: rgb(235, 234, 234);
-    margin-top: 50px;
+    // margin-top: 50px;
     // padding: 1.5rem 0;
-    padding-bottom:11.3rem;
+    // padding-bottom:11.3rem;
     display: flex;
+    min-height: 100vh;
     width:100%;
+    padding-top: 50px;
 
 }
 
@@ -14,6 +16,8 @@
     padding: 1.5rem 0; 
     padding-bottom:23.2rem;
     display: flex;
+    min-height: 100vh;
+    
 }
 
 
