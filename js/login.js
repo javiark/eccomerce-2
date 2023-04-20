@@ -41,10 +41,10 @@ loginForm.addEventListener("submit",(event)=>{
         setTimeout(()=>{
             window.location.href="/index.html"
         }, 2000)
-        const loginUser= document.getElementById("loginName")
+        // const loginUser= document.getElementById("loginName")
 
-        // console.log(`${user.fullName}`)
-        loginUser.innerHTML = `${user.fullName}`
+        // // console.log(`${user.fullName}`)
+        // loginUser.innerHTML = `${user.fullName}`
 
         // console.log(user.fullName)
     } 

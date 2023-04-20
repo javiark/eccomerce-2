@@ -13,8 +13,8 @@ function renderHeaderLinks(){
 
         if(currentUser.role ==="ADMIN_ROLE"){
 
-        const adminProductLink = createListItemElement("admin-product", "Adm Product");
-        const adminUserLink =createListItemElement("admin-user", "Adm User");
+        const adminProductLink = createListItemElement("admin-product", "Admin Product");
+        const adminUserLink =createListItemElement("admin-user", "Admin User");
  
         // const productListItem= document.createElement("li");
         // const userListItem=document.createElement("li");
@@ -45,7 +45,7 @@ function createListItemElement(path, text){ // el type es opcional, por defecto 
 
     const listItem = document.createElement("li");
     listItem.classList.add("navbar__nav-link")
-    listItem.classList.add("navbar__nav-item")
+    listItem.classList.add("navbar__nav-item1")
     //le asigno un atributo id
     listItem.setAttribute("id", path);
     link = createLinkElement(path, text); // el link lo obtenemos de la funcion

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Products</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body >
+        <!-- =================HEADER=================  -->
+        <header id="home" class="header">
+            <nav class="navbar">
+                <a href="/index.html" class="navbar__nav-link">
+                    <img class="navbar__logo" src="/assets/images/logo1.abascay-sin fondo.png" alt="Logo del ecommerce">
+                </a>
+                <div class="user-navbar">
+                    <a href="/pages/order/order.html" class="user-navbar__cart-icon-container">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <div class="user-navbar__cart-badge" id="cart-count">0</div>
+                    </a>
+                    <div class="__cart-icon-container">
+    
+                    </div>
+                    <div id="loginName" class="navbar__nav-link">
+                    </div>
+                    <a href="/pages/login/login.html"> <div class="user-navbar__user-avatar-container">
+                        <!-- <i class="fa-solid fa-user loginLogo" class="user-navbar__user-avatar" alt="Imagen de usuario" id="loginLogo"></i> -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
+                    </div>
+                    </a>
+                    <!-- TODO: avatar de la persona logueada o nombre -->
+                </div>
+                
+                <input type="checkbox" class="navbar__menu-btn" id="menu-btn">
+    
+                <label for="menu-btn" class="navbar__menu-label">
+                    <span class="navbar__menu-icon"></span>
+                </label>
+    
+    
+                <ul class="navbar__nav-links-container" id="navbar-list">
+                    <li class="navbar__nav-item">
+                        <a href="/index.html" class="navbar__nav-link">Inicio</a>
+                    </li>
+                    <li class="navbar__nav-item">
+                        <a href="/pages/contact/contact.html" class="navbar__nav-link">Contacto</a>
+                    </li>
+                    <li class="navbar__nav-item">
+                        <a href="/pages/about-us/about-us.html" class="navbar__nav-link">Nosotros</a>
+                    </li>
+                    <li class="navbar__nav-item">
+                        <a href="/pages/register/register.html" class="navbar__nav-link" target="_self">Registro</a>
+                    </li>
+                    <li class="navbar__nav-item" id="sign-in">
+                        <a href="/pages/login/login.html" class="navbar__nav-link" target="_blank">Login</a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </header>
+    <div class="main4">
+        <div class="adminContainer">
+            <h1 class="header1">ADMINISTRACION DE USUARIOS</h1>
+            <div class="container">
+                <form id="add-user" class="product-form" onsubmit="addUser(event)">
+                    <div class="input-box">
+                        <label for="nameLabel">Usuario</label>
+                        <input type="text" name="name" id="nameLabel" required class="inputBox">
+                    </div>
+                    <div class="input-box">
+                        <label for="descLabel">Email</label>
+                        <input type ="email" name="mail" id="descLabel" required class="inputBox" placeholder="nombre@ejemplo.com" minlength="8" maxlength="45" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="nameLabel">ROL</label>
+                        <input type="text" name="name" id="nameLabel" required class="inputBox">
+                    </div>
+            
+                    <div class="input-box">
+                        <label for="nameLabel">Creado</label>
+                        <input type="text" name="name" id="nameLabel" required class="inputBox">
+                    </div>
+
+            
+
+
+
+                    <button type="submit" class="submit-btn" id="submit-btn-user">Cargar Usuario</button>
+                </form>
+                <div class="table-container">
+                    <table class="table-product">
+                        <thead>
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Email</th>
+                                <th>ROL</th>
+                                <th>Creado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body-Users">
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+</div>
+    <!-- <script src="/js/object.js"></script> -->
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="footer__column">
+            <ul class="footer__contact-container">
+                <li class="footer__contact-item"> 
+                    <a href="https://www.facebook.com/casacampo.abascay" class="footer__contact-link">
+                        <i class="fa-brands fa-facebook footer__contact-icon footer__contact-icon--facebook"></i>
+                        Facebook
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="https://www.instagram.com/elabascaybrandsen/" class="footer__contact-link">
+                        <i class="fa-brands fa-instagram 
+                        footer__contact-icon
+                        footer__contact-icon--instagram"></i>
+                        Instagram
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="https://www.linkedin.com/in/consuelo-maff%C3%ADa-a25853112/" class="footer__contact-link">
+                        <i class="fa-brands fa-linkedin 
+                        footer__contact-icon
+                        footer__contact-icon--linkedin"></i>
+                        LinkedIn
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__column">
+            <img src="/assets/images/abascay.png" alt="Company Logo" class="footer__logo" width="100">
+            <h2 class="footer__company-name">
+                @ELABASCAYBRANDSEN
+            </h2>
+            <p class="footer__copyrigth">
+                Todos los derechos reservados al Abascay
+            </p>
+        </div>
+        <div class="footer__column">
+            <ul class="footer__contact-container">
+                <li class="footer__contact-item">
+                    <a href="tel:+5491156182673" class="footer__contact-link">
+                        <i class="fa-solid 
+                        fa-square-phone-flip 
+                        footer__contact-icon--phone"></i>
+                        Telefono
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="/pages/contact/location.html" class="footer__contact-link">
+                        <i class="fa-solid 
+                        fa-location-dot 
+                        footer__contact-icon--location"></i>
+                        Localizacion
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="mailto:holaabascay@gmail.com" class="footer__contact-link">
+                    
+                        
+                        <i class="fa-solid 
+                        fa-envelope 
+                        footer__contact-icon--email"></i>
+                        Email
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </footer>
+
+    <!-- ?Librerias -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    <script src="/js/users.js"></script>
+    <script src="/js/header.js"></script>
+    <!-- <script src="/js/login.js"></script> -->
+    <!-- <script src="/js/products.js"></script> -->
+    <script src="/js/isAdmin.js"></script>
+    <script src="/js/orders.js"></script>
+    <script src="/js/loginUserAvatar.js"></script>
+</body>
+</html>
+

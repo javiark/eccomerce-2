@@ -7,16 +7,36 @@
 body {
     font-family: Helvetica, sans-serif;
 }
+.adminContainer{
+    padding-top: 5rem;
+}
 .header1{
+    padding-bottom: 1rem;
     font-size: 1.2rem;
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 .inputBox{
     width: 20rem;
+    border-radius: 0.3rem;
+    border: none;
+    height: 1.5rem;
+}
 
+.inputBoxText{
+    width: 20rem;
+    border-radius: 0.3rem;
+    border: none;
+    height: 5rem;
+}
+.inputBoxTextDetail{
+    width: 20rem;
+    border-radius: 0.3rem;
+    border: none;
+    height: 15rem;
 }
 .product-form {
-    padding: 2rem;
+
+    padding: 0rem 1rem 0rem 1rem;
     border: 0px solid salmon;
     margin:     1px;
 }
@@ -34,9 +54,13 @@ body {
 
 .submit-btn {
     padding: .5rem 1rem;
-    border: 2px solid rgb(159, 241, 35);
+    width: 20rem;
+    border: 2px solid rgb(51, 87, 2);
     color: white;
     background-color: green;
+}
+.submit-btn:hover{
+    background-color: rgb(1, 105, 1);
 }
 
 .edit-btn{

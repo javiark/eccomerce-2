@@ -65,7 +65,8 @@
             </nav>
             
         </header>
-    <div class="main">
+    <div class="main4">
+        <div class="adminContainer">
             <h1 class="header1">ADMINISTRACION DE PRODUCTOS</h1>
             <div class="container">
                 <form id="add-product" class="product-form" onsubmit="addProduct(event)">
@@ -75,7 +76,7 @@
                     </div>
                     <div class="input-box">
                         <label for="descLabel">Descripción</label>
-                        <textarea name="description" id="descLabel" rows="4" required class="inputBox">
+                        <textarea name="description" id="descLabel" rows="4" required class="inputBoxText" >
                         </textarea>
                     </div>
             
@@ -90,7 +91,7 @@
                     </div>
                     <div class="input-box">
                         <label for="descLabel">Detalle</label>
-                        <textarea name="detail" id="descLabel" rows="8" required class="inputBox">
+                        <textarea name="detail" id="descLabel" rows="8" required class="inputBoxTextDetail">
                         </textarea>
                     </div>
             
@@ -121,6 +122,7 @@
                 </div>
                 
             </div>
+        </div>
 </div>
     <!-- <script src="/js/object.js"></script> -->
     <!-- footer -->
@@ -197,7 +199,8 @@
     <!-- ?Librerias -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <!-- ?Librerias -->
+
+    <script src="/js/header.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="/js/login.js"></script>
     <script src="/js/products.js"></script>
