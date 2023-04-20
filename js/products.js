@@ -101,16 +101,19 @@ function addProduct(evt) {
 
     if (editIndex >= 0) { //el indice 0 sino lo toma falso, el 0 es undifaned (falso)
         products[editIndex]=newProduct
+        // alert("se edito correctamente")
         swal ({
             title:"el producto se edito correctamente",
             icon:"info"
         })
     } else {
-        products.push(newProduct);}
+        products.push(newProduct);
         swal({
             title:"el producto se agrego correctamente",
             icon: "success",
         })
+    }
+
   
 
     //Guardarlo en el localStorage

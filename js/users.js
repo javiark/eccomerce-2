@@ -6,7 +6,7 @@ let favorites = [];
 console.log(users)
 
 
-const productForm=document.getElementById("add-user");
+const userForm=document.getElementById("add-user");
 const submitBtn = document.getElementById("submit-btn-user");
 
 
@@ -30,14 +30,14 @@ function renderizarTablaUser() {
         const tableRow = `<tr class="product">
                             <td class="product__name" onclick="editName(${index}")>${usuario.fullName}</td>
                             <td class="product__desc">${usuario.email}</td>
-                            <td class="product__price"> ${usuario.role}</td>
+                            <td class="product__name"> ${usuario.role}</td>
                             <td class="product__desc">FECHA</td>
                             <td class="product__actions">
-                                <button class="product__action-btnDetail" onclick="deleteProduct(${index})">
+                                <button class="product__action-btnDetail" onclick="deleteUser(${index})">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                            
-                                <button class="product__action-btn product__btn-edit"  onclick="editProduct(${index})">
+                                <button class="product__action-btn product__btn-edit"  onclick="editUser(${index})">
                                     <i class="fa-solid fa-pencil " ></i>
                                 </button>
                                 <button class="product__action-btn btn-favorite ${usuario.favorite===true ? 'active':''}" onclick="setFavoriteProduct(${index})">
@@ -56,110 +56,106 @@ renderizarTablaUser();
 
 // //****ADD EDIT PRODUCT*** */
 
-// function addProduct(evt) {
-//     evt.preventDefault();
-//     console.dir(evt.target);
-//     const elements = evt.target.elements;
+function addUser(evt) {
+    evt.preventDefault();
+    // console.dir(evt.target);
+    const elements = evt.target.elements;
+    // console.log(elements)
 
-//     // console.log(elements.stock.checked)
-//     // console.dir(elements.name);
-//     // console.dir(elements.price);
+    // console.log(elements.stock.checked)
+    // console.dir(elements.name);
+    // console.dir(elements.price);
     
-//     const newProduct = {
-//         name: elements.name.value,
-//         description: elements.description.value,
-//         price: elements.price.valueAsNumber,
-//         image: elements.image.value,
-//         detail:elements.detail.value,
-//         stock: elements.stock.checked,
-//     };
+    const newUser = {
+        fullName: elements.fullName.value,
+        email: elements.mail.value,
+        role: elements.rol.value,
+    };
+    // console.log(newUser)
 
 
-
-
-
-//     if (editIndex >= 0) { //el indice 0 sino lo toma falso, el 0 es undifaned (falso)
-//         products[editIndex]=newProduct
-//         swal ({
-//             title:"el producto se edito correctamente",
-//             icon:"info"
-//         })
-//     } else {
-//         products.push(newProduct);}
-//         swal({
-//             title:"el producto se agrego correctamente",
-//             icon: "success",
-//         })
+    if (editIndex >= 0) { //el indice 0 sino lo toma falso, el 0 es undifaned (falso)
+        users[editIndex]=newUser
+        swal ({
+            title:"el usuario se edito correctamente",
+            icon:"info"
+        })
+    } else {
+        users.push(newUser);
+        swal({
+            title:"el usuario se agrego correctamente",
+            icon: "success",
+        })
+    }
   
 
-//     //Guardarlo en el localStorage
-//     localStorage.setItem('products', JSON.stringify(products))
-//                         //(nombreKey, dataValue)
+    //Guardarlo en el localStorage
+    localStorage.setItem('users', JSON.stringify(users))
+    editIndex=undefined; // para que se vacie
+    submitBtn.classList.remove("edit-btn");
+    submitBtn.innerText = "Cargar Usuario"
 
-//     editIndex=undefined; // para que se vacie
-//     submitBtn.classList.remove("edit-btn");
-//     submitBtn.innerText = "Cargar Producto"
- 
-//     renderizarTabla();
+    renderizarTablaUser();
 
-//     evt.target.reset()
-//     elements.name.focus();
-// }
+    evt.target.reset();
+    elements.name.focus();
 
+    }
 
 
-// function deleteProduct(indice) {
-//     swal({
-//         title: "Borrar producto",
-//         text: `Esta seguro que desea borrar el producto ${products[indice].name}`,
-//         icon: `warning`,
-//         buttons: {
-//             cancel:"Cancelar",
-//             delete:"Borrar",
-//         }
-//     }).then(value => {
-//         if (value==="delete"){
-//             products.splice(indice, 1);
-//             localStorage.setItem("products",JSON.stringify(products))
-//             swal({
-//                 title:"Elemento borrado correctamente",
-//                 icon:"error"
+
+
+
+
+function deleteUser(indice) {
+    swal({
+        title: "Borrar usuario",
+        text: `Esta seguro que desea borrar el usuario ${users[indice].fullName}`,
+        icon: `warning`,
+        buttons: {
+            cancel:"Cancelar",
+            delete:"Borrar",
+        }
+    }).then(value => {
+        if (value==="delete"){
+            users.splice(indice, 1);
+            localStorage.setItem("users",JSON.stringify(users))
+            swal({
+                title:"El usuario se ha borrado correctamente",
+                icon:"error"
         
-//             });
-//             renderizarTabla(); 
+            });
+            renderizarTablaUser(); 
 
-//         }else {
-//             return ; //return null
-//         }
-//     })
-
-
-// }
+        }else {
+            return ; //return null
+        }
+    })
+}
 
 
 
-// function editProduct(idx){
-//     submitBtn.classList.add("edit-btn");
-//     submitBtn.innerText = "Modificar Producto"
-
-//     let product = products[idx];
-//     console.log("indice:",idx)
-//     console.log("product:",product)
+function editUser(idx){
+    submitBtn.classList.add("edit-btn");
+    submitBtn.innerText = "Modificar Usuario"
+    let user = users[idx];
+    console.log("indice:",idx)
+    console.log("usuario:",user)
     
 
 
-//     // console.table(product);
-//     const el=productForm.elements;
-//     el.description.value = product.description;
-//     el.name.value=product.name;
-//     el.price.value=product.price;
-//     el.image.value=product.image;
-//     el.detail.value=product.detail;
-//     el.stock.checked=product.stock;
-//     // console.log("indice", idx)
-//     // console.log("product:", product)
-//     editIndex=idx;
-// }
+    // console.table(product);
+    const el=userForm.elements;
+
+    el.fullName.value=user.fullName;
+    el.mail.value=user.email;
+    el.rol.value=user.rol;
+    // console.log("indice", idx)
+    // console.log("product:", product)
+    editIndex=idx;
+}
+
+
 
 // function setFavoriteProduct(index) {
 //     //Checkear si en el array productos hay algun producto cuyo indice sea distinto al elegido con la propiedad favorite: true tenemos que setearla en falso.
@@ -173,6 +169,6 @@ renderizarTablaUser();
 
 
 
-//     localStorage.setItem("favorites", JSON.stringify(favorites))
-//     renderizarTabla();
+// //     localStorage.setItem("favorites", JSON.stringify(favorites))
+// //     renderizarTabla();
 // }

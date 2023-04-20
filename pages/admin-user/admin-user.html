@@ -72,15 +72,15 @@
                 <form id="add-user" class="product-form" onsubmit="addUser(event)">
                     <div class="input-box">
                         <label for="nameLabel">Usuario</label>
-                        <input type="text" name="name" id="nameLabel" required class="inputBox">
+                        <input type="text" name="fullName" id="nameLabel" required class="inputBox">
                     </div>
                     <div class="input-box">
-                        <label for="descLabel">Email</label>
-                        <input type ="email" name="mail" id="descLabel" required class="inputBox" placeholder="nombre@ejemplo.com" minlength="8" maxlength="45" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                        <label for="mailLabel">Email</label>
+                        <input type ="email" name="mail" id="mailLabel" required class="inputBox" placeholder="nombre@ejemplo.com" minlength="8" maxlength="45" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
                     </div>
                     <div class="input-box">
-                        <label for="nameLabel">ROL</label>
-                        <input type="text" name="name" id="nameLabel" required class="inputBox">
+                        <label for="rolLabel">ROL</label>
+                        <input type="text" name="rol" id="RolLabel" required class="inputBox">
                     </div>
             
                     <div class="input-box">
@@ -188,8 +188,7 @@
 
     <!-- ?Librerias -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
+ 
     <script src="/js/users.js"></script>
     <script src="/js/header.js"></script>
     <!-- <script src="/js/login.js"></script> -->
