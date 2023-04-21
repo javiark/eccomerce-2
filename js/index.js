@@ -74,7 +74,7 @@ function renderizarProductos(products){
         </div>
     </div>
     <div class="card__footerCard">
-        <button class="card__btn-buy" href="#" onclick="addToOrder(${index}" ${user ? "": "disabled"}) >
+        <button class="card__btn-buy" id="btn" href="#" onclick="addToOrder(${index}" ) >
             Comprar
         </button>
         <div class="card__btn-container">

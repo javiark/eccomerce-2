@@ -20,16 +20,17 @@
                     <i class="fa-solid fa-cart-shopping"></i>
                     <div class="user-navbar__cart-badge" id="cart-count">0</div>
                 </a>
-                <div class="__cart-icon-container">
+                <div class="__cart-icon-container"   >
+                </div>
+                <!-- <div class="use-navbar__avatar-container"> -->
+                        <div id="loginName" class="navbar__nav-link-login">
+                        </div>
+                        <div class="user-navbar__user-avatar-container">
+                                <!-- <i class="fa-solid fa-user loginLogo" class="user-navbar__user-avatar" alt="Imagen de usuario" id="loginLogo"></i> -->
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
+                        </div>
+                <!-- </div> -->
 
-                </div>
-                <div id="loginName" class="navbar__nav-link">
-                </div>
-                <a href="/pages/login/login.html"> <div class="user-navbar__user-avatar-container">
-                    <!-- <i class="fa-solid fa-user loginLogo" class="user-navbar__user-avatar" alt="Imagen de usuario" id="loginLogo"></i> -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
-                </div>
-                </a>
                 <!-- TODO: avatar de la persona logueada o nombre -->
             </div>
             
@@ -38,8 +39,7 @@
             <label for="menu-btn" class="navbar__menu-label">
                 <span class="navbar__menu-icon"></span>
             </label>
-
-
+            
             <ul class="navbar__nav-links-container" id="navbar-list">
                 <li class="navbar__nav-item">
                     <a href="/index.html" class="navbar__nav-link">Inicio</a>
@@ -65,8 +65,12 @@
     <section class="register">
         <form class="register__form" id="registerForm" enctype="multipart/form-data">
             <div class="register__casillero">
-                <label for="idInputName" class="register__text1">Nombre Completo</label><br>
-                <input type="text" name="fullName" id="idInputName" required class="register__box" minlength="8" maxlength="40" size="50" autofocus >
+                <label for="idInputName" class="register__text1">Nombre</label><br>
+                <input type="text" name="fullName" id="idInputName" required class="register__box" minlength="3" maxlength="40" size="50" autofocus >
+            </div>
+            <div class="register__casillero">
+                <label for="idInputName" class="register__text1">Apellido</label><br>
+                <input type="text" name="surname" id="idInputName" required class="register__box" minlength="3" maxlength="40" size="50" autofocus >
             </div>
 
             <div class="register__casillero">
@@ -77,12 +81,12 @@
 
             <div class="register__casillero">
                 <label for="passwordInput" class="register__text1">Contraseña</label> <br>
-                <input type="password" name="password" id="passwordInput" required class="register__password" minlength="8" maxlength="45"> 
+                <input type="password" name="password" id="passwordInput" required class="register__password" minlength="6" maxlength="45"> 
             </div>
 
             <div class="register__casillero">
                 <label for="passwordInput2" class="register__text1"> Repetir Contraseña</label> <br>
-                <input type="password" name="password2" id="passwordInput2" required class="register__password" minlength="8" maxlength="45"> 
+                <input type="password" name="password2" id="passwordInput2" required class="register__password" minlength="6" maxlength="45"> 
             </div>
 
             <div class="register__casillero">
@@ -94,10 +98,10 @@
                 <label for="bornDateInput" class="register__text1">Fecha Nacimiento</label>
                 <input type="date" name="bornDate" id="bornDateInput" class="register__borndate">
             </div>
-            <div class="register__casillero">
+            <!-- <div class="register__casillero">
                 <label for="avatar" class="register__text1"> Avatar:</label> <br>
                 <input type="file" name="avatar" id="avatar"  class="register__age" min="12" max="130"> 
-            </div>
+            </div> -->
 
             <div class="register__casillero">
                 <label for="countryInput" class="register__text1">Seleccione su pais</label>
@@ -462,6 +466,16 @@
         </ul>
     </div>
 </footer>
+    <!-- watsapp logo -->
+
+    <div class="whatsapp-container">
+        <!-- <a class="go-top" href="#home">
+            <i class="fa-solid fa-circle-up"></i>
+        </a> -->
+        <a href="https://walink.co/1565a1" target="_blank">
+            <img src="https://cdn3.iconfinder.com/data/icons/social-media-logos-flat-colorful/2048/5302_-_Whatsapp-512.png" alt="whatsapp logo" class="logoWP">
+        </a>
+    </div>
 <script src="/js/login.js"></script>
 <script src="/js/alert.js"></script>
 <script src="/js/header.js"></script>

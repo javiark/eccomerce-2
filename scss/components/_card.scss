@@ -47,6 +47,7 @@
         font-weight: 500;
         font-size: 1.1rem;
         border-bottom: 2px solid ;
+        
     }
 
     &__description {
@@ -117,7 +118,9 @@
         border: 0;
         cursor: pointer;
         font-size: 1rem;
+        pointer-events: none;   
     }
+    
     &__btn-buy:hover{
         box-shadow: 0 0 5px #858585;
         transition: all 0.5s ease;
@@ -142,6 +145,11 @@
         padding: 0.5rem;
         margin-bottom:1;
     }
+}
+
+.enable{
+    pointer-events: all;
+    background-color: red;
 }
 
 

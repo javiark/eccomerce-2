@@ -12,57 +12,60 @@
 </head>
 
 <body>
-        <!-- =================HEADER=================  -->
-        <header id="home" class="header">
-            <nav class="navbar">
-                <a href="/index.html" class="navbar__nav-link">
-                    <img class="navbar__logo" src="/assets/images/logo1.abascay-sin fondo.png" alt="Logo del ecommerce">
+    <!-- =================HEADER=================  -->
+
+    <header id="home" class="header">
+        <nav class="navbar">
+            <a href="/index.html" class="navbar__nav-link">
+                <img class="navbar__logo" src="/assets/images/logo1.abascay-sin fondo.png" alt="Logo del ecommerce">
+            </a>
+            <div class="user-navbar">
+                <a href="/pages/order/order.html" class="user-navbar__cart-icon-container">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="user-navbar__cart-badge" id="cart-count">0</div>
                 </a>
-                <div class="user-navbar">
-                    <a href="/pages/order/order.html" class="user-navbar__cart-icon-container">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <div class="user-navbar__cart-badge" id="cart-count">0</div>
-                    </a>
-                    <div class="__cart-icon-container" >
-    
-                    </div>
-                    <div id="loginName" class="navbar__nav-link">
-                    </div>
-                    <a href="/pages/login/login.html"> <div class="user-navbar__user-avatar-container">
-                        <!-- <i class="fa-solid fa-user loginLogo" class="user-navbar__user-avatar" alt="Imagen de usuario" id="loginLogo"></i> -->
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
-                    </div>
-                    </a>
-                    <!-- TODO: avatar de la persona logueada o nombre -->
+                <div class="__cart-icon-container" >
                 </div>
-                
-                <input type="checkbox" class="navbar__menu-btn" id="menu-btn">
-    
-                <label for="menu-btn" class="navbar__menu-label">
-                    <span class="navbar__menu-icon"></span>
-                </label>
-    
-    
-                <ul class="navbar__nav-links-container" id="navbar-list">
-                    <li class="navbar__nav-item">
-                        <a href="/index.html" class="navbar__nav-link">Inicio</a>
-                    </li>
-                    <li class="navbar__nav-item">
-                        <a href="/pages/contact/contact.html" class="navbar__nav-link">Contacto</a>
-                    </li>
-                    <li class="navbar__nav-item">
-                        <a href="/pages/about-us/about-us.html" class="navbar__nav-link">Nosotros</a>
-                    </li>
-                    <li class="navbar__nav-item">
-                        <a href="/pages/register/register.html" class="navbar__nav-link" target="_self">Registro</a>
-                    </li>
-                    <li class="navbar__nav-item" id="sign-in">
-                        <a href="/pages/login/login.html" class="navbar__nav-link" target="_blank">Login</a>
-                    </li>
-                </ul>
-            </nav>
+                <!-- <div class="use-navbar__avatar-container"> -->
+                        <div id="loginName" class="navbar__nav-link-login">
+                        </div>
+                        <div class="user-navbar__user-avatar-container">
+                                <!-- <i class="fa-solid fa-user loginLogo" class="user-navbar__user-avatar" alt="Imagen de usuario" id="loginLogo"></i> -->
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/100px-Default_pfp.svg.png" class="user-navbar__user-avatar" alt="Imagen de usuario">
+                        </div>
+                <!-- </div> -->
+
+                <!-- TODO: avatar de la persona logueada o nombre -->
+            </div>
             
-        </header>
+            <input type="checkbox" class="navbar__menu-btn" id="menu-btn">
+
+            <label for="menu-btn" class="navbar__menu-label">
+                <span class="navbar__menu-icon"></span>
+            </label>
+            
+            <ul class="navbar__nav-links-container" id="navbar-list">
+                <li class="navbar__nav-item">
+                    <a href="/index.html" class="navbar__nav-link">Inicio</a>
+                </li>
+                <li class="navbar__nav-item">
+                    <a href="/pages/contact/contact.html" class="navbar__nav-link">Contacto</a>
+                </li>
+                <li class="navbar__nav-item">
+                    <a href="/pages/about-us/about-us.html" class="navbar__nav-link">Nosotros</a>
+                </li>
+                <li class="navbar__nav-item">
+                    <a href="/pages/register/register.html" class="navbar__nav-link" target="_self">Registro</a>
+                </li>
+                <li class="navbar__nav-item" id="sign-in">
+                    <a href="/pages/login/login.html" class="navbar__nav-link" target="_blank">Login</a>
+                </li>
+            </ul>
+        </nav>
+        
+    </header>
+
+     <!-- =================INFO=================  -->
 
         <div  id="card-detail">
             </div>
@@ -137,15 +140,30 @@
             </ul>
         </div>
     </footer>
+        <!-- watsapp logo -->
+
+        <div class="whatsapp-container">
+            <!-- <a class="go-top" href="#home">
+                <i class="fa-solid fa-circle-up"></i>
+            </a> -->
+            <a href="https://walink.co/1565a1" target="_blank">
+                <img src="https://cdn3.iconfinder.com/data/icons/social-media-logos-flat-colorful/2048/5302_-_Whatsapp-512.png" alt="whatsapp logo" class="logoWP">
+            </a>
+        </div>
+        
     
     <!-- <script src="/js/login.js"></script> -->
+    <script src="/js/loginUserAvatar.js"></script>
     <script src="/js/product-detail.js"></script>
     <script src="/js/header.js"></script>
     <script src="/js/alert.js"></script>
-    <script src="/js/orders.js"></script>
-    <script src="/js/products.js"></script>
-    <!-- <script src="/js/orders.js"></script> -->
-    <script src="/js/loginUserAvatar.js"></script>
+    <script src="/js/index.js"></script>
+
+
+
+
+
+
     
 </body>
 </html>

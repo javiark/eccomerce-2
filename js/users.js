@@ -1,9 +1,10 @@
 
 
 let users =JSON.parse(localStorage.getItem('users')) || [];
+console.log(users)
 let favorites = [];
 
-console.log(users)
+
 
 
 const userForm=document.getElementById("add-user");
@@ -27,12 +28,12 @@ function renderizarTablaUser() {
     users.forEach((usuario, index) => {
 
         //4- Introducir dentro del tbody una fila por producto con sus respectivas celdas
-        const tableRow = `<tr class="product">
-                            <td class="product__name" onclick="editName(${index}")>${usuario.fullName}</td>
-                            <td class="product__desc">${usuario.email}</td>
-                            <td class="product__name"> ${usuario.role}</td>
-                            <td class="product__desc">FECHA</td>
-                            <td class="product__actions">
+        const tableRow = `<tr class="user">
+                            <td class="user__name" onclick="editName(${index}")>${usuario.fullName}</td>
+                            <td class="user__desc">${usuario.email}</td>
+                            <td class="user__name"> ${usuario.role}</td>
+                            <td class="user__desc">FECHA</td>
+                            <td class="user__actions">
                                 <button class="product__action-btnDetail" onclick="deleteUser(${index})">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
@@ -68,6 +69,7 @@ function addUser(evt) {
     
     const newUser = {
         fullName: elements.fullName.value,
+        // surname:elements.surname.value,
         email: elements.mail.value,
         role: elements.rol.value,
     };
@@ -80,12 +82,12 @@ function addUser(evt) {
             title:"el usuario se edito correctamente",
             icon:"info"
         })
-    } else {
-        users.push(newUser);
-        swal({
-            title:"el usuario se agrego correctamente",
-            icon: "success",
-        })
+    // } else {
+    //     users.push(newUser);
+    //     swal({
+    //         title:"el usuario se agrego correctamente",
+    //         icon: "success",
+    //     })
     }
   
 
@@ -93,6 +95,7 @@ function addUser(evt) {
     localStorage.setItem('users', JSON.stringify(users))
     editIndex=undefined; // para que se vacie
     submitBtn.classList.remove("edit-btn");
+ 
     submitBtn.innerText = "Cargar Usuario"
 
     renderizarTablaUser();
@@ -141,6 +144,7 @@ function editUser(idx){
     let user = users[idx];
     console.log("indice:",idx)
     console.log("usuario:",user)
+    submitBtn.classList.add("visible")
     
 
 
@@ -148,8 +152,9 @@ function editUser(idx){
     const el=userForm.elements;
 
     el.fullName.value=user.fullName;
+    // el.surname.value=user.surname;
     el.mail.value=user.email;
-    el.rol.value=user.rol;
+    el.rol.value=user.role;
     // console.log("indice", idx)
     // console.log("product:", product)
     editIndex=idx;

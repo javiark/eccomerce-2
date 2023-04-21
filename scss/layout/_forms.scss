@@ -58,6 +58,13 @@
     padding-bottom: 8rem;
 }
 
+.mainLogin {
+    display: flex;
+    background-color: #EBEAEA;
+    min-height: 100vh;
+    padding-bottom: 30rem;
+}
+
 
 
 
@@ -251,6 +258,7 @@
             &__form{
                 padding-top: 1rem;
                 margin-top: 1rem;
+                margin-bottom: 18rem;
             }
            
         }

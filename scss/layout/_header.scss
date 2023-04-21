@@ -17,7 +17,7 @@
     display: flex;
     align-items: center;
     position: relative;
-   
+
     &__logo {
         height: 45px;
         
@@ -123,17 +123,27 @@
         color: black;
         cursor: pointer;
         font-size:1rem;
-        
+
        
     }
+    &__nav-link-login {
+        color: black;
+        font-size:0.8rem;
+ 
+    }
+
     &__nav-link1 {
         color: black;
         cursor: pointer;
         font-size:1rem;   
-        padding-bottom: 0.07rem; 
+        padding-bottom: 0.1rem; 
         // padding-left: 10rem; 
     }
     &__nav-link:hover {
+        color: #C3A343;
+        font-weight: 400;
+    }
+    &__nav-link1:hover {
         color: #C3A343;
         font-weight: 400;
     }
@@ -155,12 +165,30 @@
     align-items: center;
     padding: 0 1rem;
 
-    &__user-avatar {
-            width: 2rem;
-            opacity: 1;
-            color: orange;
-           
+
+    &__avatar-container{
+        background-color: #C3A343;
+        display: flex;
+        flex-direction: center;
+        text-align: center;
+        width: 300px;  
     }
+    &__user-avatar-container{
+        text-align: center;
+    }
+    &__user-avatar {
+        
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // text-align: center;
+        width: 1.8rem;
+        opacity: 1;
+        color: orange;
+        margin-left: auto;
+       
+}
+   
     &__cart-icon-container {
         color: orange;
         font-size: 1.5rem;
@@ -188,6 +216,7 @@
 
 @media screen and (min-width: 600px) {
     .navbar {
+
         &__menu-label, &__menu-btn {
             display: none;
         }
@@ -202,3 +231,11 @@
         order: 3;
     }
 }
+
+@media screen and (max-width: 500px){
+    .navbar {
+        &__nav-link-login{
+            font-size: 0.5rem;
+        }
+
+}}

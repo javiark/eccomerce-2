@@ -34,7 +34,7 @@ body {
     border: none;
     height: 15rem;
 }
-.product-form {
+.user-form {
 
     padding: 0rem 1rem 0rem 1rem;
     border: 0px solid salmon;
@@ -48,7 +48,7 @@ body {
     /* padding: 2rem;
     border: 3px solid salmon; */
 }
-.product-form > div {
+.user-form > div {
     margin-bottom: 1rem;
 }
 
@@ -58,6 +58,11 @@ body {
     border: 2px solid rgb(51, 87, 2);
     color: white;
     background-color: green;
+    visibility: hidden;
+
+}
+.visible{
+    visibility: visible;
 }
 .submit-btn:hover{
     background-color: rgb(1, 105, 1);
@@ -98,7 +103,7 @@ body {
 .table-product tr th {
     padding: .5rem;
 }
-.product{
+.user{
     &__img{
         width: 50px;
         object-fit: cover;
@@ -109,9 +114,13 @@ body {
     }
     &__name{
         width: 10%;
+        vertical-align: center;
+        text-align: center;
     }
     &__desc {
         width: 30%;
+        vertical-align: center;
+        text-align: center;
     }
     &__price {
         font-weight: bold;
@@ -169,7 +178,7 @@ body {
 }
 
 
-.product__info, .product__actions {
+.user__info, .user__actions {
     vertical-align: center;
     text-align: center;
     font-size: 1.5rem;

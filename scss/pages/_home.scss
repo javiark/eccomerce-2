@@ -1,4 +1,7 @@
 .section-cards {
+    &__title{
+        margin-top: 0.5rem;
+    }
     &__products-count{
         padding-top: 1rem;
         font-size: 1rem;
@@ -16,6 +19,7 @@
         padding: 1rem;
     }
     &__products-search-container {
+        margin-top: 0.5rem;
         padding: 1rem;
         background-color: rgb(230, 230, 230);
         border-radius: 1rem;
@@ -115,16 +119,25 @@
 }
 
 
-@media screen and (min-width: 600px) {
-    // .cards-container {
-        
+@media screen and (max-width: 500px) {
+    // .main{
+    //     margin-bottom: 5rem;
+    //     background-color: crimson;
     // }
+    .section-cards {
+        margin-bottom: 18rem;}
 }
+
+
 
 @media screen and (min-width: 1000px) {
     .section-cards {
+
+
         &__header {
             display: flex;
+            
         }
+
     }
-} 
+}

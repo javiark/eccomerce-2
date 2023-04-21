@@ -65,6 +65,7 @@ registerForm.addEventListener("submit",(event)=>{ // con addEventListener escuch
 
     const user = {
         fullName:el.fullName.value,
+        surname:el.surname.value,
         email: el.email.value,
         password: el.password.value,
         age: el.age.value,
