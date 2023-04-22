@@ -118,7 +118,7 @@
         border: 0;
         cursor: pointer;
         font-size: 1rem;
-        pointer-events: none;   
+        // pointer-events: none;   
     }
     
     &__btn-buy:hover{
@@ -148,7 +148,7 @@
 }
 
 .enable{
-    pointer-events: all;
+    // pointer-events: all;
     background-color: red;
 }
 

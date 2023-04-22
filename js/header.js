@@ -72,6 +72,8 @@ function createLinkElement(path, text){ // el texto es el que veo en el link. //
 }
 
 function logout(){
+    const loginUser= document.getElementById("loginName")
+    loginUser.innerHTML = ``
     const currentUser=JSON.parse(localStorage.getItem("currentUser"));
 
     if(currentUser.role ==="ADMIN_ROLE"){

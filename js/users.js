@@ -30,6 +30,7 @@ function renderizarTablaUser() {
         //4- Introducir dentro del tbody una fila por producto con sus respectivas celdas
         const tableRow = `<tr class="user">
                             <td class="user__name" onclick="editName(${index}")>${usuario.fullName}</td>
+                            <td class="user__name" onclick="editName(${index}")>${usuario.surname}</td>
                             <td class="user__desc">${usuario.email}</td>
                             <td class="user__name"> ${usuario.role}</td>
                             <td class="user__desc">FECHA</td>
@@ -69,9 +70,16 @@ function addUser(evt) {
     
     const newUser = {
         fullName: elements.fullName.value,
-        // surname:elements.surname.value,
+        surname:elements.surname.value,
         email: elements.mail.value,
         role: elements.rol.value,
+        // passwordInput: elements.passwordInput.value,
+        // passwordInput2: elements.passwordInput2.value,
+        // ageInput: elements.ageInput.value,
+        // bornDateInput: elements.bornDateInput.value,
+        // gender:elements.gender.value,
+        // countryInput: elements.countr.value,
+
     };
     // console.log(newUser)
 
@@ -136,7 +144,17 @@ function deleteUser(indice) {
     })
 }
 
-
+    // const user = {
+    //     fullName:el.fullName.value,
+    //     surname:el.surname.value,
+    //     email: el.email.value,
+    //     password: el.password.value,
+    //     age: el.age.value,
+    //     bornDate: el.bornDate.value,
+    //     country:el.country.value,
+    //     gender: el.gender.value,
+    //     role:"USER_ROLE",
+    // }
 
 function editUser(idx){
     submitBtn.classList.add("edit-btn");
@@ -152,7 +170,7 @@ function editUser(idx){
     const el=userForm.elements;
 
     el.fullName.value=user.fullName;
-    // el.surname.value=user.surname;
+    el.surname.value=user.surname;
     el.mail.value=user.email;
     el.rol.value=user.role;
     // console.log("indice", idx)

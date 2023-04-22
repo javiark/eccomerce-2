@@ -115,7 +115,6 @@ body {
   border: 0;
   cursor: pointer;
   font-size: 1rem;
-  pointer-events: none;
 }
 .card__btn-buy:hover {
   box-shadow: 0 0 5px #858585;
@@ -139,7 +138,6 @@ body {
 }
 
 .enable {
-  pointer-events: all;
   background-color: red;
 }
 

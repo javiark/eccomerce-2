@@ -39,6 +39,9 @@
 
 // 
 const user = JSON.parse(localStorage.getItem("currentUser"))
+console.log(user)
+
+const boton = document.getElementById("boton1")
 
 const cardContainer=document.querySelector("#card-container");
 
@@ -74,7 +77,7 @@ function renderizarProductos(products){
         </div>
     </div>
     <div class="card__footerCard">
-        <button class="card__btn-buy" id="btn" href="#" onclick="addToOrder(${index}" ) >
+        <button class="card__btn-buy" id="boton1" onclick="addToOrder(${index})" ${user ? "":'disabled'}>
             Comprar
         </button>
         <div class="card__btn-container">
