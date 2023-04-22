@@ -123,7 +123,7 @@ function checkIfUserExist(users, emailToSearch){
 
 }
 const avatar=document.getElementById("avatar")
-console.log(avatar)
+// console.log(avatar)
 // function avatar{}
 
 

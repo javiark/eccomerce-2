@@ -79,6 +79,9 @@ function logout(){
     if(currentUser.role ==="ADMIN_ROLE"){
     document.getElementById("admin-product").remove();
     document.getElementById("admin-user").remove();
+    setTimeout(()=>{
+        window.location.href="/index.html"
+    }, 1000)
 
 }
 localStorage.removeItem("currentUser");

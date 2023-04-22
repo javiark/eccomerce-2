@@ -38,9 +38,9 @@ loginForm.addEventListener("submit",(event)=>{
         // alert(`Bienvenido ${user.fullName} `)
 
 
-        // setTimeout(()=>{
-        //     window.location.href="/index.html"
-        // }, 2000)
+        setTimeout(()=>{
+            window.location.href="/index.html"
+        }, 2000)
         // const loginUser= document.getElementById("loginName")
 
         // // console.log(`${user.fullName}`)
