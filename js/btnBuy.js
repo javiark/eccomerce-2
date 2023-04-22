@@ -1,8 +1,23 @@
 function btnBuy(){
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    const boton = document.querySelector(".card__btn-buy")
+    const button2 = document.querySelectorAll(".card__btn-buy1")
+    // console.dir(button2)
+
     if (currentUser) {
-    boton.classList.add("enable");
+        button2.forEach((parametro) => {
+           pam = parametro.classList.add("enable");
+            // console.log(pam)
+        });
 }
 }
 btnBuy()
+
+
+// function btnBuy(){
+//     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+//     const boton = document.querySelector(".card__btn-buy")
+//     if (currentUser) {
+//     boton.classList.add("enable");
+// }
+// }
+// btnBuy()

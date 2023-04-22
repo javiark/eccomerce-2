@@ -1,45 +1,6 @@
-{/* <article class="card">
-<div class="card__header">
-    <img src="/assets/images/imagen1.webp" alt="Product Image" class="card__img">
-</div>
-<div class="card__body">
-    <div class="card__title">
-        BOX ABASCAY - NUEVA EDICIÓN
-    </div>
-    <div class="card__description">
-        
-            <p class="card__texto">1 Halloumi (300 g aprox)</p> 
-            <p class="card__texto">1 Orégano (300 g aprox)</p> 
-            <p class="card__texto">1 Gouda (300 g aprox)</p> 
-            <p class="card__texto">1 Sardo (300 g aprox)</p> 
-            <p class="card__texto">1 Sbrinz (300 g aprox) </p> 
-            <p class="card__texto">1 Queso Tybo (300 g aprox)</p>
-       
-    </div>
-    <div class="card__info">
-        <div class="card__date">
-        12/01/2023
-        </div>
-        <div class="card__price">
-        $9.200,00
-        </div>
-    </div>
-</div>
-<div class="card__footerCard">
-    <a class="card__btn-buy" href="#">
-        Comprar
-    </a>
-    <div class="card__btn-container">
-        <a class="card__btn" href="#">
-            Detalle
-        </a>
-    </div>
-</div>
-</article>    */}
 
-// 
 const user = JSON.parse(localStorage.getItem("currentUser"))
-console.log(user)
+// console.log(user)
 
 const boton = document.getElementById("boton1")
 
@@ -77,7 +38,7 @@ function renderizarProductos(products){
         </div>
     </div>
     <div class="card__footerCard">
-        <button class="card__btn-buy" id="boton1" onclick="addToOrder(${index})" ${user ? "":'disabled'}>
+        <button class="card__btn-buy1"  id="boton1" onclick="addToOrder(${index})" ${user ? "":'disabled'}>
             Comprar
         </button>
         <div class="card__btn-container">

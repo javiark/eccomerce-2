@@ -79,9 +79,11 @@ function logout(){
     if(currentUser.role ==="ADMIN_ROLE"){
     document.getElementById("admin-product").remove();
     document.getElementById("admin-user").remove();
+
 }
 localStorage.removeItem("currentUser");
     renderHeaderLinks();
+    btnBuy();
 }
 
 // function logout(){

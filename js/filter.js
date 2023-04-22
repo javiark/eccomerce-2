@@ -1,5 +1,5 @@
 let productos =JSON.parse(localStorage.getItem('products')) || [];
-console.log(productos)
+// console.log(productos)
 
 function metodoFilter(evt){
         //frenando la busqueda si la tecla no es la que tiene codigo 13 ( enter )
@@ -8,11 +8,11 @@ function metodoFilter(evt){
         return;
     }
     const text=evt.target.value.toLowerCase().trim();
-    console.dir(text)
+    // console.dir(text)
 
     const productosFiltrado =productos.filter((prod)=>{
         
-        console.log(`el usuario filtrado es ${prod}`)
+        // console.log(`el usuario filtrado es ${prod}`)
 
         const filtra = prod.name.toLowerCase().includes(text);
 

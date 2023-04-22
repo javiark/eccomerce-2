@@ -37,7 +37,9 @@ actualizarBadge()
 
 
 // ?Agregar elemento (funcion)
+
 function addToOrder(indice){
+    console.log("funciona el boton")
 //Tener la posibilidad de que cuando apriete el boton comprar se añada el elemento array dentro de order.products
     //antes de hacer un push 
     //Deberia checkear con un find o findIndex deberia chequear si el producto ya se encuentra
