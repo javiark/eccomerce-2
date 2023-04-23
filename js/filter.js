@@ -25,4 +25,5 @@ function metodoFilter(evt){
     }else{
         document.getElementById("productsCount").innerHTML=(`No se han encontrado productos`)
     }
+    renderizarProductos(productosFiltrado)
 };
