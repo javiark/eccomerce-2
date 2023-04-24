@@ -33,7 +33,7 @@ function renderizarTablaUser() {
                             <td class="user__name" onclick="editName(${index}")>${usuario.surname}</td>
                             <td class="user__desc">${usuario.email}</td>
                             <td class="user__name"> ${usuario.role}</td>
-                            <td class="user__desc">FECHA</td>
+                            <td class="user__desc"> ${fecha}</td>
                             <td class="user__actions">
                                 <button class="product__action-btnDetail" onclick="deleteUser(${index})">
                                     <i class="fa-solid fa-trash"></i>

@@ -1,4 +1,3 @@
-
 const user = JSON.parse(localStorage.getItem("currentUser"))
 // console.log(user)
 
@@ -30,7 +29,7 @@ function renderizarProductos(products){
         </div>
         <div class="card__info">
             <div class="card__date">
-            12/01/2023
+            ${fecha}
             </div>
             <div class="card__price">
             $ ${product.price}
@@ -49,6 +48,5 @@ function renderizarProductos(products){
     </div>`
     cardContainer.appendChild(card);
     })
-
 }
 renderizarProductos(productsLS);
