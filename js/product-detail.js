@@ -21,10 +21,10 @@ const product = products[indice];
 // document.body.innerHTML = `<p>${JSON.stringify(product)}</p>`
 //     <img src = ${product.image}>`
 
-const cardContainer=document.querySelector("#card-detail");
+const cardContainer1=document.querySelector("#card-detail");
 
 function renderizarDetail(){
-cardContainer.innerHTML = ` 
+cardContainer1.innerHTML = ` 
 <main class="main1">
     <div class="mainDetail">
         <div class="containerDetail">

@@ -83,6 +83,7 @@ function addProduct(evt) {
     // console.dir(elements.price);
     
     const newProduct = {
+
         name: elements.name.value,
         description: elements.description.value,
         price: elements.price.valueAsNumber,
