@@ -3,7 +3,7 @@ const user = JSON.parse(localStorage.getItem("currentUser"))
 
 const boton = document.getElementById("boton1")
 
-const cardContainer=document.querySelector("#card-container");
+const cardContainer=document.getElementById("card-container");
 
 const productsLS = JSON.parse(localStorage.getItem("products")) || [];
 
@@ -37,7 +37,7 @@ function renderizarProductos(products){
         </div>
     </div>
     <div class="card__footerCard">
-        <button class="card__btn-buy1"  id="boton1" onclick="addToOrder(${index})" ${user ? "":'disabled'}>
+        <button class="card__btn-buy1"  id="boton1" onclick="addToOrder(index)">
             Comprar
         </button>
         <div class="card__btn-container">
@@ -50,3 +50,47 @@ function renderizarProductos(products){
     })
 }
 renderizarProductos(productsLS);
+
+//onclick="addToOrder(${index})"  
+
+
+const badgeHTMLbuy=document.getElementById("cart-count");
+const productsOrder = JSON.parse(localStorage.getItem("products"))
+// console.log(productsOrder)
+const productsUser = JSON.parse(localStorage.getItem("users"))
+// console.log(productsUser)
+
+const tableBodyOrder = document.querySelector('#table-body-order');
+
+const productFormBuy=document.getElementById("add-product");
+const submitBtn = document.getElementById("submit-btn");
+
+
+
+let cart = [];
+
+// function actualizarBadge(){
+//     let order =[];
+//     // badgeHTML.innerText=order.products.length
+//     // badgeHTML.innerText=order.products.reduce((acc,producto)=> {
+//     //     //con reduce itera. Recibe dos productos, en cuanto empieza mi acumulador. acc empieza en 0. acc es el acumulado y el valor a iterar es el producto
+//     //     acc = acc + producto.cantidad;
+//     //     return acc
+//     // },0)
+//     console.log(order.productsOrder)
+//     let count=0;
+//     order.forEach(prod => {
+//         count +=prod.cantidad
+//     })
+//     badgeHTMLbuy.innerText=count;
+//     console.log(count)
+// }
+
+function addToOrder(index){
+    // console.log(index)
+    const item= productsOrder.find((prod)=> prod.index ===index)
+    cart.push (item)
+    console.log(cart)
+    console.log(productsOrder)
+
+}

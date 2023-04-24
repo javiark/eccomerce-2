@@ -20,6 +20,8 @@ const submitBtn = document.getElementById("submit-btn");
 //1- Obtener el body de la tabla para poder modificarlo desde JS
 const tableBody = document.querySelector('#table-body');
 
+
+
 let editIndex;
 
 
