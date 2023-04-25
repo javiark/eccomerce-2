@@ -52,3 +52,29 @@ function renderizarProductos(products){
 }
 renderizarProductos(productsLS);
 
+// arrayContar.forEach
+
+
+function pintarID(arrayPintarID){
+    let id=[]
+    arrayPintarID.forEach((prodID, indice)=>{
+    // console.log(`${indice+1}`)
+    id=indice+1
+    
+    const newObj={
+        idObj:indice
+    }
+    console.log("console"+newObj)
+// console.log(`${prodID}`)
+    //id=indice+1
+   // console.log(id)
+    // id.push
+})
+}
+
+pintarID(productsLS)
+
+
+// createId()
+
+
