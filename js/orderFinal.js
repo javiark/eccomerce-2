@@ -3,6 +3,7 @@ const productsOrder = JSON.parse(localStorage.getItem("products"))
 // console.log(productsOrder)
 const productsUser = JSON.parse(localStorage.getItem("users"))
 // console.log(productsUser)
+const productOrder = JSON.parse(localStorage.getItem("order"))
 
 const tableBodyOrder = document.querySelector('#table-body-order');
 
@@ -11,7 +12,7 @@ const submitBtn = document.getElementById("submit-btn");
 const cart = []
 
 
-console.log(productsOrder)
+// console.log(productsOrder)
 
 function addToOrder(index){
     // console.log(index)
@@ -22,7 +23,37 @@ function addToOrder(index){
     // console.log(order1)
     cart.push(order1)
     console.log(cart)
+    localStorage.setItem("order", JSON.stringify(cart))
 }
+
+
+
+productOrder.forEach((prod, index)=>{
+    // console.log(prod)
+    // const { image, name, description, price } = prod;
+    // console.log(name)
+    tableBodyOrder.innerHTML += `<tr class="order">
+    <td class="order__img-cell"><img class="product__img" src="${prod.image}" alt="${prod.name}"></td>
+    <td class="order__name" onclick="editName(${index}")>${prod.name}</td>
+    <td class="order__desc">${prod.description}</td>
+    <td class="order__desc">CANTIDAD</td>
+    <td class="order__price">$ ${prod.price}</td>
+    <td class="order__price">$ SUBTOTAL</td>
+    <td class="order__actions">
+        <button class="product__action-btnDetail" onclick="deleteProduct(${index})">
+            <i class="fa-solid fa-trash"></i>
+        </button>
+        <button class="product__action-btn product__btn-edit"  onclick="editProduct(${index})">
+            <i class="fa-solid fa-pencil " ></i>
+        </button>
+
+    
+    </td>
+</tr>`
+// tableBodyOrder.innerHTML += tableBodyOrder;
+// console.log(prod.name)
+})
+// });
 
 // selecciono todos los botones
 // const addShoppingBtn = document.querySelectorAll(".card__btn-buy1")
@@ -115,33 +146,7 @@ function addToOrder(index){
 
 
 
-// // productsOrder.forEach((prod, index)=>{
-// //     // console.log(prod)
-// //     // const { image, name, description, price } = prod;
-// //     // console.log(name)
-// //     tableBodyOrder.innerHTML += `<tr class="order">
-// //     <td class="order__img-cell"><img class="product__img" src="${prod.image}" alt="${prod.name}"></td>
-// //     <td class="order__name" onclick="editName(${index}")>${prod.name}</td>
-// //     <td class="order__desc">${prod.description}</td>
-// //     <td class="order__desc">CANTIDAD</td>
-// //     <td class="order__price">$ ${prod.price}</td>
-// //     <td class="order__price">$ SUBTOTAL</td>
-// //     <td class="order__actions">
-// //         <button class="product__action-btnDetail" onclick="deleteProduct(${index})">
-// //             <i class="fa-solid fa-trash"></i>
-// //         </button>
-// //         <button class="product__action-btn product__btn-edit"  onclick="editProduct(${index})">
-// //             <i class="fa-solid fa-pencil " ></i>
-// //         </button>
 
-    
-// //     </td>
-// // </tr>`
-// // // tableBodyOrder.innerHTML += tableRow;
-// // console.log(prod.name)
-
-
-// // });
 
 // const agregarCarrito = (prodName) => {
 //     const item = productsOrder.find((prod)=>prod.name===prodName)
