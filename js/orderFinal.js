@@ -8,7 +8,21 @@ const tableBodyOrder = document.querySelector('#table-body-order');
 
 const productFormBuy=document.getElementById("add-product");
 const submitBtn = document.getElementById("submit-btn");
+const cart = []
 
+
+console.log(productsOrder)
+
+function addToOrder(index){
+    // console.log(index)
+    let item= productsOrder.find((prod)=> (prod.index) ==index)
+    // console.log (item)
+    // console.log(cart)
+    let order1 =productsOrder[index]
+    // console.log(order1)
+    cart.push(order1)
+    console.log(cart)
+}
 
 // selecciono todos los botones
 // const addShoppingBtn = document.querySelectorAll(".card__btn-buy1")
@@ -19,10 +33,10 @@ const submitBtn = document.getElementById("submit-btn");
 // })
 
 
-addToOrder.forEach((index)=>
-{
-    console.log(index)
-})
+// addToOrder.forEach((index)=>
+// {
+//     console.log(index)
+// })
 
 // function addToCart(evt){
 //     const buttonBuy1 = evt.target;
@@ -43,19 +57,32 @@ addToOrder.forEach((index)=>
 // console.log(productsOrder)
 
 
-let orderProducts = [];
+// let orderProducts = [];
 // console.log(orderProducts)
 
-function addToOrder(id){
-    let productsOrderBuy = JSON.parse(localStorage.getItem("products"))
-    console.log (productsOrderBuy)
-    console.log(id)
-    const item= productsOrder.find((prod)=> prod.id ==id)
-    orderProducts.push (item)
-    console.dir(orderProducts)
-    // console.log(productsOrder)
+// function pintarID(arrayPintarID){
+//     arrayPintarID.forEach((prodID, indice)=>{
+//     // console.log(`${indice+1}`)
+//     idObj=indice+1
+//     // console.log("console"+newObj)
+// // console.log(idObj)
+//     //id=indice+1
+//    // console.log(id)
+//     // id.push 
+//     const arrayObjeto = [ {id:idObj}]
+//     // console.log(arrayObjeto)
+//     orderProducts.push(arrayObjeto)
 
-}
+// })
+// }
+// pintarID(productsOrder)
+// // console.log(orderProducts)
+
+
+
+
+
+
 
 
 

@@ -38,11 +38,11 @@ function renderizarProductos(products){
         </div>
     </div>
     <div class="card__footerCard">
-        <button class="card__btn-buy1"  id="boton1" onclick="addToOrder(${index})">
+        <button class="card__btn-buy1"  onclick="addToOrder(${index})" id=${index}>
             Comprar
         </button>
         <div class="card__btn-container">
-            <a class="card__btn" href="/pages/product-detail/product-detail.html?id=${index}">
+            <a class="card__btn" href="/pages/product-detail/product-detail.html?id=${index}" >
                 Ver mas
             </a>
         </div>
@@ -52,27 +52,29 @@ function renderizarProductos(products){
 }
 renderizarProductos(productsLS);
 
+// let result = productsLS.reduce((arr,nav)=>
+//     {arr.push(productsLS.name)
+//         return(arr)
+//     },
+//     [])
+
+//     console.log(result)
+
 // arrayContar.forEach
 
 
-function pintarID(arrayPintarID){
-    let id=[]
-    arrayPintarID.forEach((prodID, indice)=>{
-    // console.log(`${indice+1}`)
-    id=indice+1
-    
-    const newObj={
-        idObj:indice
-    }
-    console.log("console"+newObj)
-// console.log(`${prodID}`)
-    //id=indice+1
-   // console.log(id)
-    // id.push
-})
-}
-
-pintarID(productsLS)
+// function pintarID(arrayPintarID){
+//     arrayPintarID.forEach((prodID, indice)=>{
+//     // console.log(`${indice+1}`)
+//     id=indice+1
+//     // console.log("console"+newObj)
+// console.log(id)
+//     //id=indice+1
+//    // console.log(id)
+//     // id.push
+// })
+// }
+// pintarID(productsLS)
 
 
 // createId()

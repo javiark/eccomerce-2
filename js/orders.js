@@ -1,5 +1,26 @@
+const order1 = { 
+    userId: 1,// indice de usuario de nuestro array
+    products : [
+        {
+            productID: 18,   // momentaneamiente sera un indice de producto de nuestro array del localStorage
+            quantity: 1,
+            price: 24000,
+        },
+        {
+            productID: 8,   // momentaneamiente sera un indice de producto de nuestro array del localStorage
+            quantity: 2,
+            price: 3000,
+        }
+    ],
+   createdAt:new Date()
+   total: 323240
+
+}
+
+
 const badgeHTML=document.getElementById("cart-count")
-let order = { // usuario
+let order = { 
+    userID:1// usuario
     product: [ //array de productos
         {
         productName:"XBOX",
