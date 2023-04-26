@@ -67,20 +67,21 @@ function addUser(evt) {
     // console.log(elements.stock.checked)
     // console.dir(elements.name);
     // console.dir(elements.price);
-    
-    const newUser = {
-        fullName: elements.fullName.value,
-        surname:elements.surname.value,
-        email: elements.mail.value,
-        role: elements.rol.value,
-        // passwordInput: elements.passwordInput.value,
-        // passwordInput2: elements.passwordInput2.value,
-        // ageInput: elements.ageInput.value,
-        // bornDateInput: elements.bornDateInput.value,
-        // gender:elements.gender.value,
-        // countryInput: elements.countr.value,
+    let newUser = editIndex ? users[editIndex] : {};
 
-    };
+    // const newUser = {
+        newUser.fullName =  elements.fullName.value;
+        newUser.surname = elements.surname.value;
+        newUser.email =  elements.mail.value;
+        newUser.role =  elements.rol.value;
+    //     // passwordInput: elements.passwordInput.value,
+    //     // passwordInput2: elements.passwordInput2.value,
+    //     // ageInput: elements.ageInput.value,
+    //     // bornDateInput: elements.bornDateInput.value,
+    //     // gender:elements.gender.value,
+    //     // countryInput: elements.countr.value,
+
+    // };
     // console.log(newUser)
 
 
