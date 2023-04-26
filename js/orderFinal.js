@@ -2,6 +2,7 @@ const badgeHTMLbuy=document.getElementById("cart-count");
 const productsOrder = JSON.parse(localStorage.getItem("products"))
 // console.log(productsOrder)
 const productsUser = JSON.parse(localStorage.getItem("users"))
+const orderUser = JSON.parse(localStorage.getItem("currentUser"))
 // console.log(productsUser)
 const productOrder = JSON.parse(localStorage.getItem("order"))
 
@@ -9,7 +10,44 @@ const tableBodyOrder = document.querySelector('#table-body-order');
 
 const productFormBuy=document.getElementById("add-product");
 const submitBtn = document.getElementById("submit-btn");
-const cart = []
+
+// const order1 = { 
+//     userId: 1,// indice de usuario de nuestro array
+//     products : [
+//         {
+//             productID: 18,   // momentaneamiente sera un indice de producto de nuestro array del localStorage
+//             quantity: 1,
+//             price: 24000,
+//         },
+//         {
+//             productID: 8,   // momentaneamiente sera un indice de producto de nuestro array del localStorage
+//             quantity: 2,
+//             price: 3000,
+//         }
+//     ],
+//    createdAt:new Date()
+//    total: 323240
+
+// }
+
+// const newProduct = {
+        
+//     name: elements.name.value,
+//     description: elements.description.value,
+//     price: elements.price.valueAsNumber,
+//     image: elements.image.value,
+//     detail:elements.detail.value,
+//     stock: elements.stock.checked,
+// };
+const mailUser = {mailOrder : orderUser.email}
+// console.log(mailUser)
+const cart = 
+    [
+    
+]
+
+
+console.log(orderUser.fullName)
 
 
 // console.log(productsOrder)
@@ -17,14 +55,28 @@ const cart = []
 function addToOrder(index){
     // console.log(index)
     let item= productsOrder.find((prod)=> (prod.index) ==index)
+
+
     // console.log (item)
-    // console.log(cart)
+
     let order1 =productsOrder[index]
     // console.log(order1)
     cart.push(order1)
     console.log(cart)
+    cart.push(mailUser)
     localStorage.setItem("order", JSON.stringify(cart))
 }
+
+// function findUser(index){
+//     let user= productsUser.find((us)=> (us.index) ==index)
+//     console.log(user)
+// }
+function findUser(index){
+let userId = productsUser.findIndex((p)=>(p.index)==orderUser)
+console.log (userId)
+}
+
+findUser(orderUser)
 
 
 
