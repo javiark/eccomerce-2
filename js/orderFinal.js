@@ -39,8 +39,8 @@ const submitBtn = document.getElementById("submit-btn");
 //     detail:elements.detail.value,
 //     stock: elements.stock.checked,
 // };
-const mailUser = {mailOrder : orderUser.email}
-// console.log(mailUser)
+const mailUser = [orderUser.email]
+console.log(mailUser)
 const cart = 
     [
     
@@ -52,40 +52,63 @@ console.log(orderUser.fullName)
 
 // console.log(productsOrder)
 
-function addToOrder(index){
-    // console.log(index)
-    let item= productsOrder.find((prod)=> (prod.index) ==index)
 
 
-    // console.log (item)
+//     let order1 =productsOrder[index]
+//     // console.log(order1)
+//     cart.push(order1)
+//     console.log(cart)
+//     cart.push(mailUser)
+//     localStorage.setItem("order", JSON.stringify(cart))
+// }
+// console.log(productsUser)
 
-    let order1 =productsOrder[index]
-    // console.log(order1)
-    cart.push(order1)
-    console.log(cart)
-    cart.push(mailUser)
-    localStorage.setItem("order", JSON.stringify(cart))
-}
-console.log(productsUser)
+let  mailsUserTotal = []
 
-productsUser.forEach((usuario, index) => {
-    let nombreNN=`${usuario.email}`
+productsUser.forEach((usuario) => {
+    let nombreNN=`${usuario.email} `
     console.log(nombreNN)
+    mailsUserTotal.push(nombreNN)
 
-    let mailUser=orderUser.email;
-    console.log(mailUser)
-
-    
 });
 
+console.log(mailsUserTotal)
+console.log(mailUser)
 
 
-console.log(orderUser)
-let nombreUser=orderUser.email;
-console.log(nombreUser)
-console.log(productsUser)
-let nombreUserOrder=productsUser.fullName;
-console.log(nombreUserOrder)
+const resUsserID = mailsUserTotal.findIndex(findID1)
+function findID1(value){
+    return value===mailUser}
+console.log(resUsserID)
+
+      
+
+
+const numbers = [1,2,3,4,5]
+const res = numbers.findIndex(findThree);
+function findThree(value){
+    return value ===3
+}
+
+console.log(res)
+
+
+
+
+
+
+
+
+
+
+
+
+// console.log(orderUser)
+// let nombreUser=orderUser.email;
+// console.log(nombreUser)
+// console.log(productsUser)
+// let nombreUserOrder=productsUser.fullName;
+// console.log(nombreUserOrder)
 
 let res1=productsUser.findIndex(findUser)
 
