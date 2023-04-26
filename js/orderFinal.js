@@ -66,17 +66,54 @@ function addToOrder(index){
     cart.push(mailUser)
     localStorage.setItem("order", JSON.stringify(cart))
 }
+console.log(productsUser)
+
+productsUser.forEach((usuario, index) => {
+    let nombreNN=`${usuario.email}`
+    console.log(nombreNN)
+
+    let mailUser=orderUser.email;
+    console.log(mailUser)
+
+    
+});
+
+
+
+console.log(orderUser)
+let nombreUser=orderUser.email;
+console.log(nombreUser)
+console.log(productsUser)
+let nombreUserOrder=productsUser.fullName;
+console.log(nombreUserOrder)
+
+let res1=productsUser.findIndex(findUser)
+
+function findUser(value){
+    return value ===orderUser
+}
+
+// console.log(res1)
+
+// const numbers = [1,2,3,4,5]
+// const res = numbers.findIndex(findThree);
+// function findThree(value){
+//     return value ===3
+// }
+
+// console.log(res)
 
 // function findUser(index){
 //     let user= productsUser.find((us)=> (us.index) ==index)
 //     console.log(user)
 // }
-function findUser(index){
-let userId = productsUser.findIndex((p)=>(p.index)==orderUser)
-console.log (userId)
-}
+console.log(orderUser)
 
-findUser(orderUser)
+console.log(productsUser)
+let userId = productsUser.findIndex((p)=>p===orderUser)
+console.log (userId)
+
+
 
 
 
