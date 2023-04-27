@@ -76,13 +76,14 @@ productOrder.forEach((prod,index)=>{
 console.log(productOrderFinal)
 
 
-let userID=orderUser.fullName
+let userName=orderUser.fullName
 let userOrder=orderUser.email
 let totalOrder=`$$`
 let createdAt = new Date()
 
 let order1 ={
-    userID,
+    usuarioID1,
+    userName,
     userOrder,
     totalOrder,
     createdAt,
@@ -95,6 +96,16 @@ let order1 ={
 console.log(order1)
 
 
+function actualizarBadge(){
+
+    let count=0;
+    productOrderFinal.forEach( productOrderFinal => {
+        count += productOrderFinal.quiantity
+    })
+    badgeHTMLbuy.innerText=count;
+    console.log(count)
+}
+actualizarBadge()
 
 
 productOrder.forEach((prod, index)=>{
@@ -125,13 +136,3 @@ productOrder.forEach((prod, index)=>{
 
 
 
-function actualizarBadge(){
-    let order =[];
-    console.log(order.productsOrder)
-    let count=0;
-    order.forEach(prod => {
-        count +=prod.cantidad
-    })
-    badgeHTMLbuy.innerText=count;
-    console.log(count)
-}
