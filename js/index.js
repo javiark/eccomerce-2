@@ -38,7 +38,7 @@ function renderizarProductos(products){
         </div>
     </div>
     <div class="card__footerCard">
-        <button class="card__btn-buy1"  onclick="addToOrder(${index})" id=${index}>
+        <button class="card__btn-buy1"  onclick="addToOrder(${index}) " id=${index}>
             Comprar
         </button>
         <div class="card__btn-container">

@@ -17,6 +17,7 @@ const order1 = {
 
 }
 
+],
 
 const badgeHTML=document.getElementById("cart-count")
 let order = { 
