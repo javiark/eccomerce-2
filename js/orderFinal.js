@@ -9,8 +9,8 @@ const tableBodyOrder = document.querySelector('#table-body-order');
 const productFormBuy=document.getElementById("add-product");
 const submitBtn = document.getElementById("submit-btn");
 
-console.log(orderUser)
-console.log(productOrder)
+// console.log(orderUser)
+// console.log(productOrder)
 
 const mailUser = [orderUser.email]
 const priceBuy = [productOrder.price]
@@ -19,35 +19,19 @@ const cart =
     [   
 ]
 
-
-function actualizarBadge(){
-    let count=0;
-}
-
-
-
-
-
-
-
 //-----------------------OBTENER ID DE USUARIO---------------------
 const usuarioID1 = productsUser.findIndex(id1=>id1.email === orderUser.email)
-console.log(usuarioID1)
-// userID.push(`userID:${usuarioID1}`)
+// console.log(usuarioID1)
+
 // console.log(userID)
-
-
 // console.log(orderUser.fullName)
 // console.log(productsOrder)
 // console.log(cart)
 // console.log(mailUser)
 
-
+//-----------------------GENERAR ARRAY DE PRODUCTOS---------------------
 
 let productOrderFinal = [];
-
-
-
 
 function addToOrder(index){
     // console.log(index)
@@ -59,7 +43,7 @@ function addToOrder(index){
     let order1 =productsOrder[index]
     // console.log(order1)
     cart.push(order1)
-    console.log(cart)
+    // console.log(cart)
     // cart.push(mailUser)
     localStorage.setItem("order", JSON.stringify(cart))
 }
@@ -71,9 +55,10 @@ productOrder.forEach((prod,index)=>{
         quiantity:1     
     }
     productOrderFinal.push(nuevaOrden)
+    
 
 });
-console.log(productOrderFinal)
+// console.log(productOrderFinal)
 
 
 let userName=orderUser.fullName
@@ -93,9 +78,10 @@ let order1 ={
     // userMail,
     // userPrice
 }
-console.log(order1)
+// console.log(order1)
 
 
+//----------------ACTUALIZAR CANTIDAD EN CARRITOS DE COMPRA--------------
 function actualizarBadge(){
 
     let count=0;
@@ -103,9 +89,16 @@ function actualizarBadge(){
         count += productOrderFinal.quiantity
     })
     badgeHTMLbuy.innerText=count;
-    console.log(count)
+    // console.log(count)
 }
 actualizarBadge()
+
+
+
+
+
+
+
 
 
 productOrder.forEach((prod, index)=>{
