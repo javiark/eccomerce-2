@@ -47,6 +47,23 @@ console.log(usuarioID1)
 let productOrderFinal = [];
 
 
+
+
+function addToOrder(index){
+    // console.log(index)
+    let item= productsOrder.find((prod)=> (prod.index) ==index)
+
+
+    // console.log (item)
+
+    let order1 =productsOrder[index]
+    // console.log(order1)
+    cart.push(order1)
+    console.log(cart)
+    // cart.push(mailUser)
+    localStorage.setItem("order", JSON.stringify(cart))
+}
+
 productOrder.forEach((prod,index)=>{
     const nuevaOrden={
         nameOrder:prod.name,
@@ -76,21 +93,6 @@ let order1 ={
     // userPrice
 }
 console.log(order1)
-
-function addToOrder(index){
-    // console.log(index)
-    let item= productsOrder.find((prod)=> (prod.index) ==index)
-
-
-    // console.log (item)
-
-    let order1 =productsOrder[index]
-    // console.log(order1)
-    cart.push(order1)
-    console.log(cart)
-    // cart.push(mailUser)
-    localStorage.setItem("order", JSON.stringify(cart))
-}
 
 
 
