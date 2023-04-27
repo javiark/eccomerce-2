@@ -40,14 +40,16 @@ const submitBtn = document.getElementById("submit-btn");
 //     stock: elements.stock.checked,
 // };
 const mailUser = [orderUser.email]
-console.log(mailUser)
+// console.log(mailUser)
 const cart = 
     [
     
 ]
 
-
-console.log(orderUser.fullName)
+//OBTENER ID DE USUARIO
+const usuarioID1 = productsUser.findIndex(id1=>id1.email === orderUser.email)
+console.log(usuarioID1)
+// console.log(orderUser.fullName)
 
 
 // console.log(productsOrder)
@@ -63,34 +65,27 @@ console.log(orderUser.fullName)
 // }
 // console.log(productsUser)
 
-let  mailsUserTotal = []
+// let  mailsUserTotal = []
 
-productsUser.forEach((usuario) => {
-    let nombreNN=`${usuario.email} `
-    console.log(nombreNN)
-    mailsUserTotal.push(nombreNN)
+// productsUser.forEach((usuario) => {
+//     let nombreNN=`${usuario.email} `
+//     console.log(nombreNN)
+//     mailsUserTotal.push(nombreNN)
 
-});
+// });
 
-console.log(mailsUserTotal)
-console.log(mailUser)
+// console.log(mailsUserTotal)
+// console.log(mailUser)
 
 
-const resUsserID = mailsUserTotal.findIndex(findID1)
-function findID1(value){
-    return value===mailUser}
-console.log(resUsserID)
+// const resUsserID = mailsUserTotal.findIndex(findID1)
+// function findID1(value){
+//     return value===mailUser}
+// console.log(resUsserID)
 
       
 
 
-const numbers = [1,2,3,4,5]
-const res = numbers.findIndex(findThree);
-function findThree(value){
-    return value ===3
-}
-
-console.log(res)
 
 
 
@@ -110,11 +105,11 @@ console.log(res)
 // let nombreUserOrder=productsUser.fullName;
 // console.log(nombreUserOrder)
 
-let res1=productsUser.findIndex(findUser)
+// let res1=productsUser.findIndex(findUser)
 
-function findUser(value){
-    return value ===orderUser
-}
+// function findUser(value){
+//     return value ===orderUser
+// }
 
 // console.log(res1)
 
@@ -130,11 +125,11 @@ function findUser(value){
 //     let user= productsUser.find((us)=> (us.index) ==index)
 //     console.log(user)
 // }
-console.log(orderUser)
+// console.log(orderUser)
 
-console.log(productsUser)
-let userId = productsUser.findIndex((p)=>p===orderUser)
-console.log (userId)
+// console.log(productsUser)
+// let userId = productsUser.findIndex((p)=>p===orderUser)
+// console.log (userId)
 
 
 
