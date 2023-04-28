@@ -116,11 +116,15 @@ body {
     &__desc {
         width: 30%;
     }
+    &__quantity{
+        text-align: center;
+    }
     &__price {
         font-weight: bold;
     }
     &__price {
         font-weight: bold;
+        text-align: center;
     }
     &__info-icon.disabled{
         filter: grayscale(1);
@@ -172,7 +176,7 @@ body {
 }
 
 
-.product__info, .product__actions {
+.product__info, .order__actions {
     vertical-align: center;
     text-align: center;
     font-size: 1.5rem;

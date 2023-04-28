@@ -1478,6 +1478,9 @@ body {
 .table-product {
   border-collapse: collapse;
 }
+.table-product__text-center {
+  text-align: center;
+}
 
 .table-product thead tr {
   background-color: dodgerblue;
@@ -1672,6 +1675,18 @@ body {
   padding-bottom: 1rem;
 }
 
+.final-price {
+  text-align: right;
+  background-color: #32579e;
+  color: white;
+}
+
+.final-price-number {
+  text-align: center;
+  background-color: #32579e;
+  color: white;
+}
+
 @media screen and (min-width: 1000px) {
   .container {
     flex-direction: row;
@@ -1801,11 +1816,15 @@ body {
 .order__desc {
   width: 30%;
 }
+.order__quantity {
+  text-align: center;
+}
 .order__price {
   font-weight: bold;
 }
 .order__price {
   font-weight: bold;
+  text-align: center;
 }
 .order__info-icon.disabled {
   filter: grayscale(1);
@@ -1847,7 +1866,7 @@ body {
   background-color: rgb(247, 217, 155);
 }
 
-.product__info, .product__actions {
+.product__info, .order__actions {
   vertical-align: center;
   text-align: center;
   font-size: 1.5rem;

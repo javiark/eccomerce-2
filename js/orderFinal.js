@@ -13,6 +13,7 @@ const productOrderFin = JSON.parse(localStorage.getItem("orderFinal"))
 
 const productFormBuy=document.getElementById("add-product");
 const submitBtn = document.getElementById("submit-btn");
+const total = document.getElementById("totalPrice")
 
 
 
@@ -20,14 +21,15 @@ const submitBtn = document.getElementById("submit-btn");
 // console.log(orderUser)
 // console.log(productOrder)
 
-const mailUser = [orderUser.email]
-const priceBuy = [productOrder.price]
+// const mailUser = [orderUser.email]
+// const priceBuy = [productOrder.price]
+// console.log(priceBuy)
 
 
 
 //-----------------------OBTENER ID DE USUARIO---------------------
 const usuarioID1 = productsUser.findIndex(id1=>id1.email === orderUser.email)
-// console.log(usuarioID1)
+console.log(usuarioID1)
 
 // console.log(userID)
 // console.log(orderUser.fullName)
@@ -42,6 +44,7 @@ const cart = []
 const cartFinal = []
 
 function addToOrder(index){
+    
     // console.log(index)
     let item= productsOrder.find((prod)=> (prod.index) ==index)
 
@@ -56,38 +59,49 @@ function addToOrder(index){
     localStorage.setItem("order", JSON.stringify(cart))
 }
 
+//Tener la posibilidad de que cuando apriete el boton comprar se añada el elemento array dentro de order.products
+    //antes de hacer un push 
+    //Deberia checkear con un find o findIndex deberia chequear si el producto ya se encuentra
+    //Si se encuentra incremento su cantidad++
+    //Sino hago un push de ese elemento.
+    //Incrementar el total
+    //Volver a guardar en el sessionStorage. (  Con SesionStorage se borra cada vez que reinicio la pagina)
+
 
 productOrder.forEach((prod,index)=>{
+
     const nuevaOrden={
         nameOrder:prod.name,
         priceOrder:prod.price,
-        quiantity:1     
+        quiantity:1,  
+        imageOrder:prod.image, 
+        descriptionOrder:prod.description,
     }
     productOrderFinal.push(nuevaOrden)
-    let userName=orderUser.fullName
-    let userOrder=orderUser.email
-    let totalOrder=`$$`
-    let createdAt = new Date()
-
-    let orderFinal ={
-        usuarioID1,
-        userName,
-        userOrder,
-        totalOrder,
-        createdAt,
-        productOrderFinal
-    }
-
-console.log(orderFinal)
-cartFinal.push(orderFinal)
-localStorage.setItem("orderFinal", JSON.stringify(cartFinal))
-
-
-    
+// console.log(nuevaOrden)
+cartFinal.push(nuevaOrden)
+// console.log(cartFinal)    
 
 });
-const name111=productOrderFin.name
-console.log(productOrderFin)
+
+let userName=orderUser.fullName
+let userOrder=orderUser.email
+let totalOrder=`$$`
+let createdAt = new Date()
+let ordernFinal={
+    usuarioID1,
+    userName,
+    userOrder,
+    totalOrder,
+    createdAt,
+    cartFinal
+}
+console.log(ordernFinal)
+localStorage.setItem("orderFinal", JSON.stringify(ordernFinal))
+
+
+
+
 
 
 
@@ -108,17 +122,23 @@ actualizarBadge()
 
 console.log(cartFinal.userName)
 
+//----------------ACTUALIZAR PRECIO--------------
+
+let valorTotal = cartFinal.reduce((acc,prod) => acc + prod.quiantity * prod.priceOrder,0 )
+
+total.innerHTML = `$ ${valorTotal}`
+
 
 
 
 
 //----------------ELIMINAR PRODUCTO--------------
 
-function deleteProductBuy(indice) {
-            productOrder.splice(indice, 1);
-            localStorage.setItem("order", JSON.stringify(cart))
-            showAlert(`Elemento borrado correctamente`, 'warning' )
-            renderizarTablaOrdenes(); 
-    }
+// function deleteProductBuy(indice) {
+//             productOrder.splice(indice, 1);
+//             localStorage.setItem("orderFinal", JSON.stringify(ordernFinal))
+//             showAlert(`Elemento borrado correctamente`, 'warning' )
+//             renderizarTablaOrdenes(); 
+//     }
 
 

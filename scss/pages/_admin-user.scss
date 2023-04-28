@@ -81,6 +81,9 @@ body {
 
 .table-product {
     border-collapse: collapse;
+    &__text-center{
+        text-align: center;
+    }
 }
 
 .table-product thead tr {
@@ -293,6 +296,17 @@ body {
     &__detail{
         padding-bottom: 1rem;
     }
+}
+
+.final-price{
+    text-align: right;
+    background-color:#32579e;
+    color: white;
+}
+.final-price-number{
+    text-align: center;
+    background-color:#32579e;
+    color: white;
 }
 
 
