@@ -12,16 +12,14 @@ const order1 = {
             price: 3000,
         }
     ],
-   createdAt:new Date()
+   createdAt:new Date(),
    total: 323240
 
 }
 
-],
-
 const badgeHTML=document.getElementById("cart-count")
 let order = { 
-    userID:1// usuario
+    userID:1,// usuario
     product: [ //array de productos
         {
         productName:"XBOX",

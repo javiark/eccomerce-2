@@ -1,13 +1,21 @@
+
+
 const badgeHTMLbuy=document.getElementById("cart-count");
 const productsOrder = JSON.parse(localStorage.getItem("products"))
 // console.log(productsOrder)
 const productsUser = JSON.parse(localStorage.getItem("users"))
 const orderUser = JSON.parse(localStorage.getItem("currentUser"))
+
+
 // console.log(productsUser)
 const productOrder = JSON.parse(localStorage.getItem("order"))
-const tableBodyOrder = document.querySelector('#table-body-order');
+const productOrderFin = JSON.parse(localStorage.getItem("orderFinal"))
+
 const productFormBuy=document.getElementById("add-product");
 const submitBtn = document.getElementById("submit-btn");
+
+
+
 
 // console.log(orderUser)
 // console.log(productOrder)
@@ -15,9 +23,7 @@ const submitBtn = document.getElementById("submit-btn");
 const mailUser = [orderUser.email]
 const priceBuy = [productOrder.price]
 
-const cart = 
-    [   
-]
+
 
 //-----------------------OBTENER ID DE USUARIO---------------------
 const usuarioID1 = productsUser.findIndex(id1=>id1.email === orderUser.email)
@@ -32,6 +38,8 @@ const usuarioID1 = productsUser.findIndex(id1=>id1.email === orderUser.email)
 //-----------------------GENERAR ARRAY DE PRODUCTOS---------------------
 
 let productOrderFinal = [];
+const cart = []
+const cartFinal = []
 
 function addToOrder(index){
     // console.log(index)
@@ -48,6 +56,7 @@ function addToOrder(index){
     localStorage.setItem("order", JSON.stringify(cart))
 }
 
+
 productOrder.forEach((prod,index)=>{
     const nuevaOrden={
         nameOrder:prod.name,
@@ -55,30 +64,33 @@ productOrder.forEach((prod,index)=>{
         quiantity:1     
     }
     productOrderFinal.push(nuevaOrden)
+    let userName=orderUser.fullName
+    let userOrder=orderUser.email
+    let totalOrder=`$$`
+    let createdAt = new Date()
+
+    let orderFinal ={
+        usuarioID1,
+        userName,
+        userOrder,
+        totalOrder,
+        createdAt,
+        productOrderFinal
+    }
+
+console.log(orderFinal)
+cartFinal.push(orderFinal)
+localStorage.setItem("orderFinal", JSON.stringify(cartFinal))
+
+
     
 
 });
-// console.log(productOrderFinal)
+const name111=productOrderFin.name
+console.log(productOrderFin)
 
 
-let userName=orderUser.fullName
-let userOrder=orderUser.email
-let totalOrder=`$$`
-let createdAt = new Date()
 
-let order1 ={
-    usuarioID1,
-    userName,
-    userOrder,
-    totalOrder,
-    createdAt,
-    productOrderFinal
-    
-    // cart,
-    // userMail,
-    // userPrice
-}
-// console.log(order1)
 
 
 //----------------ACTUALIZAR CANTIDAD EN CARRITOS DE COMPRA--------------
@@ -89,43 +101,24 @@ function actualizarBadge(){
         count += productOrderFinal.quiantity
     })
     badgeHTMLbuy.innerText=count;
-    // console.log(count)
+    console.log(count)
 }
 actualizarBadge()
 
 
+console.log(cartFinal.userName)
 
 
 
 
 
+//----------------ELIMINAR PRODUCTO--------------
 
-
-productOrder.forEach((prod, index)=>{
-    // console.log(prod)
-    // const { image, name, description, price } = prod;
-    // console.log(name)
-    tableBodyOrder.innerHTML += `<tr class="order">
-    <td class="order__img-cell"><img class="product__img" src="${prod.image}" alt="${prod.name}"></td>
-    <td class="order__name" onclick="editName(${index}")>${prod.name}</td>
-    <td class="order__desc">${prod.description}</td>
-    <td class="order__desc">CANTIDAD</td>
-    <td class="order__price">$ ${prod.price}</td>
-    <td class="order__price">$ SUBTOTAL</td>
-    <td class="order__actions">
-        <button class="product__action-btnDetail" onclick="deleteProduct(${index})">
-            <i class="fa-solid fa-trash"></i>
-        </button>
-        <button class="product__action-btn product__btn-edit"  onclick="editProduct(${index})">
-            <i class="fa-solid fa-pencil " ></i>
-        </button>
-
-    
-    </td>
-</tr>`
-// tableBodyOrder.innerHTML += tableBodyOrder;
-// console.log(prod.name)
-})
-
+function deleteProductBuy(indice) {
+            productOrder.splice(indice, 1);
+            localStorage.setItem("order", JSON.stringify(cart))
+            showAlert(`Elemento borrado correctamente`, 'warning' )
+            renderizarTablaOrdenes(); 
+    }
 
 

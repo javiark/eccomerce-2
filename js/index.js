@@ -1,9 +1,10 @@
+const cardContainer=document.getElementById("card-container");
 const user = JSON.parse(localStorage.getItem("currentUser"))
 // console.log(user)
 
 const boton = document.getElementById("boton1")
 
-const cardContainer=document.getElementById("card-container");
+
 
 const productsLS = JSON.parse(localStorage.getItem("products")) || [];
 
