@@ -41,23 +41,33 @@ console.log(usuarioID1)
 
 //---------------------RECORRER TODO EL ARRAY DE PRODUCTOS-------------------------//
 
-let productOrderFinal = [];
+let orderArray = [];
 let cart = []
+
+console.log(productsOrder)
 
 
 productsOrder.forEach((prod,id)=>{
     console.log(id)
 
+
+    let quantity =parseInt(1)
+    console.log(quantity)
+    let  productID = id
     let nuevaOrden={
+        productID,
+        quantity,
         nameOrder:prod.name,
         priceOrder:prod.price,
-        quantity:prod.quantity,  
         imageOrder:prod.image, 
         descriptionOrder:prod.description,
     }
-productOrderFinal.push(nuevaOrden)
-console.log(productOrderFinal)    
+    orderArray.push(nuevaOrden)
+    console.log(orderArray)    
 });
+// productOrderFinal.push(quantity)
+
+
 
 //---------------------AGREGAR PRODUCTO COMPRADO-------------------------//
 
@@ -69,11 +79,11 @@ function addToOrder(index){
 
     // console.log (item)
 
-    let order1 =productsOrder[index]
+
+    let orderBuy =orderArray[index]
     // console.log(order1)
-     cart.push(order1)
     console.log(cart)
-    cart.push(order1)
+    cart.push(orderBuy)
     localStorage.setItem("order", JSON.stringify(cart))
 }
 
@@ -114,7 +124,7 @@ let ordernFinal={
     createdAt,
     cart
 }
-console.log(ordernFinal)
+// console.log(ordernFinal)
 // localStorage.setItem("orderFinal", JSON.stringify(ordernFinal))
 
 
@@ -126,12 +136,12 @@ console.log(ordernFinal)
 
 
 //----------------ACTUALIZAR CANTIDAD EN CARRITOS DE COMPRA--------------
-console.log(productOrder)
+// console.log(productOrder)
 function actualizarBadge(){
 
     let count=0;
     productOrder.forEach(productOrder => {
-        count += productOrder.quantity
+        count += parseInt(productOrder.quantity)
     })
     badgeHTMLbuy.innerText=count;
     console.log(count)
@@ -144,7 +154,7 @@ actualizarBadge()
 
 //----------------ACTUALIZAR PRECIO--------------
 
-let valorTotal = cart.reduce((acc,prod) => acc + prod.quantity * prod.price,0 )
+let valorTotal =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
 
 total.innerHTML = `$ ${valorTotal}`
 console.log(valorTotal)
