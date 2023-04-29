@@ -44,7 +44,10 @@ console.log(usuarioID1)
 let orderArray = [];
 let cart = []
 
-console.log(productsOrder)
+
+console.log(orderArray)
+console.log(productOrder)
+
 
 
 productsOrder.forEach((prod,id)=>{
@@ -70,47 +73,35 @@ productsOrder.forEach((prod,id)=>{
 
 
 //---------------------AGREGAR PRODUCTO COMPRADO-------------------------//
+const products = [];
+
+
 
 function addToOrder(index){
-    
-    // console.log(index)
-    // let item= productsOrder.find((prod)=> (prod.index) ==index)
 
-
-    // console.log (item)
-
-
+    console.log(index)
     let orderBuy =orderArray[index]
-    // console.log(order1)
-    console.log(cart)
-    cart.push(orderBuy)
-    localStorage.setItem("order", JSON.stringify(cart))
+    // console.log(orderBuy)
+    const existe = products.some(prod => prod.productID===index)
+    console.log(existe)
+    
+    if(existe){
+        const prod = products.map(prod =>{
+            if(prod.productID===index){
+                prod.quantity++
+            }
+        })
+    }else{
+    products.push(orderBuy)
+    console.log(products)
+    }
+    // console.log(orderBuy)
+    localStorage.setItem("order", JSON.stringify(products))
+    console.log(index)
+
 }
 
-//Tener la posibilidad de que cuando apriete el boton comprar se añada el elemento array dentro de order.products
-    //antes de hacer un push 
-    //Deberia checkear con un find o findIndex deberia chequear si el producto ya se encuentra
-    //Si se encuentra incremento su cantidad++
-    //Sino hago un push de ese elemento.
-    //Incrementar el total
-    //Volver a guardar en el sessionStorage. (  Con SesionStorage se borra cada vez que reinicio la pagina)
 
-
-// productOrder.forEach((prod,index)=>{
-
-//     const nuevaOrden={
-//         nameOrder:prod.name,
-//         priceOrder:prod.price,
-//         quiantity:1,  
-//         imageOrder:prod.image, 
-//         descriptionOrder:prod.description,
-//     }
-//     productOrderFinal.push(nuevaOrden)
-// // console.log(nuevaOrden)
-//     cart.push(nuevaOrden)
-// // console.log(cartFinal)    
-
-// });
 
 let userName=orderUser.fullName
 let userOrder=orderUser.email
@@ -122,9 +113,9 @@ let ordernFinal={
     userOrder,
     totalOrder,
     createdAt,
-    cart
+    orderArray
 }
-// console.log(ordernFinal)
+console.log(ordernFinal)
 // localStorage.setItem("orderFinal", JSON.stringify(ordernFinal))
 
 
@@ -137,27 +128,27 @@ let ordernFinal={
 
 //----------------ACTUALIZAR CANTIDAD EN CARRITOS DE COMPRA--------------
 // console.log(productOrder)
-function actualizarBadge(){
+// function actualizarBadge(){
 
-    let count=0;
-    productOrder.forEach(productOrder => {
-        count += parseInt(productOrder.quantity)
-    })
-    badgeHTMLbuy.innerText=count;
-    console.log(count)
+//     let count=0;
+//     productOrder.forEach(productOrder => {
+//         count += parseInt(productOrder.quantity)
+//     })
+//     badgeHTMLbuy.innerText=count;
+//     console.log(count)
 
 
-}
-actualizarBadge()
+// }
+// actualizarBadge()
 
 
 
 //----------------ACTUALIZAR PRECIO--------------
 
-let valorTotal =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
+// let valorTotal =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
 
-total.innerHTML = `$ ${valorTotal}`
-console.log(valorTotal)
+// total.innerHTML = `$ ${valorTotal}`
+// console.log(valorTotal)
 
 
 
