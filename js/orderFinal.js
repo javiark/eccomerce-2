@@ -45,10 +45,10 @@ const cartFinal = []
 
 function addToOrder(index){
     
-    // console.log(index)
+    console.log(index)
     let item= productsOrder.find((prod)=> (prod.index) ==index)
 
-    productOrder.forEach((prod,index)=>{
+    productsOrder.forEach((prod,index)=>{
 
         const nuevaOrden={
             nameOrder:prod.name,
@@ -111,16 +111,16 @@ function addToOrder(index){
 
 
 //----------------ACTUALIZAR CANTIDAD EN CARRITOS DE COMPRA--------------
-function actualizarBadge(){
+// function actualizarBadge(){
 
-    let count=0;
-    productOrderFin.forEach(productOrderFin => {
-        count += productOrderFin.quantity
-    })
-    badgeHTMLbuy.innerText=count;
-    console.log(count)
-}
-actualizarBadge()
+//     let count=0;
+//     productOrderFin.forEach(productOrderFin => {
+//         count += productOrderFin.quantity
+//     })
+//     badgeHTMLbuy.innerText=count;
+//     console.log(count)
+// }
+// actualizarBadge()
 
 
 
