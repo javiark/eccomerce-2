@@ -2,7 +2,7 @@ const tableBodyOrder = document.getElementById('table-body-order');
 const productsOrderBuy = JSON.parse(localStorage.getItem("order"));
 
 // const productsOrderBuy1 = JSON.parse(localStorage.getItem("cartFinal"))
-console.log(productsOrderBuy)
+// console.log(productsOrderBuy)
 // console.log(productOrder)
 // console.log(cartFinal)
 
@@ -13,6 +13,18 @@ console.log(productsOrderBuy)
 function renderizarTablaOrdenes(){
 
     tableBodyOrder.innerHTML = '';
+    
+    // productsOrderBuy.forEach(productOrder => {
+    //     let cant = productOrder.quantity
+    //     let precio = productOrder.priceOrder
+    //     console.log(cant)
+    //     console.log(precio)
+    //     let subtotal = cant * precio
+    //     console.log(subtotal)
+    // })
+
+
+
     productsOrderBuy.forEach((prod, index)=>{
         // console.log(prod)
         // const { image, name, description, price } = prod;
@@ -21,9 +33,9 @@ function renderizarTablaOrdenes(){
         <td class="order__img-cell"><img class="product__img" src="${prod.imageOrder}" alt="${prod.nameOrder}"></td>
         <td class="order__name" onclick="editName(${index}")>${prod.nameOrder}</td>
         <td class="order__desc">${prod.descriptionOrder}</td>
-        <td class="order__quantity">1</td>
+        <td class="order__quantity">${prod.quantity}</td>
         <td class="order__price">$ ${prod.priceOrder}</td>
-        <td class="order__price">$ SUBTOTAL</td>
+        <td class="order__price">$ ${prod.priceOrder * prod.quantity }</td>
         <td class="order__actions">
             <button class="product__action-btnDetail" onclick="deleteProductBuy(${index})">
                 <i class="fa-solid fa-trash"></i>

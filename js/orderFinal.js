@@ -75,6 +75,7 @@ productsOrder.forEach((prod,id)=>{
 //---------------------AGREGAR PRODUCTO COMPRADO-------------------------//
 const products = [];
 
+// console.log(products)
 
 
 function addToOrder(index){
@@ -95,10 +96,10 @@ function addToOrder(index){
     products.push(orderBuy)
     console.log(products)
     }
-    // console.log(orderBuy)
-    localStorage.setItem("order", JSON.stringify(products))
-    console.log(index)
 
+    // console.log(orderBuy)
+    sessionStorage.setItem("order", JSON.stringify(products))
+    console.log(index)
 }
 
 
@@ -127,28 +128,51 @@ console.log(ordernFinal)
 
 
 //----------------ACTUALIZAR CANTIDAD EN CARRITOS DE COMPRA--------------
-// console.log(productOrder)
-// function actualizarBadge(){
+console.log(productOrder)
+function actualizarBadge(){
 
-//     let count=0;
-//     productOrder.forEach(productOrder => {
-//         count += parseInt(productOrder.quantity)
-//     })
-//     badgeHTMLbuy.innerText=count;
-//     console.log(count)
+    let count=0;
+    productOrder.forEach(productOrder => {
+        count += parseInt(productOrder.quantity)
+    })
+    badgeHTMLbuy.innerText=count;
+    console.log(count)
 
 
-// }
-// actualizarBadge()
+}
+actualizarBadge()
 
 
 
 //----------------ACTUALIZAR PRECIO--------------
 
-// let valorTotal =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
+let valorTotal =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
 
-// total.innerHTML = `$ ${valorTotal}`
-// console.log(valorTotal)
+total.innerHTML = `$ ${valorTotal}`
+console.log(valorTotal)
+
+//----------------VALOR SUBTOTAL--------------
+
+// console.log(productOrder)
+function calcularSubtotal(){
+
+    productOrder.forEach(productOrder => {
+        let cant = productOrder.quantity
+        let precio = productOrder.priceOrder
+        // console.log(cant)
+        // console.log(precio)
+        let subtotal = cant * precio
+        console.log(subtotal)
+
+    })
+    productOrder.push(subtotal)
+}
+calcularSubtotal()
+console.log(productOrder)
+
+
+
+    
 
 
 
