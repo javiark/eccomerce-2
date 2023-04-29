@@ -151,41 +151,18 @@ let valorTotal =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.pri
 total.innerHTML = `$ ${valorTotal}`
 console.log(valorTotal)
 
-//----------------VALOR SUBTOTAL--------------
-
-// console.log(productOrder)
-function calcularSubtotal(){
-
-    productOrder.forEach(productOrder => {
-        let cant = productOrder.quantity
-        let precio = productOrder.priceOrder
-        // console.log(cant)
-        // console.log(precio)
-        let subtotal = cant * precio
-        console.log(subtotal)
-
-    })
-    productOrder.push(subtotal)
-}
-calcularSubtotal()
-console.log(productOrder)
-
-
-
-    
-
 
 
 
 
 
 //----------------ELIMINAR PRODUCTO--------------
-
-// function deleteProductBuy(indice) {
-//             productOrder.splice(indice, 1);
-//             localStorage.setItem("orderFinal", JSON.stringify(orderFinal))
-//             showAlert(`Elemento borrado correctamente`, 'warning' )
-//             renderizarTablaOrdenes(); 
-//     }
+console.log(productOrder)
+function deleteProductBuy(index) {
+            productOrder.splice(index, 1);
+            sessionStorage.setItem("order", JSON.stringify(products))
+            showAlert(`Elemento borrado correctamente`, 'warning' )
+            renderizarTablaOrdenes(); 
+    }
 
 
