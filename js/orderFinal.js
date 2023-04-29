@@ -75,7 +75,7 @@ productsOrder.forEach((prod,id)=>{
 //---------------------AGREGAR PRODUCTO COMPRADO-------------------------//
 const products = [];
 
-// console.log(products)
+console.log(products)
 
 
 function addToOrder(index){
@@ -98,7 +98,7 @@ function addToOrder(index){
     }
 
     // console.log(orderBuy)
-    sessionStorage.setItem("order", JSON.stringify(products))
+    localStorage.setItem("order", JSON.stringify(products))
     console.log(index)
 }
 
@@ -159,10 +159,15 @@ console.log(valorTotal)
 //----------------ELIMINAR PRODUCTO--------------
 console.log(productOrder)
 function deleteProductBuy(index) {
+    console.log(index)
+            console.log("boton funciona")
             productOrder.splice(index, 1);
             sessionStorage.setItem("order", JSON.stringify(products))
             showAlert(`Elemento borrado correctamente`, 'warning' )
             renderizarTablaOrdenes(); 
     }
+
+    const cities = ["chicago", "valencia","madrid"]
+    console.log(cities.splice(0,1))
 
 
