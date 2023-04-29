@@ -1,8 +1,7 @@
 const tableBodyOrder = document.getElementById('table-body-order');
 const productsOrderBuy = JSON.parse(localStorage.getItem("orderFinal"))
 console.log(productsOrderBuy)
-console.log(productOrder)
-console.log(cartFinal)
+
 
 //----------------PINTAR TABLA--------------
 
@@ -11,7 +10,7 @@ console.log(cartFinal)
 function renderizarTablaOrdenes(){
 
     tableBodyOrder.innerHTML = '';
-    cartFinal.forEach((prod, index)=>{
+    productsOrderBuy.forEach((prod, index)=>{
         // console.log(prod)
         // const { image, name, description, price } = prod;
         // console.log(name)
@@ -19,7 +18,7 @@ function renderizarTablaOrdenes(){
         <td class="order__img-cell"><img class="product__img" src="${prod.imageOrder}" alt="${prod.nameOrder}"></td>
         <td class="order__name" onclick="editName(${index}")>${prod.nameOrder}</td>
         <td class="order__desc">${prod.descriptionOrder}</td>
-        <td class="order__quantity">${prod.quiantity}</td>
+        <td class="order__quantity">${prod.quantity}</td>
         <td class="order__price">$ ${prod.priceOrder}</td>
         <td class="order__price">$ SUBTOTAL</td>
         <td class="order__actions">

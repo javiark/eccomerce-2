@@ -48,15 +48,48 @@ function addToOrder(index){
     // console.log(index)
     let item= productsOrder.find((prod)=> (prod.index) ==index)
 
+    productOrder.forEach((prod,index)=>{
+
+        const nuevaOrden={
+            nameOrder:prod.name,
+            priceOrder:prod.price,
+            quantity:1,  
+            imageOrder:prod.image, 
+            descriptionOrder:prod.description,
+        }
+        productOrderFinal.push(nuevaOrden)
+    // console.log(nuevaOrden)
+    cartFinal.push(nuevaOrden)
+    // console.log(cartFinal)    
+    
+    });
+    
+    let userName=orderUser.fullName
+    let userOrder=orderUser.email
+    let totalOrder=`$$`
+    let createdAt = new Date()
+    let orderFinal={
+        usuarioID1,
+        userName,
+        userOrder,
+        totalOrder,
+        createdAt,
+        cartFinal
+    }
+    console.log(orderFinal)
+    console.log(cartFinal)
+    localStorage.setItem("orderFinal", JSON.stringify(cartFinal))
+    
+
 
     // console.log (item)
 
-    let order1 =productsOrder[index]
+    // let order1 =productsOrder[index]
     // console.log(order1)
-    cart.push(order1)
+    // cart.push(order1)
     // console.log(cart)
     // cart.push(mailUser)
-    localStorage.setItem("order", JSON.stringify(cart))
+    // localStorage.setItem("order", JSON.stringify(cart))
 }
 
 //Tener la posibilidad de que cuando apriete el boton comprar se añada el elemento array dentro de order.products
@@ -68,36 +101,6 @@ function addToOrder(index){
     //Volver a guardar en el sessionStorage. (  Con SesionStorage se borra cada vez que reinicio la pagina)
 
 
-productOrder.forEach((prod,index)=>{
-
-    const nuevaOrden={
-        nameOrder:prod.name,
-        priceOrder:prod.price,
-        quiantity:1,  
-        imageOrder:prod.image, 
-        descriptionOrder:prod.description,
-    }
-    productOrderFinal.push(nuevaOrden)
-// console.log(nuevaOrden)
-cartFinal.push(nuevaOrden)
-// console.log(cartFinal)    
-
-});
-
-let userName=orderUser.fullName
-let userOrder=orderUser.email
-let totalOrder=`$$`
-let createdAt = new Date()
-let ordernFinal={
-    usuarioID1,
-    userName,
-    userOrder,
-    totalOrder,
-    createdAt,
-    cartFinal
-}
-console.log(ordernFinal)
-localStorage.setItem("orderFinal", JSON.stringify(ordernFinal))
 
 
 
@@ -111,8 +114,8 @@ localStorage.setItem("orderFinal", JSON.stringify(ordernFinal))
 function actualizarBadge(){
 
     let count=0;
-    productOrderFinal.forEach( productOrderFinal => {
-        count += productOrderFinal.quiantity
+    productOrderFin.forEach(productOrderFin => {
+        count += productOrderFin.quantity
     })
     badgeHTMLbuy.innerText=count;
     console.log(count)
@@ -120,11 +123,10 @@ function actualizarBadge(){
 actualizarBadge()
 
 
-console.log(cartFinal.userName)
 
 //----------------ACTUALIZAR PRECIO--------------
 
-let valorTotal = cartFinal.reduce((acc,prod) => acc + prod.quiantity * prod.priceOrder,0 )
+let valorTotal =  productOrderFin.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
 
 total.innerHTML = `$ ${valorTotal}`
 
