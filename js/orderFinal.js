@@ -9,11 +9,15 @@ const orderUser = JSON.parse(localStorage.getItem("currentUser"))
 
 // console.log(productsUser)
 const productOrder = JSON.parse(localStorage.getItem("order"))
-const productOrderFin = JSON.parse(localStorage.getItem("orderFinal"))
+// const productOrderFin = JSON.parse(localStorage.getItem("orderFinal"))
 
 const productFormBuy=document.getElementById("add-product");
 const submitBtn = document.getElementById("submit-btn");
 const total = document.getElementById("totalPrice")
+
+console.log(productsOrder)
+
+
 
 
 
@@ -31,65 +35,46 @@ const total = document.getElementById("totalPrice")
 const usuarioID1 = productsUser.findIndex(id1=>id1.email === orderUser.email)
 console.log(usuarioID1)
 
-// console.log(userID)
-// console.log(orderUser.fullName)
-// console.log(productsOrder)
-// console.log(cart)
-// console.log(mailUser)
 
-//-----------------------GENERAR ARRAY DE PRODUCTOS---------------------
+
+
+
+//---------------------RECORRER TODO EL ARRAY DE PRODUCTOS-------------------------//
 
 let productOrderFinal = [];
-const cart = []
-const cartFinal = []
+let cart = []
+
+
+productsOrder.forEach((prod,id)=>{
+    console.log(id)
+
+    let nuevaOrden={
+        nameOrder:prod.name,
+        priceOrder:prod.price,
+        quantity:prod.quantity,  
+        imageOrder:prod.image, 
+        descriptionOrder:prod.description,
+    }
+productOrderFinal.push(nuevaOrden)
+console.log(productOrderFinal)    
+});
+
+//---------------------AGREGAR PRODUCTO COMPRADO-------------------------//
 
 function addToOrder(index){
     
-    console.log(index)
-    let item= productsOrder.find((prod)=> (prod.index) ==index)
-
-    productsOrder.forEach((prod,index)=>{
-
-        const nuevaOrden={
-            nameOrder:prod.name,
-            priceOrder:prod.price,
-            quantity:1,  
-            imageOrder:prod.image, 
-            descriptionOrder:prod.description,
-        }
-        productOrderFinal.push(nuevaOrden)
-    // console.log(nuevaOrden)
-    cartFinal.push(nuevaOrden)
-    // console.log(cartFinal)    
-    
-    });
-    
-    let userName=orderUser.fullName
-    let userOrder=orderUser.email
-    let totalOrder=`$$`
-    let createdAt = new Date()
-    let orderFinal={
-        usuarioID1,
-        userName,
-        userOrder,
-        totalOrder,
-        createdAt,
-        cartFinal
-    }
-    console.log(orderFinal)
-    console.log(cartFinal)
-    localStorage.setItem("orderFinal", JSON.stringify(cartFinal))
-    
+    // console.log(index)
+    // let item= productsOrder.find((prod)=> (prod.index) ==index)
 
 
     // console.log (item)
 
-    // let order1 =productsOrder[index]
+    let order1 =productsOrder[index]
     // console.log(order1)
-    // cart.push(order1)
-    // console.log(cart)
-    // cart.push(mailUser)
-    // localStorage.setItem("order", JSON.stringify(cart))
+     cart.push(order1)
+    console.log(cart)
+    cart.push(order1)
+    localStorage.setItem("order", JSON.stringify(cart))
 }
 
 //Tener la posibilidad de que cuando apriete el boton comprar se añada el elemento array dentro de order.products
@@ -101,6 +86,36 @@ function addToOrder(index){
     //Volver a guardar en el sessionStorage. (  Con SesionStorage se borra cada vez que reinicio la pagina)
 
 
+// productOrder.forEach((prod,index)=>{
+
+//     const nuevaOrden={
+//         nameOrder:prod.name,
+//         priceOrder:prod.price,
+//         quiantity:1,  
+//         imageOrder:prod.image, 
+//         descriptionOrder:prod.description,
+//     }
+//     productOrderFinal.push(nuevaOrden)
+// // console.log(nuevaOrden)
+//     cart.push(nuevaOrden)
+// // console.log(cartFinal)    
+
+// });
+
+let userName=orderUser.fullName
+let userOrder=orderUser.email
+let totalOrder=`$$`
+let createdAt = new Date()
+let ordernFinal={
+    usuarioID1,
+    userName,
+    userOrder,
+    totalOrder,
+    createdAt,
+    cart
+}
+console.log(ordernFinal)
+// localStorage.setItem("orderFinal", JSON.stringify(ordernFinal))
 
 
 
@@ -111,24 +126,29 @@ function addToOrder(index){
 
 
 //----------------ACTUALIZAR CANTIDAD EN CARRITOS DE COMPRA--------------
-// function actualizarBadge(){
+console.log(productOrder)
+function actualizarBadge(){
 
-//     let count=0;
-//     productOrderFin.forEach(productOrderFin => {
-//         count += productOrderFin.quantity
-//     })
-//     badgeHTMLbuy.innerText=count;
-//     console.log(count)
-// }
-// actualizarBadge()
+    let count=0;
+    productOrder.forEach(productOrder => {
+        count += productOrder.quantity
+    })
+    badgeHTMLbuy.innerText=count;
+    console.log(count)
+
+
+}
+actualizarBadge()
 
 
 
 //----------------ACTUALIZAR PRECIO--------------
 
-let valorTotal =  productOrderFin.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
+let valorTotal = cart.reduce((acc,prod) => acc + prod.quantity * prod.price,0 )
 
 total.innerHTML = `$ ${valorTotal}`
+console.log(valorTotal)
+
 
 
 
@@ -138,7 +158,7 @@ total.innerHTML = `$ ${valorTotal}`
 
 // function deleteProductBuy(indice) {
 //             productOrder.splice(indice, 1);
-//             localStorage.setItem("orderFinal", JSON.stringify(ordernFinal))
+//             localStorage.setItem("orderFinal", JSON.stringify(orderFinal))
 //             showAlert(`Elemento borrado correctamente`, 'warning' )
 //             renderizarTablaOrdenes(); 
 //     }
