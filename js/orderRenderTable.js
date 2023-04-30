@@ -1,5 +1,5 @@
 const tableBodyOrder = document.getElementById('table-body-order');
-const productsOrderBuy = JSON.parse(localStorage.getItem("order"));
+let productsOrderBuy = JSON.parse(localStorage.getItem("order"));
 
 // const productsOrderBuy1 = JSON.parse(localStorage.getItem("cartFinal"))
 // console.log(productsOrderBuy)
@@ -27,6 +27,7 @@ function renderizarTablaOrdenes(){
 
     productsOrderBuy.forEach((prod, index)=>{
         // console.log(prod)
+
         // const { image, name, description, price } = prod;
         // console.log(name)
         tableBodyOrder.innerHTML += `<tr class="order">
@@ -50,3 +51,5 @@ function renderizarTablaOrdenes(){
     }
 
     renderizarTablaOrdenes()
+
+    

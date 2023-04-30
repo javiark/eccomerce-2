@@ -38,6 +38,7 @@ let order = {
     total: 21000, // total de la compra
 }
 
+
 function actualizarBadge(){
     // badgeHTML.innerText=order.products.length
     // badgeHTML.innerText=order.products.reduce((acc,producto)=> {

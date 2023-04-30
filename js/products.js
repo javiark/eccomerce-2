@@ -102,7 +102,7 @@ function addProduct(evt) {
 
 
 
-    if (editIndex >= 0) { //el indice 0 sino lo toma falso, el 0 es undifaned (falso)
+    if (editIndex >= 0) { //el i|ndice 0 sino lo toma falso, el 0 es undifaned (falso)
         products[editIndex]=newProduct
         // alert("se edito correctamente")
         swal ({
@@ -148,6 +148,10 @@ function deleteProduct(indice) {
         if (value==="delete"){
             products.splice(indice, 1);
             localStorage.setItem("products",JSON.stringify(products))
+            let products =JSON.parse(localStorage.getItem('products')) || [];
+            
+
+            
             swal({
                 title:"Elemento borrado correctamente",
                 icon:"error"
