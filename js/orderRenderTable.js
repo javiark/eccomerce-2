@@ -52,4 +52,18 @@ function renderizarTablaOrdenes(){
 
     renderizarTablaOrdenes()
 
+    let orderUser1 = JSON.parse(localStorage.getItem("currentUser"))
+
+
+    function cleantable(){
+
+        if (orderUser1) {
+                console.log("hay usuario")
+            }else{
+                tableBodyOrder.innerHTML = '';
+            }
+    }
+
+cleantable()
+
     

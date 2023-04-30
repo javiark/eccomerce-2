@@ -19,6 +19,37 @@ const total = document.getElementById("totalPrice")
 
 
 
+//---------------------AGREGAR PRODUCTO COMPRADO-------------------------//
+const products = [];
+
+// console.log(products)
+
+
+function addToOrder(index){
+
+    // console.log(index)
+    let orderBuy =orderArray[index]
+    // console.log(orderBuy)
+    const existe = products.some(prod => prod.productID===index)
+    // console.log(existe)
+    
+    if(existe){
+        const prod = products.map(prod =>{
+            if(prod.productID===index){
+                prod.quantity++
+            }
+        })
+    }else{
+    products.push(orderBuy)
+    // console.log(products)
+    let arrayProducts = Object.values(products)
+    // console.log(arrayProducts)
+    }
+
+    // console.log(orderBuy)
+    localStorage.setItem("order", JSON.stringify(products))
+    // console.log(index)
+}
 
 
 
@@ -64,37 +95,6 @@ productsOrder.forEach((prod,id)=>{
 
 
 
-//---------------------AGREGAR PRODUCTO COMPRADO-------------------------//
-const products = [];
-
-// console.log(products)
-
-
-function addToOrder(index){
-
-    // console.log(index)
-    let orderBuy =orderArray[index]
-    // console.log(orderBuy)
-    const existe = products.some(prod => prod.productID===index)
-    // console.log(existe)
-    
-    if(existe){
-        const prod = products.map(prod =>{
-            if(prod.productID===index){
-                prod.quantity++
-            }
-        })
-    }else{
-    products.push(orderBuy)
-    // console.log(products)
-    let arrayProducts = Object.values(products)
-    // console.log(arrayProducts)
-    }
-
-    // console.log(orderBuy)
-    localStorage.setItem("order", JSON.stringify(products))
-    // console.log(index)
-}
 
 
 
@@ -122,6 +122,7 @@ let ordernFinal={
 
 
 //----------------ACTUALIZAR CANTIDAD EN CARRITOS DE COMPRA--------------
+
 function actualizarBadge(){
 
     let count=0;
