@@ -16,6 +16,7 @@ const submitBtn = document.getElementById("submit-btn");
 const total = document.getElementById("totalPrice")
 
 console.log(productsOrder)
+console.log(Object.values(productOrder))
 
 
 
@@ -95,6 +96,8 @@ function addToOrder(index){
     }else{
     products.push(orderBuy)
     console.log(products)
+    let arrayProducts = Object.values(products)
+    console.log(arrayProducts)
     }
 
     // console.log(orderBuy)
@@ -158,6 +161,7 @@ console.log(valorTotal)
 
 //----------------ELIMINAR PRODUCTO--------------
 console.log(productOrder)
+
 function deleteProductBuy(index) {
     console.log(index)
             console.log("boton funciona")
@@ -169,5 +173,10 @@ function deleteProductBuy(index) {
 
     const cities = ["chicago", "valencia","madrid"]
     console.log(cities.splice(0,1))
+    // const cities1 = {["chicago"],["valencia"],["chicago"]}
+    // console.log(cities1.splice(0,1))
+    console.log(productOrder.length)
 
+// for ( let i=0; i<productOrder.length)
 
+    
