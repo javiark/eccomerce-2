@@ -1,17 +1,8 @@
-
-
 let products =JSON.parse(localStorage.getItem('products')) || [];
 let favorites = [];
 
 console.log(products)
 
-// const editButtons = document.querySelectorAll(".btn-edit");
-
-// productForm.addEventListener("click", ()=> {
-// console.log(" se hizo click en el formulario") })
-// swal({
-//     title: localStorage.getItem("products")
-// })
 
 const productForm=document.getElementById("add-product");
 const submitBtn = document.getElementById("submit-btn");
@@ -19,8 +10,6 @@ const submitBtn = document.getElementById("submit-btn");
 
 //1- Obtener el body de la tabla para poder modificarlo desde JS
 const tableBody = document.querySelector('#table-body');
-
-
 
 let editIndex;
 
@@ -34,11 +23,7 @@ function renderizarTabla() {
     }
     //3- Iterar el array para acceder a cada producto
     products.forEach((producto, index) => {
-        // let imageSrc = '/assets/images/no-product.png';
 
-        // if(producto.image) {
-        //     imageSrc = producto.image;
-        // }
 
         let imageSrc = producto.image ? producto.image : '/assets/images/no-product.png';
         //4- Introducir dentro del tbody una fila por producto con sus respectivas celdas
@@ -48,7 +33,6 @@ function renderizarTabla() {
                             <td class="product__desc">${producto.description}</td>
                             <td class="product__price">$ ${producto.price}</td>
                             <td class="product__desc">${producto.detail}</td>
-
                             <td class="product__actions">
                                 <button class="product__action-btnDetail" onclick="deleteProduct(${index})">
                                     <i class="fa-solid fa-trash"></i>
@@ -78,12 +62,7 @@ function addProduct(evt) {
     console.dir(evt.target);
     const elements = evt.target.elements;
 
-    // console.log(elements.stock.checked)
-    // console.dir(elements.name);
-    // console.dir(elements.price);
-    
     const newProduct = {
-        
         name: elements.name.value,
         description: elements.description.value,
         price: elements.price.valueAsNumber,
@@ -94,15 +73,8 @@ function addProduct(evt) {
 
 
 
-    // const newFormData = new FormData(evt.target);
-    // const newProductFormData = Object.fromEntries(newFormData);
-    // newProductFormData.stock = newProductFormData.stock === "on" ? true : false;
-    // newProductFormData.joystick = newProductFormData.joystick === "on" ? true : false;
-    // newProductFormData.price = +newProductFormData.price
 
-
-
-    if (editIndex >= 0) { //el i|ndice 0 sino lo toma falso, el 0 es undifaned (falso)
+    if (editIndex >= 0) { //el indice 0 sino lo toma falso, el 0 es undifaned (falso)
         products[editIndex]=newProduct
         // alert("se edito correctamente")
         swal ({
@@ -148,10 +120,6 @@ function deleteProduct(indice) {
         if (value==="delete"){
             products.splice(indice, 1);
             localStorage.setItem("products",JSON.stringify(products))
-            let products =JSON.parse(localStorage.getItem('products')) || [];
-            
-
-            
             swal({
                 title:"Elemento borrado correctamente",
                 icon:"error"
@@ -239,13 +207,3 @@ function setFavoriteProduct(index) {
 
 
 
-
-
-// product
-//     name
-//     description
-//     price
-//     imagen
-//     stock?
-//     joystick?
-//     games?
