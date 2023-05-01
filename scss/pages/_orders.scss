@@ -291,6 +291,31 @@ body {
         padding-bottom: 1rem;
     }
 }
+.boton-container{
+    // align-items: center;
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-color: white;
+    width: 2rem;
+    &__boton-div{
+        margin: 0 auto;
+
+        background-color: white;
+        width: 4rem;
+
+    }
+    
+    &__boton-order{
+        border: none;
+        background-color: white;
+        cursor: pointer;
+        // padding: 0.5rem;
+    }
+
+}
+
+
 
 
 @media screen and (min-width: 1000px) {
