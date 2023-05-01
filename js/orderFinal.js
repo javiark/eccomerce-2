@@ -75,6 +75,9 @@ function renderizarTablaOrdenes(){
 
 cleantable()
 
+
+// let orderFinal = JSON.parse(localStorage.getItem("orderArrayFinal"))
+
 //---------------------RECORRER TODO EL ARRAY DE PRODUCTOS-------------------------//
 
 let orderArray = [];
@@ -158,6 +161,8 @@ function addToOrder(index){
     sessionStorage.setItem("order", JSON.stringify(products))
     // console.log(index)
 }
+
+
 
 
 
