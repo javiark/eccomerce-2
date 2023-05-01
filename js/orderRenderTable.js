@@ -1,3 +1,4 @@
+
 const tableBodyOrder = document.getElementById('table-body-order');
 let productsOrderBuy = JSON.parse(localStorage.getItem("order"));
 
@@ -65,5 +66,3 @@ function renderizarTablaOrdenes(){
     }
 
 cleantable()
-
-    
