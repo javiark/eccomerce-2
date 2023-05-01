@@ -1,12 +1,6 @@
 
 const tableBodyOrder = document.getElementById('table-body-order');
 let productsOrderBuy = JSON.parse(localStorage.getItem("order"));
-
-// const productsOrderBuy1 = JSON.parse(localStorage.getItem("cartFinal"))
-// console.log(productsOrderBuy)
-// console.log(productOrder)
-// console.log(cartFinal)
-
 //----------------PINTAR TABLA--------------
 
 
@@ -14,23 +8,13 @@ let productsOrderBuy = JSON.parse(localStorage.getItem("order"));
 function renderizarTablaOrdenes(){
 
     tableBodyOrder.innerHTML = '';
+    if(productsOrderBuy.length===0){
+        tableBodyOrder.innerHTML="<p class='disabled'>NO SE ENCONTRARON PRODUCTOS</p>"
+        return
+    }
     
-    // productsOrderBuy.forEach(productOrder => {
-    //     let cant = productOrder.quantity
-    //     let precio = productOrder.priceOrder
-    //     console.log(cant)
-    //     console.log(precio)
-    //     let subtotal = cant * precio
-    //     console.log(subtotal)
-    // })
-
-
-
     productsOrderBuy.forEach((prod, index)=>{
-        // console.log(prod)
 
-        // const { image, name, description, price } = prod;
-        // console.log(name)
         tableBodyOrder.innerHTML += `<tr class="order">
         <td class="order__img-cell"><img class="product__img" src="${prod.imageOrder}" alt="${prod.nameOrder}"></td>
         <td class="order__name" onclick="editName(${index}")>${prod.nameOrder}</td>
@@ -44,11 +28,9 @@ function renderizarTablaOrdenes(){
             </button> 
         </td>
     </tr>`
-    // tableBodyOrder.innerHTML += tableBodyOrder;
-    // console.log(prod.name)
-    
+
+
     })
-    
     }
 
     renderizarTablaOrdenes()
