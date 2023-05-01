@@ -67,6 +67,9 @@ function renderizarTablaOrdenes(){
                 console.log("hay usuario")
             }else{
                 tableBodyOrder.innerHTML = '';
+                productOrder= [];
+                sessionStorage.setItem("order", JSON.stringify(products))
+                actualizarBadge();
             }
     }
 
