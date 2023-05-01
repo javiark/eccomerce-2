@@ -11,7 +11,7 @@ console.log(orderFinal)
 
 
 // console.log(productsUser)
-let productOrder = JSON.parse(localStorage.getItem("order"))
+let productOrder = JSON.parse(sessionStorage.getItem("order"))
 // const productOrderFin = JSON.parse(localStorage.getItem("orderFinal"))
 
 const productFormBuy=document.getElementById("add-product");
@@ -152,7 +152,7 @@ function addToOrder(index){
     }
 
     // console.log(orderBuy)
-    localStorage.setItem("order", JSON.stringify(products))
+    sessionStorage.setItem("order", JSON.stringify(products))
     // console.log(index)
 }
 
@@ -205,7 +205,7 @@ console.log(productOrder)
 function deleteProductBuy(indice){
     console.log("funciona")
     productOrder.splice(indice, 1);
-    localStorage.setItem("order",JSON.stringify(productOrder));
+    sessionStorage.setItem("order",JSON.stringify(productOrder));
     // localStorage.setItem("products",JSON.stringify(products));
     renderizarTablaOrdenes()
 }
