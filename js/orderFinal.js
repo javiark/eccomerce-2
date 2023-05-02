@@ -162,7 +162,6 @@ function deleteProductBuy(indice){
     productOrder.forEach(productOrder => {
         count2 += parseInt(productOrder.quantity)
         })
-    
         badgeHTMLbuy.innerText=count2;
     console.log(productOrder)
     renderizarTablaOrdenes()
