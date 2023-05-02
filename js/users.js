@@ -82,7 +82,7 @@ function addUser(evt) {
     //     // countryInput: elements.countr.value,
 
     // };
-    console.log(newUser)
+    // console.log(newUser)
 
 
     if (editIndex >= 0) { //el indice 0 sino lo toma falso, el 0 es undifaned (falso)
