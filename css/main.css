@@ -1944,6 +1944,28 @@ body {
   font-size: 1.1rem;
   font-weight: 400;
 }
+.containerDetail__containerAdd {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding-bottom: 0.5rem;
+  border: none;
+  height: 2.5rem;
+}
+.containerDetail__containerBtn1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 6rem;
+  border: 1px solid rgba(20, 20, 20, 0.3);
+  background-color: white;
+}
+.containerDetail__containerBtn {
+  cursor: pointer;
+  background-color: white;
+  width: 2rem;
+  border: none;
+}
 .containerDetail__btn-add {
   background-color: rgba(0, 0, 0, 0.2039215686);
   color: white;

@@ -1,8 +1,8 @@
-const tableBodyOrder1 = document.getElementById('table-body-order');
+const tableBodyOrder = document.getElementById('table-body-order');
 const products = [];
 
 
-let badgeHTMLbuy=document.getElementById("cart-count");
+badgeHTMLbuy=document.getElementById("cart-count");
 
 let productsOrder = JSON.parse(localStorage.getItem("products"))
 let productsUser = JSON.parse(localStorage.getItem("users"))
@@ -59,15 +59,15 @@ let ordernFinal={
 
 function renderizarTablaOrdenes(){
 
-    tableBodyOrder1.innerHTML = '';
+    tableBodyOrder.innerHTML = '';
     if(productOrder.length===0){
-        tableBodyOrder1.innerHTML="<p class='disabled'>NO SE ENCONTRARON PRODUCTOS</p>"
+        tableBodyOrder.innerHTML="<p class='disabled'>NO SE ENCONTRARON PRODUCTOS</p>"
         return
     }
     
     productOrder.forEach((prod, index)=>{
 
-        tableBodyOrder1.innerHTML += `<tr class="order">
+        tableBodyOrder.innerHTML += `<tr class="order">
         <td class="order__img-cell"><img class="product__img" src="${prod.imageOrder}" alt="${prod.nameOrder}"></td>
         <td class="order__name" onclick="editName(${index}")>${prod.nameOrder}</td>
         <td class="order__desc">${prod.descriptionOrder}</td>
@@ -94,7 +94,7 @@ function renderizarTablaOrdenes(){
         if (orderUser) {
                 // console.log("hay usuario")
             }else{
-                tableBodyOrder1.innerHTML = '';
+                tableBodyOrder.innerHTML = '';
                 productOrder= [];
                 sessionStorage.setItem("order", JSON.stringify(products))
                 actualizarBadge();
@@ -105,9 +105,8 @@ cleantable()
 
 
 //----------------ACTUALIZAR CANTIDAD EN CARRITOS DE COMPRA--------------
-
+let count=0;
 function cartUpdate(){
-    let count=0;
 productOrder.forEach(productOrder => {
     count += parseInt(productOrder.quantity)
 })

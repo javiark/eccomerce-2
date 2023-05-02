@@ -14,9 +14,9 @@ console.log(paramsEntries)
 
 const indice= paramsEntries.id;
 
-const products = JSON.parse(localStorage.getItem("products"));
+const products1 = JSON.parse(localStorage.getItem("products"));
 
-const product = products[indice];
+const product = products1[indice];
 
 // document.body.innerHTML = `<p>${JSON.stringify(product)}</p>`
 //     <img src = ${product.image}>`
@@ -44,10 +44,11 @@ cardContainer1.innerHTML = `
                     <p class="card__texto">${product.description}</p> 
                 </div>
             </div>
-            <button class="containerDetail__btn-add">
+            <div class="containerDetail__containerAdd"><div class="containerDetail__containerBtn1"><button class="containerDetail__containerBtn" > -</button> 0 <button  class="containerDetail__containerBtn"> +</button></div></div>
+            <button class="containerDetail__btn-add" onclick="addToOrder1(${index}) " id=${index}>
                 Añadir a carrito
             </button>
-            <button class="containerDetail__btn-buy">Comprar Ahora</button>
+            <button class="containerDetail__btn-buy" onclick="addToOrder1(${index}) " id=${index}>Comprar Ahora</button>
         </div>
         </div>
 
@@ -65,41 +66,35 @@ cardContainer1.innerHTML = `
 renderizarDetail()
 
 
-// cardContainer.innerHTML =`
-// {/* <main class="mainDetail">
-// <section class="section-cards-detail">
-//     <div class="cards-container-detail" id="card-container">
-  
-//         <article class="card">
-//             <div class="card__header">
-//                 <img src=${product.image} alt=${product.name} class="card__img">
-//             </div>
-//             <div class="card__body">
-//                 <div class="card__title">
-//                 <p>${product.name}</p>
-//                 </div>
-//                 <div class="card__description">
-//                     <p class="card__texto">${product.detail}</p> 
-                    
-//                 </div>
-//                 <div class="card__info">
-//                     <div class="card__date">
-//                     12/01/2023
-//                     </div>
-//                     <div class="card__price">
-//                     $ ${JSON.stringify(product.price)}
-//                     </div>
-//                 </div>
-//             </div>
-//             <div class="card__footerCardDetail">
-//                 <a class="card__btn-buy" href="#">
-//                     Comprar
-//                 </a>
+//---------------------AGREGAR PRODUCTO COMPRADO-------------------------//
+let orderFinal1 = JSON.parse(localStorage.getItem("orderArrayFinal"))
+let badgeHTMLbuy2=document.getElementById("cart-count");
 
-//             </div>
-//         </article> 
-//         </main>
-//     </div>
-// </section>
 
-// ` */}
+
+function addToOrder1(index){
+
+    let count4 = 0;
+    let orderBuy1 =orderFinal1[index]
+    const existe = products.some(prod => prod.productID===index)
+
+    if(existe){
+        const prod = products.map(prod =>{
+            if(prod.productID===index){
+                prod.quantity++
+            }
+        })
+    }else{
+    products.push(orderBuy1)
+    let arrayProducts = Object.values(products)
+
+    }
+    products.forEach(products => {
+    count4 += parseInt(products.quantity)
+    })
+
+    badgeHTMLbuy2.innerText=count4;
+    sessionStorage.setItem("order", JSON.stringify(products))
+}
+
+
