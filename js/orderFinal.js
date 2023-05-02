@@ -10,6 +10,8 @@ let orderFinal = JSON.parse(localStorage.getItem("orderArrayFinal"))
 let productOrder = JSON.parse(sessionStorage.getItem("order"))
 
 
+
+
 const productFormBuy=document.getElementById("add-product");
 const submitBtn = document.getElementById("submit-btn");
 const total = document.getElementById("totalPrice")
@@ -68,8 +70,8 @@ function renderizarTablaOrdenes(){
         <td class="order__img-cell"><img class="product__img" src="${prod.imageOrder}" alt="${prod.nameOrder}"></td>
         <td class="order__name" onclick="editName(${index}")>${prod.nameOrder}</td>
         <td class="order__desc">${prod.descriptionOrder}</td>
-        <td class="order__quantity" ><div class="boton-container"><div class="boton-container__boton-div"><button class="boton-container__boton-order">-</button> ${prod.quantity} <button class="boton-container__boton-order">+</button></div></div></td>
-        <td class="order__price">$ ${prod.priceOrder}</td>
+        <td class="order__quantity" ><div class="boton-container"><div class="boton-container__boton-div"><button class="boton-container__boton-order" onclick="restToOrderQuantity(${index}) " id=${index} >-</button> ${prod.quantity} <button class="boton-container__boton-order" onclick= "AccToOrderQuantity(${index})">+</button></div></div></td>
+        <td class="order__price" id="new-price">$ ${prod.priceOrder}</td>
         <td class="order__price">$ ${prod.priceOrder * prod.quantity }</td>
         <td class="order__actions">
             <button class="product__action-btnDetail" onclick="deleteProductBuy(${index})">
@@ -166,4 +168,44 @@ function deleteProductBuy(indice){
     console.log(productOrder)
     renderizarTablaOrdenes()
 }
+//----------------RESTAR CANTIDAD PRODUCTO--------------
+
+function restToOrderQuantity(index){
+
+    productOrder.forEach((idx)=>{
+        if(index===idx.productID & idx.quantity>0) {
+            idx.quantity--;
+        }   
+    })
+    sessionStorage.setItem("order", JSON.stringify(productOrder))
+
+    //calcular Valor total
+    let valorTotalRestar =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
+    total.innerHTML = `$ ${valorTotalRestar}`
+    renderizarTablaOrdenes()
+
+    }
+
+//----------------SUMAR CANTIDAD PRODUCTO--------------
+
+    function AccToOrderQuantity(index){
+
+        productOrder.forEach((idx)=>{
+            if(index===idx.productID ) {
+                idx.quantity++;
+            }   
+        })
+    
+        sessionStorage.setItem("order", JSON.stringify(productOrder))
+    
+        //calcular Valor total
+        let valorTotalSumar =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
+        total.innerHTML = `$ ${valorTotalSumar}`
+        renderizarTablaOrdenes()
+    
+        }
+
+    
+
+  
 
