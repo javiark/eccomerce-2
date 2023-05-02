@@ -1,4 +1,4 @@
-const tableBodyOrder = document.getElementById('table-body-order');
+const tableBodyOrder1 = document.getElementById('table-body-order');
 const products = [];
 
 
@@ -59,15 +59,15 @@ let ordernFinal={
 
 function renderizarTablaOrdenes(){
 
-    tableBodyOrder.innerHTML = '';
+    tableBodyOrder1.innerHTML = '';
     if(productOrder.length===0){
-        tableBodyOrder.innerHTML="<p class='disabled'>NO SE ENCONTRARON PRODUCTOS</p>"
+        tableBodyOrder1.innerHTML="<p class='disabled'>NO SE ENCONTRARON PRODUCTOS</p>"
         return
     }
     
     productOrder.forEach((prod, index)=>{
 
-        tableBodyOrder.innerHTML += `<tr class="order">
+        tableBodyOrder1.innerHTML += `<tr class="order">
         <td class="order__img-cell"><img class="product__img" src="${prod.imageOrder}" alt="${prod.nameOrder}"></td>
         <td class="order__name" onclick="editName(${index}")>${prod.nameOrder}</td>
         <td class="order__desc">${prod.descriptionOrder}</td>
@@ -94,7 +94,7 @@ function renderizarTablaOrdenes(){
         if (orderUser) {
                 // console.log("hay usuario")
             }else{
-                tableBodyOrder.innerHTML = '';
+                tableBodyOrder1.innerHTML = '';
                 productOrder= [];
                 sessionStorage.setItem("order", JSON.stringify(products))
                 actualizarBadge();
