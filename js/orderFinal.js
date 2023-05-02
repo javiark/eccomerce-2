@@ -1,7 +1,8 @@
 const tableBodyOrder = document.getElementById('table-body-order');
 const products = [];
-let count=0;
-badgeHTMLbuy=document.getElementById("cart-count");
+
+
+let badgeHTMLbuy=document.getElementById("cart-count");
 
 let productsOrder = JSON.parse(localStorage.getItem("products"))
 let productsUser = JSON.parse(localStorage.getItem("users"))
@@ -105,11 +106,15 @@ cleantable()
 
 //----------------ACTUALIZAR CANTIDAD EN CARRITOS DE COMPRA--------------
 
+function cartUpdate(){
+    let count=0;
 productOrder.forEach(productOrder => {
     count += parseInt(productOrder.quantity)
 })
 
 badgeHTMLbuy.innerText=count;
+}
+cartUpdate()
 
 
 //---------------------AGREGAR PRODUCTO COMPRADO-------------------------//
@@ -171,13 +176,24 @@ function deleteProductBuy(indice){
 //----------------RESTAR CANTIDAD PRODUCTO--------------
 
 function restToOrderQuantity(index){
+    let count2=0
 
     productOrder.forEach((idx)=>{
         if(index===idx.productID & idx.quantity>0) {
             idx.quantity--;
+
         }   
     })
+    productOrder.forEach(productOrder => {
+        count2 += parseInt(productOrder.quantity)
+    })
+
+    badgeHTMLbuy.innerText=count2;
+    
+    
     sessionStorage.setItem("order", JSON.stringify(productOrder))
+
+        // badgeHTMLbuy.innerText=count2;
 
     //calcular Valor total
     let valorTotalRestar =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
@@ -189,18 +205,26 @@ function restToOrderQuantity(index){
 //----------------SUMAR CANTIDAD PRODUCTO--------------
 
     function AccToOrderQuantity(index){
+        let count2=0
 
         productOrder.forEach((idx)=>{
             if(index===idx.productID ) {
                 idx.quantity++;
             }   
         })
+
+        productOrder.forEach(productOrder => {
+            count2 += parseInt(productOrder.quantity)
+        })
+
+        badgeHTMLbuy.innerText=count2;
     
         sessionStorage.setItem("order", JSON.stringify(productOrder))
     
         //calcular Valor total
         let valorTotalSumar =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
         total.innerHTML = `$ ${valorTotalSumar}`
+        
         renderizarTablaOrdenes()
     
         }
