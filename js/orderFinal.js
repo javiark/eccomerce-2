@@ -23,9 +23,59 @@ const total = document.getElementById("totalPrice")
 
 
 // let productsOrderBuy = JSON.parse(localStorage.getItem("order"));
+
+//---------------------RECORRER TODO EL ARRAY DE PRODUCTOS-------------------------//
+
+let orderArray = [];
+let cart = []
+
+
+// console.log(orderArray)
+// console.log(productOrder)
+
+
+
+productsOrder.forEach((prod,id)=>{
+    // console.log(id)
+
+
+    let quantity =parseInt(1)
+    // console.log(quantity)
+    let  productID = id
+    let nuevaOrden={
+        productID,
+        quantity,
+        nameOrder:prod.name,
+        priceOrder:prod.price,
+        imageOrder:prod.image, 
+        descriptionOrder:prod.description,
+    }
+    orderArray.push(nuevaOrden)
+    localStorage.setItem("orderArrayFinal", JSON.stringify(orderArray))
+
+});
+console.log(orderArray)   
+// productOrderFinal.push(quantity)
+
+let userName=orderUser.fullName
+let userOrder=orderUser.email
+let totalOrder=`$$`
+let createdAt = new Date()
+let ordernFinal={
+    // usuarioID1,
+    userName,
+    userOrder,
+    totalOrder,
+    createdAt,
+    orderArray
+}
+// console.log(ordernFinal)
+// localStorage.setItem("orderFinal", JSON.stringify(ordernFinal))
+
+
 //----------------PINTAR TABLA--------------
 
-actualizarBadge()
+// actualizarBadge()
 
 function renderizarTablaOrdenes(){
 
@@ -78,55 +128,6 @@ cleantable()
 
 // let orderFinal = JSON.parse(localStorage.getItem("orderArrayFinal"))
 
-//---------------------RECORRER TODO EL ARRAY DE PRODUCTOS-------------------------//
-
-let orderArray = [];
-let cart = []
-
-
-// console.log(orderArray)
-// console.log(productOrder)
-
-
-
-productsOrder.forEach((prod,id)=>{
-    // console.log(id)
-
-
-    let quantity =parseInt(1)
-    // console.log(quantity)
-    let  productID = id
-    let nuevaOrden={
-        productID,
-        quantity,
-        nameOrder:prod.name,
-        priceOrder:prod.price,
-        imageOrder:prod.image, 
-        descriptionOrder:prod.description,
-    }
-    orderArray.push(nuevaOrden)
-    localStorage.setItem("orderArrayFinal", JSON.stringify(orderArray))
-
-   
-});
-console.log(orderArray)   
-// productOrderFinal.push(quantity)
-
-let userName=orderUser.fullName
-let userOrder=orderUser.email
-let totalOrder=`$$`
-let createdAt = new Date()
-let ordernFinal={
-    // usuarioID1,
-    userName,
-    userOrder,
-    totalOrder,
-    createdAt,
-    orderArray
-}
-// console.log(ordernFinal)
-// localStorage.setItem("orderFinal", JSON.stringify(ordernFinal))
-
 
 //---------------------AGREGAR PRODUCTO COMPRADO-------------------------//
 
@@ -136,7 +137,7 @@ let ordernFinal={
 
 
 function addToOrder(index){
-
+    
     console.log(index)
     let orderBuy =orderFinal[index]
     console.log(orderBuy)
@@ -160,6 +161,7 @@ function addToOrder(index){
     // console.log(orderBuy)
     sessionStorage.setItem("order", JSON.stringify(products))
     // console.log(index)
+
 }
 
 
@@ -191,6 +193,9 @@ function actualizarBadge(){
 
 
 }
+
+actualizarBadge()
+
 
 
 
