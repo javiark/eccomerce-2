@@ -1,6 +1,8 @@
-const products = [];
- badgeHTMLbuy=document.getElementById("cart-count");
 const tableBodyOrder = document.getElementById('table-body-order');
+const products = [];
+let count=0;
+badgeHTMLbuy=document.getElementById("cart-count");
+
 let productsOrder = JSON.parse(localStorage.getItem("products"))
 // console.log(productsOrder)
 let productsUser = JSON.parse(localStorage.getItem("users"))
@@ -105,6 +107,8 @@ function renderizarTablaOrdenes(){
     })
     }
 
+
+
     renderizarTablaOrdenes()
 
 //---------------------LIMPIAR TABLA SI NO HAY USUARIO-------------------------//
@@ -128,6 +132,17 @@ cleantable()
 
 // let orderFinal = JSON.parse(localStorage.getItem("orderArrayFinal"))
 
+//----------------ACTUALIZAR CANTIDAD EN CARRITOS DE COMPRA--------------
+
+
+productOrder.forEach(productOrder => {
+    count += parseInt(productOrder.quantity)
+})
+console.log(count)
+
+badgeHTMLbuy.innerText=count;
+
+
 
 //---------------------AGREGAR PRODUCTO COMPRADO-------------------------//
 
@@ -137,7 +152,8 @@ cleantable()
 
 
 function addToOrder(index){
-    
+
+    let count1 = 0;
     console.log(index)
     let orderBuy =orderFinal[index]
     console.log(orderBuy)
@@ -155,14 +171,29 @@ function addToOrder(index){
     products.push(orderBuy)
     // console.log(products)
     let arrayProducts = Object.values(products)
-    // console.log(arrayProducts)
+
+
+
     }
+    products.forEach(products => {
+    count1 += parseInt(products.quantity)
+    console.log(count1)
+    })
+
+
+ 
+
+    badgeHTMLbuy.innerText=count1;
+
 
     // console.log(orderBuy)
+    console.log(products)
     sessionStorage.setItem("order", JSON.stringify(products))
     // console.log(index)
 
 }
+
+
 
 
 
@@ -176,25 +207,6 @@ const usuarioID1 = productsUser.findIndex(id1=>id1.email === orderUser.email)
 
 
 
-
-
-
-
-//----------------ACTUALIZAR CANTIDAD EN CARRITOS DE COMPRA--------------
-
-function actualizarBadge(){
-
-    let count=0;
-    productOrder.forEach(productOrder => {
-        count += parseInt(productOrder.quantity)
-    })
-    badgeHTMLbuy.innerText=count;
-    // console.log(count)
-
-
-}
-
-actualizarBadge()
 
 
 
@@ -246,3 +258,4 @@ function deleteProductBuy(indice){
 
 // deleteProductBuy(2)
 // console.log(productOrder)
+
