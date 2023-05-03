@@ -80,7 +80,9 @@ function renderizarTablaOrdenes(){
                 <i class="fa-solid fa-trash"></i>
             </button> 
         </td>
-    </tr>`
+    </tr>
+    
+    `
     })
     }
 
