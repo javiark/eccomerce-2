@@ -1966,6 +1966,9 @@ body {
   width: 2rem;
   border: none;
 }
+.containerDetail__containerNumber {
+  padding-top: 0.4rem;
+}
 .containerDetail__btn-add {
   background-color: rgba(0, 0, 0, 0.2039215686);
   color: white;
