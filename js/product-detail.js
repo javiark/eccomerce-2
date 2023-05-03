@@ -17,6 +17,11 @@ const indice= paramsEntries.id;
 const products1 = JSON.parse(localStorage.getItem("products"));
 
 const product = products1[indice];
+let orderFinal1 = JSON.parse(localStorage.getItem("orderArrayFinal"))
+let badgeHTMLbuy2=document.getElementById("cart-count");
+let badgeHTMLbuy3=document.getElementById("countNumber");
+let productOrder2 = JSON.parse(sessionStorage.getItem("order"))
+const product3 = productOrder2[indice];
 
 // document.body.innerHTML = `<p>${JSON.stringify(product)}</p>`
 //     <img src = ${product.image}>`
@@ -44,7 +49,7 @@ cardContainer1.innerHTML = `
                     <p class="card__texto">${product.description}</p> 
                 </div>
             </div>
-            <div class="containerDetail__containerAdd"><div class="containerDetail__containerBtn1"><button class="containerDetail__containerBtn" onclick=" restcount(indice) "> -</button><div class="containerDetail__containerNumber" id="countNumber"> 0 </div><button  class="containerDetail__containerBtn"> +</button></div></div>
+            <div class="containerDetail__containerAdd"><div class="containerDetail__containerBtn1"><button class="containerDetail__containerBtn" onclick=" restcount(indice) "> -</button><div class="containerDetail__containerNumber" id="countNumber">  ${product3.quantity} </div><button  class="containerDetail__containerBtn"> +</button></div></div>
             <button class="containerDetail__btn-add" onclick="restcount(${index})" id=${index}>
                 Añadir a carrito
             </button>
@@ -67,43 +72,31 @@ renderizarDetail()
 
 
 //---------------------AGREGAR PRODUCTO COMPRADO-------------------------//
-let orderFinal1 = JSON.parse(localStorage.getItem("orderArrayFinal"))
-let badgeHTMLbuy2=document.getElementById("cart-count");
-let badgeHTMLbuy3=document.getElementById("countNumber");
-let productOrder2 = JSON.parse(sessionStorage.getItem("order"))
+
 
 function restcount(index)
 
 {
-    console.log(index)
-
+    // console.log(index)
     let countNumber=0;
-    // console.log(countNumber)
-    // console.log(productOrder2)
     productOrder2.forEach((idx)=>{
         console.log(idx.quantity)
-        // console.log(idx.productID)
+        let countNumb = idx.quantity
+
 
         if(idx.quantity>0) {
             idx.quantity--;
-            console.log(idx.quantity)
+            // console.log(idx.quantity)
         }   
+        console.log(countNumb)
+        // badgeHTMLbuy3.innerText=countNumb;
     })
     // productOrder2.forEach(productOrder2 => {
     //     countNumber += parseInt(productOrder2.quantity)
     // })
-    // console.log(countNumber)
-
-    badgeHTMLbuy.innerText=countNumber;
-
-    // productOrder.forEach((idx)=>{
-    //     if(index===idx.productID & idx.quantity>0) {
-    //         idx.quantity--;
-
-    //     }   
-    // })
 
 }
+
 function addToOrder1(index){
 
     let count4 = 0;
