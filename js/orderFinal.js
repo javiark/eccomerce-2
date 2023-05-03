@@ -170,6 +170,8 @@ function deleteProductBuy(indice){
         count2 += parseInt(productOrder.quantity)
         })
         badgeHTMLbuy.innerText=count2;
+        let valorTotal =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
+        total.innerHTML = `$ ${valorTotal}`
     console.log(productOrder)
     renderizarTablaOrdenes()
 }
