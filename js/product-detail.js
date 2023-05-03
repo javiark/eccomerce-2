@@ -56,10 +56,8 @@ cardContainer1.innerHTML = `
                 </div>
             </div>
             <div class="containerDetail__containerAdd"><div class="containerDetail__containerBtn1"><button class="containerDetail__containerBtn" onclick=" restCount(indice) ">-</button><div class="containerDetail__containerNumber" id="countNumber"> 1</div><button  class="containerDetail__containerBtn" onclick=" addCount(indice) "> +</button></div></div>
-            <button class="containerDetail__btn-add" >
-                Añadir a carrito
-            </button>
-            <button class="containerDetail__btn-buy"  id=${index} onclick="renderizarTablaOrdenes1()">Comprar Ahora</button>
+
+            <a href="/pages/order/order.html" class="containerDetail__btn-buy" >  <button class="containerDetail__btn-buy">Comprar Ahora</button><a/>
         </div>
         </div>
 

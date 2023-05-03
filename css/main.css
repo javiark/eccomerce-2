@@ -1969,6 +1969,9 @@ body {
 .containerDetail__containerNumber {
   padding-top: 0.4rem;
 }
+.containerDetail__link {
+  color: rgb(71, 71, 71);
+}
 .containerDetail__btn-add {
   background-color: rgba(0, 0, 0, 0.2039215686);
   color: white;
