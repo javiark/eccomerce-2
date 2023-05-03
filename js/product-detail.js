@@ -1,6 +1,10 @@
+const tableBodyOrder1 = document.getElementById('table-body-order');
+let productOrderDetail = JSON.parse(sessionStorage.getItem("order")) || [];
+console.log(productOrderDetail)
+
 const params = window.location.search;
 
-console.log(params)
+// console.log(params)
 
 const index = params.split("id=")[1].split("&")[0];
 
@@ -10,7 +14,7 @@ const paramsUrl = new URLSearchParams(params);
 
 const paramsEntries = Object.fromEntries(paramsUrl)
 
-console.log(paramsEntries)
+// console.log(paramsEntries)
 
 const indice= paramsEntries.id;
 
@@ -19,9 +23,11 @@ const products1 = JSON.parse(localStorage.getItem("products"));
 const product = products1[indice];
 let orderFinal1 = JSON.parse(localStorage.getItem("orderArrayFinal"))
 let badgeHTMLbuy2=document.getElementById("cart-count");
-let badgeHTMLbuy3=document.getElementById("countNumber");
-let productOrder2 = JSON.parse(sessionStorage.getItem("order"))
-const product3 = productOrder2[indice];
+
+let productOrder2 = JSON.parse(sessionStorage.getItem("order")) || [];
+// let product3=productOrder2[indice];
+// console.log(product3)
+// const product1 = products1[indice];
 
 // document.body.innerHTML = `<p>${JSON.stringify(product)}</p>`
 //     <img src = ${product.image}>`
@@ -49,11 +55,11 @@ cardContainer1.innerHTML = `
                     <p class="card__texto">${product.description}</p> 
                 </div>
             </div>
-            <div class="containerDetail__containerAdd"><div class="containerDetail__containerBtn1"><button class="containerDetail__containerBtn" onclick=" restcount(indice) "> -</button><div class="containerDetail__containerNumber" id="countNumber">  ${product3.quantity} </div><button  class="containerDetail__containerBtn"> +</button></div></div>
-            <button class="containerDetail__btn-add" onclick="restcount(${index})" id=${index}>
+            <div class="containerDetail__containerAdd"><div class="containerDetail__containerBtn1"><button class="containerDetail__containerBtn" onclick=" restCount(indice) ">-</button><div class="containerDetail__containerNumber" id="countNumber"> 1</div><button  class="containerDetail__containerBtn" onclick=" addCount(indice) "> +</button></div></div>
+            <button class="containerDetail__btn-add" >
                 Añadir a carrito
             </button>
-            <button class="containerDetail__btn-buy" onclick="addToOrder1(${index}) " id=${index}>Comprar Ahora</button>
+            <button class="containerDetail__btn-buy"  id=${index} onclick="renderizarTablaOrdenes1()">Comprar Ahora</button>
         </div>
         </div>
 
@@ -70,56 +76,65 @@ cardContainer1.innerHTML = `
 
 renderizarDetail()
 
+let badgeHTMLbuy3=document.getElementById("countNumber");
+
+
+    
+
 
 //---------------------AGREGAR PRODUCTO COMPRADO-------------------------//
 
+let productsDetail =[]
 
-function restcount(index)
 
+function restCount(index)
 {
-    // console.log(index)
+    let orderDetail1=[orderFinal1[index]]
+
+    console.log(index)
     let countNumber=0;
-    productOrder2.forEach((idx)=>{
-        console.log(idx.quantity)
+    orderFinal1.forEach((idx)=>{
         let countNumb = idx.quantity
-
-
         if(idx.quantity>0) {
-            idx.quantity--;
-            // console.log(idx.quantity)
-        }   
-        console.log(countNumb)
-        // badgeHTMLbuy3.innerText=countNumb;
+            idx.quantity--;        }   
+
+        badgeHTMLbuy3.innerText=idx.quantity;
+        badgeHTMLbuy2.innerText=idx.quantity;
+
     })
-    // productOrder2.forEach(productOrder2 => {
-    //     countNumber += parseInt(productOrder2.quantity)
-    // })
+
+    console.log(orderDetail1)
+    sessionStorage.setItem("order", JSON.stringify(orderDetail1))
 
 }
 
-function addToOrder1(index){
 
-    let count4 = 0;
-    let orderBuy1 =orderFinal1[index]
-    const existe = products.some(prod => prod.productID===index)
 
-    if(existe){
-        const prod = products.map(prod =>{
-            if(prod.productID===index){
-                prod.quantity++
-            }
-        })
-    }else{
-    products.push(orderBuy1)
-    let arrayProducts = Object.values(products)
+function addCount(index)
+{
+    let orderDetail1=[orderFinal1[index]]
 
-    }
-    products.forEach(products => {
-    count4 += parseInt(products.quantity)
+    console.log(index)
+    let countNumber=1;
+    orderFinal1.forEach((idx)=>{
+        let countNumb = idx.quantity;
+            idx.quantity++;
+
+        badgeHTMLbuy3.innerText=idx.quantity;
+        badgeHTMLbuy2.innerText=idx.quantity;
+
     })
 
-    badgeHTMLbuy2.innerText=count4;
-    sessionStorage.setItem("order", JSON.stringify(products))
+    console.log(orderDetail1)
+    sessionStorage.setItem("order", JSON.stringify(orderDetail1))
+
+
+
 }
+
+
+
+
+
 
 

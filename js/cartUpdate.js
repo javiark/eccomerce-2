@@ -1,13 +1,16 @@
 //----------------ACTUALIZAR CANTIDAD EN CARRITOS DE COMPRA--------------
-let productOrder1 = JSON.parse(sessionStorage.getItem("order"))
-let badgeHTMLbuy1=document.getElementById("cart-count");
+let productOrder4 = JSON.parse(sessionStorage.getItem("order"));
+let badgeHTMLbuy4=document.getElementById("cart-count");
 
 function cartUpdate(){
-    let count=0;
-productOrder1.forEach(productOrder1 => {
-    count += parseInt(productOrder1.quantity)
+    let countCart=0;
+productOrder4.forEach(productOrder4 => {
+    countCart += parseInt(productOrder4.quantity)
 })
 
-badgeHTMLbuy1.innerText=count;
+badgeHTMLbuy4.innerText=countCart;
+console.log(countCart)
 }
+
+
 cartUpdate()

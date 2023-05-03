@@ -8,7 +8,8 @@ let productsOrder = JSON.parse(localStorage.getItem("products"))
 let productsUser = JSON.parse(localStorage.getItem("users"))
 let orderUser = JSON.parse(localStorage.getItem("currentUser"))
 let orderFinal = JSON.parse(localStorage.getItem("orderArrayFinal"))
-let productOrder = JSON.parse(sessionStorage.getItem("order"))
+let productOrder = JSON.parse(sessionStorage.getItem("order")) 
+console.log(productOrder)|| [];
 
 
 

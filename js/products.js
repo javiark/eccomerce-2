@@ -88,7 +88,7 @@ function addProduct(evt) {
             icon: "success",
         })
     }
-
+    console.log(products)
   
 
     //Guardarlo en el localStorage
