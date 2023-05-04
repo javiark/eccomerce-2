@@ -77,16 +77,11 @@ function addProduct(evt) {
     if (editIndex >= 0) { //el indice 0 sino lo toma falso, el 0 es undifaned (falso)
         products[editIndex]=newProduct
         // alert("se edito correctamente")
-        swal ({
-            title:"el producto se edito correctamente",
-            icon:"info"
-        })
+        showAlert("El producto se edito correctamente", "succes")
     } else {
         products.push(newProduct);
-        swal({
-            title:"el producto se agrego correctamente",
-            icon: "success",
-        })
+        showAlert("El producto se agrego correctamente", "succes")
+
     }
     console.log(products)
   
@@ -98,6 +93,7 @@ function addProduct(evt) {
     editIndex=undefined; // para que se vacie
     submitBtn.classList.remove("edit-btn");
     submitBtn.innerText = "Cargar Producto"
+    showAlert("El producto se agrego correctamente", "succes")
  
     renderizarTabla();
 
@@ -108,29 +104,11 @@ function addProduct(evt) {
 
 
 function deleteProduct(indice) {
-    swal({
-        title: "Borrar producto",
-        text: `Esta seguro que desea borrar el producto ${products[indice].name}`,
-        icon: `warning`,
-        buttons: {
-            cancel:"Cancelar",
-            delete:"Borrar",
-        }
-    }).then(value => {
-        if (value==="delete"){
-            products.splice(indice, 1);
-            localStorage.setItem("products",JSON.stringify(products))
-            swal({
-                title:"Elemento borrado correctamente",
-                icon:"error"
-        
-            });
-            renderizarTabla(); 
+    products.splice(indice, 1);
+    localStorage.setItem("products",JSON.stringify(products))
+    showAlert("El producto se ha borrado", "succes")
+    renderizarTabla();
 
-        }else {
-            return ; //return null
-        }
-    })
 
 
 }
@@ -171,17 +149,17 @@ function setFavoriteProduct(index) {
     });
 
     //--------------------------------------------------------
-    // const favCount = 0;
-    // const prodFiltradosFavoritos= products.forEach(prod => {
-    //     if(prod.favorite) {
-    //         favCount++
-    //     }
-    // })
+    const favCount = 0;
+    const prodFiltradosFavoritos= products.forEach(prod => {
+        if(prod.favorite) {
+            favCount++
+        }
+    })
 
-    //     if (favCount >= 3){
-    //     favorites.shift();
-    // }
-    // favorites.push(index)
+        if (favCount >= 3){
+        favorites.shift();
+    }
+    favorites.push(index)
     //---------------------------------------------
     //otra forma
     // prodFiltradosFavoritos.length >=3
@@ -201,7 +179,33 @@ function setFavoriteProduct(index) {
 
 
 
+// function deleteProduct(indice) {
+//     swal({
+//         title: "Borrar producto",
+//         text: `Esta seguro que desea borrar el producto ${products[indice].name}`,
+//         icon: `warning`,
+//         buttons: {
+//             cancel:"Cancelar",
+//             delete:"Borrar",
+//         }
+//     }).then(value => {
+//         if (value==="delete"){
+//             products.splice(indice, 1);
+//             localStorage.setItem("products",JSON.stringify(products))
+//             swal({
+//                 title:"Elemento borrado correctamente",
+//                 icon:"error"
+        
+//             });
+//             renderizarTabla(); 
 
+//         }else {
+//             return ; //return null
+//         }
+//     })
+
+
+// }
 
 
 

@@ -53,8 +53,9 @@ loginForm.addEventListener("submit",(event)=>{
         return;}
     });
 
-    
-
+    function cleanOrder(){
+        sessionStorage.clear("order");
+    }
 
 
 

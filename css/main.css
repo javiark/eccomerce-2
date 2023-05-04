@@ -821,7 +821,7 @@ body {
   font-weight: 500;
   border-radius: 0.3rem;
   padding-left: 1rem;
-  color: #b4b4b4;
+  color: #666666;
   width: 20.3rem;
 }
 .register__casillero {
@@ -841,7 +841,7 @@ body {
   height: 2rem;
   border-radius: 0.3rem;
   padding-left: 1rem;
-  color: #b4b4b4;
+  color: #666666;
   width: 20.3rem;
 }
 .register__button {
@@ -2069,6 +2069,10 @@ body {
 
 .buy-btn:hover {
   background-color: rgb(1, 105, 1);
+}
+
+.buy-btn-empty {
+  visibility: hidden;
 }
 
 @media screen and (min-width: 1000px) {

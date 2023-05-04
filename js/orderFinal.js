@@ -13,7 +13,7 @@ console.log(productOrder)|| [];
 
 
 
-
+const btnEnd1=document.getElementById("btnEnd")
 const productFormBuy=document.getElementById("add-product");
 const submitBtn = document.getElementById("submit-btn");
 const total = document.getElementById("totalPrice")
@@ -239,8 +239,20 @@ function restToOrderQuantity(index){
         renderizarTablaOrdenes()
     
         }
+        //----------------FINALIZAR COMPRA--------------
+        // if(tableBodyOrder=''){
+        //     console.log("no hay nada")
+        // }
+
+        if(productOrder.length===0){
+            console.log("no")
+            btnEnd1.classList.add("buy-btn-empty")
+
+        }
 
         function buyEnd(){
+
+            
             showAlert("Gracias por su compra", "succes")
 
             sessionStorage.clear("order");
@@ -248,8 +260,9 @@ function restToOrderQuantity(index){
             setTimeout(()=>{
             window.location.href = "/index.html"
         
-            },5000) 
+            },3000) 
         }
+
 
     
 
