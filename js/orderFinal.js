@@ -123,6 +123,7 @@ cartUpdate()
 
 function addToOrder(index){
 
+
     let count1 = 0;
     let orderBuy =orderFinal[index]
     const existe = products.some(prod => prod.productID===index)
@@ -180,10 +181,12 @@ function deleteProductBuy(indice){
 //----------------RESTAR CANTIDAD PRODUCTO--------------
 
 function restToOrderQuantity(index){
+    console.log("funcionaboton")
     let count2=0
+    console.log(productOrder)
 
     productOrder.forEach((idx)=>{
-        if(index===idx.productID & idx.quantity>0) {
+        if( idx.quantity>0) {
             idx.quantity--;
 
         }   
@@ -209,12 +212,16 @@ function restToOrderQuantity(index){
 //----------------SUMAR CANTIDAD PRODUCTO--------------
 
     function AccToOrderQuantity(index){
+        console.log(index)
+        console.log("funcionaboton")
         let count2=0
+        console.log(productOrder)
 
         productOrder.forEach((idx)=>{
-            if(index===idx.productID ) {
-                idx.quantity++;
-            }   
+            idx.quantity++;
+            // if(index===idx.productID ) {
+            //     idx.quantity++;
+            // }   
         })
 
         productOrder.forEach(productOrder => {
