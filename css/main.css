@@ -1793,6 +1793,8 @@ body {
 }
 
 .table-container-order {
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
   width: 100vw;
   overflow-x: scroll;
@@ -2047,6 +2049,19 @@ body {
   border: none;
   background-color: white;
   cursor: pointer;
+}
+
+.buy-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  width: 10rem;
+  border: 2px solid rgb(51, 87, 2);
+  color: white;
+  background-color: green;
+}
+
+.buy-btn:hover {
+  background-color: rgb(1, 105, 1);
 }
 
 @media screen and (min-width: 1000px) {

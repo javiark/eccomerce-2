@@ -70,6 +70,9 @@ body {
 
 
 .table-container-order {
+    display: flex;
+    flex-direction: column; 
+
 
     padding: 1rem;
     width: 100vw;
@@ -365,6 +368,19 @@ body {
         // padding: 0.5rem;
     }
 
+}
+
+.buy-btn {
+
+    margin-top: 1rem;
+    padding: .5rem 1rem;
+    width: 10rem;
+    border: 2px solid rgb(51, 87, 2);
+    color: white;
+    background-color: green;
+}
+.buy-btn:hover{
+    background-color: rgb(1, 105, 1);
 }
 
 

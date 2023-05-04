@@ -157,20 +157,16 @@ function addToCart(index){
         console.log(orderDetail2)
         sessionStorage.setItem("order", JSON.stringify(orderDetail2))
 
-    }      
+    }  
+    console.log(idx.quantity)
+    ixNumber = parseInt(idx.quantity)
+    console.log(ixNumber)
+    if(ixNumber==1 ){
+
+        badgeHTMLbuy2.innerText=1;
+
+}      
     })
-    // orderDetail1.forEach((idx)=>{
-    //     // let countNumb = idx.quantity;
-    //     console.log(idx.quantity)
-    //     if(idx.quantity[index]===1 ){
-
-    //     console.log(orderDetail2)
-
-    //     badgeHTMLbuy2.innerText=1; 
-    // }      
-    // })
-
-
 
 }
 
