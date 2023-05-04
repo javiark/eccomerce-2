@@ -72,16 +72,7 @@ function addUser(evt) {
         newUser.surname = elements.surname.value;
         newUser.email =  elements.mail.value;
         newUser.role =  elements.rol.value;
-    //     // passwordInput: elements.passwordInput.value,
-    //     // passwordInput2: elements.passwordInput2.value,
-    //     // ageInput: elements.ageInput.value,
-    //     // bornDateInput: elements.bornDateInput.value,
-    //     // gender:elements.gender.value,
-    //     // countryInput: elements.countr.value,
 
-    // };
-    // console.log(newUser)
-    console.log(user)
 
 
     if (editIndex >= 0) { //el indice 0 sino lo toma falso, el 0 es undifaned (falso)
@@ -90,21 +81,16 @@ function addUser(evt) {
             title:"el usuario se edito correctamente",
             icon:"info"
         })
-    // } else {
-    //     users.push(newUser);
-    //     swal({
-    //         title:"el usuario se agrego correctamente",
-    //         icon: "success",
-    //     })
+
     }
   
 
     //Guardarlo en el localStorage
     localStorage.setItem('users', JSON.stringify(users))
     editIndex=undefined; // para que se vacie
-    submitBtn.classList.remove("edit-btn");
+    // submitBtn.classList.remove("edit-btn-order");
  
-    submitBtn.innerText = "Cargar Usuario"
+    // submitBtn.innerText = "Cargar Usuario"
 
     renderizarTablaUser();
 
@@ -112,9 +98,6 @@ function addUser(evt) {
     // elements.name.focus();
 
     }
-
-
-
 
 
 
@@ -144,106 +127,25 @@ function deleteUser(indice) {
     })
 }
 
-    // const user = {
-    //     fullName:el.fullName.value,
-    //     surname:el.surname.value,
-    //     email: el.email.value,
-    //     password: el.password.value,
-    //     age: el.age.value,
-    //     bornDate: el.bornDate.value,
-    //     country:el.country.value,
-    //     gender: el.gender.value,
-    //     role:"USER_ROLE",
-    // }
-
 function editUser(idx){
-    console.log(idx)
     submitBtn.classList.add("edit-btn");
     submitBtn.innerText = "Modificar Usuario"
     let user = users[idx];
     console.log("indice:",idx)
     console.log("usuario:",user)
     submitBtn.classList.add("visible")
- 
+    
+    // console.table(product);
     const el=userForm.elements;
-
     el.fullName.value=user.fullName;
     el.surname.value=user.surname;
     el.mail.value=user.email;
     el.rol.value=user.role;
-
-    // let newUser1 = editIndex ? users[editIndex] : {};
-
-
-    // el.fullName.value= newUser1.fullName;
-    // el.surname.value= newUser1.surname;
-    // el.mail.value= newUser1.email;
-    // el.rol.value= newUser1.role;
-    // // // console.log("indice", idx)
-    // // // console.log("product:", product)
-    // editIndex=idx;
-    // console.log(newUser1)
-}
-
-function editUserChange(idx){
-    console.log(idx)
-    submitBtn.classList.add("edit-btn");
-    submitBtn.innerText = "Modificar Usuario"
-    let user = users[idx];
-    console.log("indice:",idx)
-    console.log("usuario:",user)
-    submitBtn.classList.add("visible")
-    let newUser1 = editIndex ? users[editIndex] : {};
-
-
-    el.fullName.value= newUser1.fullName;
-    el.surname.value= newUser1.surname;
-    el.mail.value= newUser1.email;
-    el.rol.value= newUser1.role;
+    // console.log("indice", idx)
+    // console.log("product:", product)
     editIndex=idx;
-    console.log(newUser1)
-
 }
 
 
 
-// function editUser(idx){
-//     submitBtn.classList.add("edit-btn");
-//     submitBtn.innerText = "Modificar Usuario"
-//     let user = users[idx];
-//     console.log("indice:",idx)
-//     console.log("usuario:",user)
-//     submitBtn.classList.add("visible")
-    
-//     // console.table(product);
-//     const el=userForm.elements;
-//     el.fullName.value=user.fullName;
-//     el.surname.value=user.surname;
-//     el.mail.value=user.email;
-//     el.rol.value=user.role;
-//     // console.log("indice", idx)
-//     // console.log("product:", product)
-//     editIndex=idx;
-// }
 
-
-
-
-
-
-
-// function setFavoriteProduct(index) {
-//     //Checkear si en el array productos hay algun producto cuyo indice sea distinto al elegido con la propiedad favorite: true tenemos que setearla en falso.
-//     // Setear el producto elegido como favorite: true
-
-
-//     products.forEach((prod,idx)=>{
-//         if(index===idx) prod.favorite = true;
-//         else prod.favorite = false;
-//     });
-
-
-
-// //     localStorage.setItem("favorites", JSON.stringify(favorites))
-// //     renderizarTabla();
-// }
