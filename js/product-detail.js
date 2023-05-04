@@ -1,5 +1,8 @@
+
+sessionStorage.clear("order");
 const tableBodyOrder1 = document.getElementById('table-body-order');
 let productOrderDetail = JSON.parse(sessionStorage.getItem("order")) || [];
+
 
 // let productOrderBuy = JSON.parse(sessionStorage.getItem("orderDetail")) ;
 
@@ -139,18 +142,35 @@ function addCount(index)
 }
 
 function addToCart(index){
+    let orderDetail2=[orderFinal1[index]]
+    let orderDetail1=[productOrderDetail[index]]
+    console.log(orderDetail2)
+
 
     // console.log(productOrderDetail)
-    
-    productOrderDetail.forEach((idx)=>{
+    // console.log(index)
+    orderDetail2.forEach((idx)=>{
         // let countNumb = idx.quantity;
         console.log(idx.quantity)
-        if(idx.quantity===1){
-        badgeHTMLbuy2.innerText=1;
-    }
-        
-    
+        if(idx.quantity[index]==1 ){
+
+        console.log(orderDetail2)
+        sessionStorage.setItem("order", JSON.stringify(orderDetail2))
+
+    }      
     })
+    orderDetail1.forEach((idx)=>{
+        // let countNumb = idx.quantity;
+        console.log(idx.quantity)
+        if(idx.quantity[index]===1 ){
+
+        console.log(orderDetail2)
+
+        badgeHTMLbuy2.innerText=1; 
+    }      
+    })
+
+
 
 }
 
