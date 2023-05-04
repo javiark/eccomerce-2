@@ -85,8 +85,11 @@ function logout(){
 
 }
 localStorage.removeItem("currentUser");
+sessionStorage.clear("order");
+
     renderHeaderLinks();
     btnBuy();
+
 }
 
 // function logout(){

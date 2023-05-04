@@ -1,5 +1,6 @@
 let products =JSON.parse(localStorage.getItem('products')) || [];
 let favorites = [];
+let favoritesStar=JSON.parse(localStorage.getItem('favorites')) ;
 
 console.log(products)
 
@@ -138,43 +139,50 @@ function editProduct(idx){
     editIndex=idx;
 }
 
-function setFavoriteProduct(index) {
-    //Checkear si en el array productos hay algun producto cuyo indice sea distinto al elegido con la propiedad favorite: true tenemos que setearla en falso.
-    // Setear el producto elegido como favorite: true
+// function setFavoriteProduct(index) {
+//     //Checkear si en el array productos hay algun producto cuyo indice sea distinto al elegido con la propiedad favorite: true tenemos que setearla en falso.
+//     // Setear el producto elegido como favorite: true
 
 
-    products.forEach((prod,idx)=>{
-        if(index===idx) prod.favorite = true;
-        else prod.favorite = false;
-    });
+//     products.forEach((prod,idx)=>{
+//         console.log(products)
+//         if(index===idx) prod.favorite = true;
+//         else prod.favorite = false;
+//     });
 
-    //--------------------------------------------------------
-    const favCount = 0;
-    const prodFiltradosFavoritos= products.forEach(prod => {
-        if(prod.favorite) {
-            favCount++
-        }
-    })
+//     //--------------------------------------------------------
+//     // const favCount = 0;
+//     // const prodFiltradosFavoritos= products.forEach(prod => {
+//     //     if(prod.favorite) {
+//     //         favCount++
+//     //     }
+//     // })
 
-        if (favCount >= 3){
-        favorites.shift();
-    }
-    favorites.push(index)
-    //---------------------------------------------
-    //otra forma
-    // prodFiltradosFavoritos.length >=3
+//     // //     if (favCount >= 3){
+//     // //     favorites.shift();
+//     // // }
+//     // // favorites.push(index)
+//     // //---------------------------------------------
+//     // //otra forma
+//     // prodFiltradosFavoritos.length >=3
 
-    // console.log(index)
+//     // console.log(index)
 
-    // if (favorite.length >= 3){
-    //     favorite.shift();
-    // }
-    // favorites.push(index)
+//     // if (favorite.length >= 3){
+//     //     favorite.shift();
+//     // }
+//     // const count2=0;
+//     // products.forEach(products => {
+//     //     count2 += parseInt(products.quantity)
+//     //     })
+//     favorites.push(products[index])
+//     if (favoritesStar.length >= 2){
 
 
-    localStorage.setItem("favorites", JSON.stringify(favorites))
-    renderizarTabla();
-}
+//     localStorage.setItem("favorites", JSON.stringify(favorites))
+//     renderizarTabla();
+// }
+// }
 
 
 
