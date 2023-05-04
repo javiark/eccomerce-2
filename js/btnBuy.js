@@ -1,6 +1,8 @@
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+const button2 = document.querySelectorAll(".card__btn-buy1")
+
 function btnBuy(){
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    const button2 = document.querySelectorAll(".card__btn-buy1")
+
     // console.dir(button2)
 
     if (currentUser) {

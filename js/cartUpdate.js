@@ -1,5 +1,5 @@
 //----------------ACTUALIZAR CANTIDAD EN CARRITOS DE COMPRA--------------
-let productOrder4 = JSON.parse(sessionStorage.getItem("order"));
+let productOrder4 = JSON.parse(sessionStorage.getItem("order")) || [];
 let badgeHTMLbuy4=document.getElementById("cart-count");
 
 function cartUpdate(){

@@ -1,6 +1,8 @@
 
 
 let users =JSON.parse(localStorage.getItem('users')) || [];
+let usersC =JSON.parse(localStorage.getItem('currentUser')) || [];
+console.log(usersC)
 // console.log(users)
 let favorites = [];
 
@@ -62,11 +64,7 @@ function addUser(evt) {
     evt.preventDefault();
     // console.dir(evt.target);
     const elements = evt.target.elements;
-    // console.log(elements)
 
-    // console.log(elements.stock.checked)
-    // console.dir(elements.name);
-    // console.dir(elements.price);
     let newUser = editIndex ? users[editIndex] : {};
 
     // const newUser = {
@@ -83,6 +81,7 @@ function addUser(evt) {
 
     // };
     // console.log(newUser)
+    console.log(user)
 
 
     if (editIndex >= 0) { //el indice 0 sino lo toma falso, el 0 es undifaned (falso)
@@ -110,7 +109,7 @@ function addUser(evt) {
     renderizarTablaUser();
 
     evt.target.reset();
-    elements.name.focus();
+    // elements.name.focus();
 
     }
 
@@ -158,26 +157,78 @@ function deleteUser(indice) {
     // }
 
 function editUser(idx){
+    console.log(idx)
     submitBtn.classList.add("edit-btn");
     submitBtn.innerText = "Modificar Usuario"
     let user = users[idx];
     console.log("indice:",idx)
     console.log("usuario:",user)
     submitBtn.classList.add("visible")
-    
-
-
-    // console.table(product);
+ 
     const el=userForm.elements;
 
     el.fullName.value=user.fullName;
     el.surname.value=user.surname;
     el.mail.value=user.email;
     el.rol.value=user.role;
-    // console.log("indice", idx)
-    // console.log("product:", product)
-    editIndex=idx;
+
+    // let newUser1 = editIndex ? users[editIndex] : {};
+
+
+    // el.fullName.value= newUser1.fullName;
+    // el.surname.value= newUser1.surname;
+    // el.mail.value= newUser1.email;
+    // el.rol.value= newUser1.role;
+    // // // console.log("indice", idx)
+    // // // console.log("product:", product)
+    // editIndex=idx;
+    // console.log(newUser1)
 }
+
+function editUserChange(idx){
+    console.log(idx)
+    submitBtn.classList.add("edit-btn");
+    submitBtn.innerText = "Modificar Usuario"
+    let user = users[idx];
+    console.log("indice:",idx)
+    console.log("usuario:",user)
+    submitBtn.classList.add("visible")
+    let newUser1 = editIndex ? users[editIndex] : {};
+
+
+    el.fullName.value= newUser1.fullName;
+    el.surname.value= newUser1.surname;
+    el.mail.value= newUser1.email;
+    el.rol.value= newUser1.role;
+    editIndex=idx;
+    console.log(newUser1)
+
+}
+
+
+
+// function editUser(idx){
+//     submitBtn.classList.add("edit-btn");
+//     submitBtn.innerText = "Modificar Usuario"
+//     let user = users[idx];
+//     console.log("indice:",idx)
+//     console.log("usuario:",user)
+//     submitBtn.classList.add("visible")
+    
+//     // console.table(product);
+//     const el=userForm.elements;
+//     el.fullName.value=user.fullName;
+//     el.surname.value=user.surname;
+//     el.mail.value=user.email;
+//     el.rol.value=user.role;
+//     // console.log("indice", idx)
+//     // console.log("product:", product)
+//     editIndex=idx;
+// }
+
+
+
+
 
 
 
