@@ -144,7 +144,7 @@ function addCount(index)
 function addToCart(index){
     let orderDetail2=[orderFinal1[index]]
     let orderDetail1=[productOrderDetail[index]]
-    console.log(orderDetail2)
+    console.log(orderDetail1)
 
 
     // console.log(productOrderDetail)
@@ -152,23 +152,23 @@ function addToCart(index){
     orderDetail2.forEach((idx)=>{
         // let countNumb = idx.quantity;
         console.log(idx.quantity)
-        if(idx.quantity[index]==1 ){
+        if(idx.quantity[index]=1 ){
 
         console.log(orderDetail2)
         sessionStorage.setItem("order", JSON.stringify(orderDetail2))
 
     }      
     })
-    orderDetail1.forEach((idx)=>{
-        // let countNumb = idx.quantity;
-        console.log(idx.quantity)
-        if(idx.quantity[index]===1 ){
+    // orderDetail1.forEach((idx)=>{
+    //     // let countNumb = idx.quantity;
+    //     console.log(idx.quantity)
+    //     if(idx.quantity[index]===1 ){
 
-        console.log(orderDetail2)
+    //     console.log(orderDetail2)
 
-        badgeHTMLbuy2.innerText=1; 
-    }      
-    })
+    //     badgeHTMLbuy2.innerText=1; 
+    // }      
+    // })
 
 
 
