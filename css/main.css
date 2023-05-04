@@ -54,8 +54,7 @@ body {
 .card__img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .card__body {
   display: flex;
@@ -450,8 +449,7 @@ body {
     width: 12rem;
     display: flex;
     justify-content: space-evenly;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 .main {
@@ -1055,8 +1053,7 @@ body {
   .imageAboutUs {
     height: 15.4rem;
     justify-content: center;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .section-info__title-container {
     display: flex;
@@ -1225,8 +1222,7 @@ body {
 
 .product__img {
   width: 50px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 50px;
   border-radius: 50%;
   display: block;
@@ -1344,11 +1340,9 @@ body {
   flex-grow: 1;
   width: 30rem;
 }
-.containerDetail__descriptionLarge {
-  display: flex;
+.containerDetail__descriptionLargeProd {
   flex-direction: column;
-  margin-top: 1rem;
-  margin-left: 2rem;
+  background-color: brown;
   width: 54rem;
 }
 .containerDetail__title {
@@ -1388,6 +1382,25 @@ body {
   transition: all 0.5s ease;
 }
 .containerDetail__detail {
+  padding-bottom: 1rem;
+}
+
+.containerDesc {
+  display: flex;
+  justify-content: center;
+  width: 100rem;
+}
+.containerDesc__cont {
+  width: 52rem;
+  margin: 0 auto;
+}
+.containerDesc__title {
+  justify-content: center;
+  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.containerDesc__detail {
   padding-bottom: 1rem;
 }
 
@@ -1469,9 +1482,6 @@ body {
 .visible {
   visibility: visible;
 }
-.invisible{
-  opacity: 0;
-}
 
 .submit-btn:hover {
   background-color: rgb(1, 105, 1);
@@ -1518,8 +1528,7 @@ body {
 
 .user__img {
   width: 50px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 50px;
   border-radius: 50%;
   display: block;
@@ -1817,8 +1826,7 @@ body {
 
 .order__img {
   width: 50px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 50px;
   border-radius: 50%;
   display: block;
@@ -2048,4 +2056,4 @@ body {
   .table-container-order {
     overflow-x: auto;
   }
-}/*# sourceMappingURL=main.css.map */
+}
