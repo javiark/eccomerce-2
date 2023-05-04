@@ -2051,11 +2051,17 @@ body {
   cursor: pointer;
 }
 
+.buy-btn-container {
+  display: flex;
+  justify-content: right;
+  text-align: center;
+}
+
 .buy-btn {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   width: 10rem;
-  border: 2px solid rgb(51, 87, 2);
+  border: 2px solid green;
   color: white;
   background-color: green;
 }
