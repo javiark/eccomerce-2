@@ -1,8 +1,4 @@
-
-
 let users =JSON.parse(localStorage.getItem('users')) || [];
-let usersC =JSON.parse(localStorage.getItem('currentUser')) || [];
-console.log(usersC)
 // console.log(users)
 let favorites = [];
 
@@ -62,16 +58,24 @@ renderizarTablaUser();
 
 function addUser(evt) {
     evt.preventDefault();
-    // console.dir(evt.target);
+
     const elements = evt.target.elements;
 
-    let newUser = editIndex ? users[editIndex] : {};
+    // let newUser = editIndex ? users[editIndex] : {};
+    let newUser=users[editIndex]
+    if(editIndex >= 0){
 
-    // const newUser = {
         newUser.fullName =  elements.fullName.value;
         newUser.surname = elements.surname.value;
         newUser.email =  elements.mail.value;
         newUser.role =  elements.rol.value;
+    }else{
+        users[editIndex] = {};
+    }
+    
+
+
+
 
 
 
@@ -80,24 +84,32 @@ function addUser(evt) {
         swal ({
             title:"el usuario se edito correctamente",
             icon:"info"
+
         })
+       
 
     }
-  
-
+    console.log(newUser)
+    console.log(users)
     //Guardarlo en el localStorage
     localStorage.setItem('users', JSON.stringify(users))
     editIndex=undefined; // para que se vacie
-    // submitBtn.classList.remove("edit-btn-order");
+    submitBtn.classList.remove("edit-btn-order");
  
     // submitBtn.innerText = "Cargar Usuario"
 
     renderizarTablaUser();
+    // submitBtn.classList.add("invisible");
+        
 
     evt.target.reset();
-    // elements.name.focus();
+    elements.fullName.focus();
+
 
     }
+
+
+
 
 
 
@@ -127,16 +139,31 @@ function deleteUser(indice) {
     })
 }
 
+    // const user = {
+    //     fullName:el.fullName.value,
+    //     surname:el.surname.value,
+    //     email: el.email.value,
+    //     password: el.password.value,
+    //     age: el.age.value,
+    //     bornDate: el.bornDate.value,
+    //     country:el.country.value,
+    //     gender: el.gender.value,
+    //     role:"USER_ROLE",
+    // }
+
 function editUser(idx){
-    submitBtn.classList.add("edit-btn");
+    submitBtn.classList.add("edit-btn-order");
     submitBtn.innerText = "Modificar Usuario"
     let user = users[idx];
     console.log("indice:",idx)
     console.log("usuario:",user)
     submitBtn.classList.add("visible")
     
+
+
     // console.table(product);
     const el=userForm.elements;
+
     el.fullName.value=user.fullName;
     el.surname.value=user.surname;
     el.mail.value=user.email;
@@ -148,4 +175,18 @@ function editUser(idx){
 
 
 
+// function setFavoriteProduct(index) {
+//     //Checkear si en el array productos hay algun producto cuyo indice sea distinto al elegido con la propiedad favorite: true tenemos que setearla en falso.
+//     // Setear el producto elegido como favorite: true
 
+
+//     products.forEach((prod,idx)=>{
+//         if(index===idx) prod.favorite = true;
+//         else prod.favorite = false;
+//     });
+
+
+
+// //     localStorage.setItem("favorites", JSON.stringify(favorites))
+// //     renderizarTabla();
+// }

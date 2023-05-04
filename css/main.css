@@ -1469,6 +1469,9 @@ body {
 .visible {
   visibility: visible;
 }
+.invisible{
+  opacity: 0;
+}
 
 .submit-btn:hover {
   background-color: rgb(1, 105, 1);
@@ -1775,7 +1778,7 @@ body {
   background-color: rgb(1, 105, 1);
 }
 
-.edit-btn {
+.edit-btn-order {
   background-color: dodgerblue;
   border-color: skyblue;
 }
