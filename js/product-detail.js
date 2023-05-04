@@ -1,6 +1,8 @@
 const tableBodyOrder1 = document.getElementById('table-body-order');
 let productOrderDetail = JSON.parse(sessionStorage.getItem("order")) || [];
-console.log(productOrderDetail)
+
+// let productOrderBuy = JSON.parse(sessionStorage.getItem("orderDetail")) ;
+
 
 const params = window.location.search;
 
@@ -56,6 +58,9 @@ cardContainer1.innerHTML = `
                     </div>
                 </div>
                     <div class="containerDetail__containerAdd"><div class="containerDetail__containerBtn1"><button class="containerDetail__containerBtn" onclick=" restCount(indice) ">-</button><div class="containerDetail__containerNumber" id="countNumber"> 1</div><button  class="containerDetail__containerBtn" onclick=" addCount(indice) "> +</button></div></div>
+                    <button class="containerDetail__btn-add" onclick="addToCart(index)">
+                             Añadir a carrito
+                     </button>
 
                     <a href="/pages/order/order.html" class="containerDetail__btn-buy" >  <button class="containerDetail__btn-buy">Comprar Ahora</button><a/>
                     </div>
@@ -131,9 +136,65 @@ function addCount(index)
     console.log(orderDetail1)
     sessionStorage.setItem("order", JSON.stringify(orderDetail1))
 
+}
 
+function addToCart(index){
+
+    // console.log(productOrderDetail)
+    
+    productOrderDetail.forEach((idx)=>{
+        // let countNumb = idx.quantity;
+        console.log(idx.quantity)
+        if(idx.quantity===1){
+        badgeHTMLbuy2.innerText=1;
+    }
+        
+    
+    })
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
