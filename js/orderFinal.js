@@ -240,6 +240,17 @@ function restToOrderQuantity(index){
     
         }
 
+        function buyEnd(){
+            showAlert("Gracias por su compra", "succes")
+
+            sessionStorage.clear("order");
+
+            setTimeout(()=>{
+            window.location.href = "/index.html"
+        
+            },5000) 
+        }
+
     
 
   

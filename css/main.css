@@ -2064,6 +2064,7 @@ body {
   border: 2px solid green;
   color: white;
   background-color: green;
+  cursor: pointer;
 }
 
 .buy-btn:hover {
