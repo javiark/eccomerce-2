@@ -625,12 +625,12 @@ body {
   background-color: #dddada;
   padding: 15px;
   height: 470px;
-  width: 900px;
+  width: 700px;
   border-radius: 10px;
 }
 .formContact__Nombre {
   margin-bottom: 10px;
-  width: 870px;
+  width: 670px;
   border-radius: 5px;
   height: 35px;
   border: none;
@@ -639,14 +639,14 @@ body {
 }
 .formContact__Email {
   margin-bottom: 10px;
-  width: 870px;
+  width: 670px;
   border-radius: 5px;
   height: 35px;
   border: none;
   padding-left: 5px;
 }
 .formContact__Consults {
-  width: 870px;
+  width: 670px;
   border-radius: 5px;
   height: 250px;
   border: none;
@@ -664,7 +664,7 @@ body {
   padding-top: 20px;
 }
 .Contact__IframeContact {
-  width: 900px;
+  width: 700px;
   height: 470px;
 }
 
