@@ -102,7 +102,6 @@ body {
   background-color: rgba(0, 0, 0, 0.2039215686);
   color: white;
   border-radius: 8px;
-  pointer-events: none;
 }
 .card__btn:hover {
   box-shadow: 0 0 5px #858585;
@@ -149,7 +148,7 @@ body {
 
 .alert-dialog {
   position: absolute;
-  top: 80%;
+  top: 75%;
   left: 50%;
   transform: translateX(-50%);
   background-color: #85a089;

@@ -8,7 +8,7 @@ function showAlert(text, type = 'sucess') {
     alertDialog.innerText = text;
     document.body.appendChild(alertDialog);
     if(type === 'succes') {
-        alertDialog.style.backgroundColor = ' #1ad760';
+        alertDialog.style.backgroundColor = ' #827433';
     }
     
     
