@@ -5,11 +5,14 @@ const products = [];
 badgeHTMLbuy=document.getElementById("cart-count");
 
 let productsOrder = JSON.parse(localStorage.getItem("products"))
+let productsOrder1 = JSON.parse(localStorage.getItem("products"))
 
 let productsUser = JSON.parse(localStorage.getItem("users"))
 let orderUser = JSON.parse(localStorage.getItem("currentUser"))
 let orderFinal = JSON.parse(localStorage.getItem("orderArrayFinal"))
 let productOrder = JSON.parse(sessionStorage.getItem("order")) 
+let productOrderFF = JSON.parse(sessionStorage.getItem("order")) 
+
 console.log(productOrder)|| [];
 
 
@@ -62,12 +65,12 @@ let ordernFinal={
 function renderizarTablaOrdenes(){
 
     tableBodyOrder.innerHTML = '';
-    if(productOrder.length===0){
+    if(productOrderFF.length===0){
         tableBodyOrder.innerHTML="<p class='disabled'>NO SE ENCONTRARON PRODUCTOS</p>"
         return
     }
     
-    productOrder.forEach((prod, index)=>{
+    productOrderFF.forEach((prod, index)=>{
 
         tableBodyOrder.innerHTML += `<tr class="order">
         <td class="order__img-cell"><img class="product__img" src="${prod.imageOrder}" alt="${prod.nameOrder}"></td>
@@ -181,36 +184,7 @@ function deleteProductBuy(indice){
     showAlert("Su producto se ha borrado", "succes")
     renderizarTablaOrdenes()
 }
-//----------------RESTAR CANTIDAD PRODUCTO--------------
 
-function restToOrderQuantity(index){
-    // console.log("funcionaboton")
-    let count2=0
-    console.log(productOrder)
-
-    productOrder.forEach((idx)=>{
-        if(index===idx.productID & idx.quantity>0) {
-            idx.quantity--;
-
-        }   
-    })
-    productOrder.forEach(productOrder => {
-        count2 += parseInt(productOrder.quantity)
-    })
-
-    badgeHTMLbuy.innerText=count2;
-    
-    
-    sessionStorage.setItem("order", JSON.stringify(productOrder))
-
-        // badgeHTMLbuy.innerText=count2;
-
-    //calcular Valor total
-    let valorTotalRestar =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
-    total.innerHTML = `$ ${valorTotalRestar}`
-    renderizarTablaOrdenes()
-
-    }
 
 //----------------SUMAR CANTIDAD PRODUCTO--------------
 
@@ -219,29 +193,66 @@ function restToOrderQuantity(index){
         // console.log("funcionaboton")
         let count2=0
         // console.log(productOrder)
+        let orderAdd = productOrderFF[index]
+        console.log(orderAdd)
 
-        productOrder.forEach((idx)=>{
-            // idx.quantity++;
-            if(index===idx.productID ) {
+        productOrderFF.forEach((idx)=>{
+            console.log(idx)
+            if(orderAdd===idx ) {
                 idx.quantity++;
             }   
         })
 
-        productOrder.forEach(productOrder => {
-            count2 += parseInt(productOrder.quantity)
+        productOrderFF.forEach(productOrderFF => {
+            count2 += parseInt(productOrderFF.quantity)
         })
+        console.log(count2)
 
         badgeHTMLbuy.innerText=count2;
     
-        sessionStorage.setItem("order", JSON.stringify(productOrder))
+        sessionStorage.setItem("order", JSON.stringify(productOrderFF))
     
         //calcular Valor total
-        let valorTotalSumar =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
+        let valorTotalSumar =productOrderFF.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
         total.innerHTML = `$ ${valorTotalSumar}`
         
         renderizarTablaOrdenes()
     
         }
+
+        //----------------RESTAR CANTIDAD PRODUCTO--------------
+
+function restToOrderQuantity(index){
+    console.log(index)
+    // console.log("funcionaboton")
+    let count2=0
+    // console.log(productOrder)
+    let orderAdd = productOrderFF[index]
+    console.log(orderAdd)
+
+    productOrderFF.forEach((idx)=>{
+        console.log(idx)
+        if(orderAdd===idx & idx.quantity>0) {
+            idx.quantity--;
+        }   
+    })
+
+    productOrderFF.forEach(productOrderFF => {
+        count2 += parseInt(productOrderFF.quantity)
+    })
+    console.log(count2)
+
+    badgeHTMLbuy.innerText=count2;
+
+    sessionStorage.setItem("order", JSON.stringify(productOrderFF))
+
+    //calcular Valor total
+    let valorTotalSumar =productOrderFF.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
+    total.innerHTML = `$ ${valorTotalSumar}`
+    
+    renderizarTablaOrdenes()
+
+    }
         //----------------FINALIZAR COMPRA--------------
         // if(tableBodyOrder=''){
         //     console.log("no hay nada")
