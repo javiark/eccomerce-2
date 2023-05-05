@@ -81,11 +81,7 @@ function addUser(evt) {
 
     if (editIndex >= 0) { //el indice 0 sino lo toma falso, el 0 es undifaned (falso)
         users[editIndex]=newUser
-        swal ({
-            title:"el usuario se edito correctamente",
-            icon:"info"
 
-        })
        
 
     }
@@ -100,6 +96,7 @@ function addUser(evt) {
 
     renderizarTablaUser();
     // submitBtn.classList.add("invisible");
+    showAlert("El usuario se edito correctamente", "succes")
         
 
     evt.target.reset();
@@ -113,31 +110,17 @@ function addUser(evt) {
 
 
 
-function deleteUser(indice) {
-    swal({
-        title: "Borrar usuario",
-        text: `Esta seguro que desea borrar el usuario ${users[indice].fullName}`,
-        icon: `warning`,
-        buttons: {
-            cancel:"Cancelar",
-            delete:"Borrar",
-        }
-    }).then(value => {
-        if (value==="delete"){
-            users.splice(indice, 1);
-            localStorage.setItem("users",JSON.stringify(users))
-            swal({
-                title:"El usuario se ha borrado correctamente",
-                icon:"error"
-        
-            });
-            renderizarTablaUser(); 
 
-        }else {
-            return ; //return null
-        }
-    })
-}
+
+
+function deleteUser(indice) {
+    users.splice(indice, 1);
+    localStorage.setItem("users",JSON.stringify(users))
+    renderizarTablaUser(); 
+    showAlert("El producto se borro correctamente", "succes")
+
+    }
+
 
     // const user = {
     //     fullName:el.fullName.value,
@@ -171,6 +154,7 @@ function editUser(idx){
     // console.log("indice", idx)
     // console.log("product:", product)
     editIndex=idx;
+
 }
 
 

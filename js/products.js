@@ -94,7 +94,7 @@ function addProduct(evt) {
     editIndex=undefined; // para que se vacie
     submitBtn.classList.remove("edit-btn");
     submitBtn.innerText = "Cargar Producto"
-    showAlert("El producto se agrego correctamente", "succes")
+    // showAlert("El producto se edito correctamente", "succes")
  
     renderizarTabla();
 
