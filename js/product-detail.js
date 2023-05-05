@@ -41,7 +41,7 @@ const cardContainer1=document.querySelector("#card-detail");
 
 function renderizarDetail(){
 cardContainer1.innerHTML = ` 
-<main class="main1">
+<main class="main">
     <div class="mainDetail">
         <div class="containerDetail">
             <div class="containerDetail__imageContainer">
@@ -70,11 +70,13 @@ cardContainer1.innerHTML = `
 
         </div>
         <div class="containerDesc">
-
             <div class="containerDesc__cont">
+
+
               <h1 class="containerDesc__title">DESCRIPCION</h1>
                     <div class="containerDesc__detail">${product.detail}</div>
             </div>
+
         </div>
 
 

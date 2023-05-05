@@ -1331,7 +1331,6 @@ body {
 .containerDetail__imageContainer {
   width: 25rem;
   height: 30rem;
-  margin-left: 5rem;
   margin-top: 5rem;
   text-align: center;
   overflow: hidden;
@@ -1392,12 +1391,12 @@ body {
 
 .containerDesc {
   display: flex;
+  width: 100vw;
   justify-content: center;
-  width: 100rem;
+  align-items: center;
 }
 .containerDesc__cont {
-  width: 52rem;
-  margin: 0 auto;
+  width: 43rem;
 }
 .containerDesc__title {
   justify-content: center;
@@ -1947,7 +1946,6 @@ body {
 .containerDetail__imageContainer {
   width: 25rem;
   height: 30rem;
-  margin-left: 5rem;
   margin-top: 5rem;
   text-align: center;
   overflow: hidden;
@@ -1959,7 +1957,7 @@ body {
 }
 .containerDetail__container {
   flex-grow: 1;
-  width: 30rem;
+  width: 20rem;
 }
 .containerDetail__descriptionLarge {
   display: flex;
@@ -2088,5 +2086,31 @@ body {
   }
   .table-container-order {
     overflow-x: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  .containerDesc__cont {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  .containerDetail {
+    margin: auto 0;
+    flex-direction: column;
+  }
+  .containerDetail__image {
+    width: 20rem;
+    text-align: center;
+    justify-content: center;
+  }
+  .containerDetail__description {
+    margin-right: 2rem;
+    width: 20rem;
+  }
+  .containerDetail__imageContainer {
+    text-align: center;
+    width: 20rem;
+    height: 25rem;
+    margin-left: 2rem;
+    margin-top: 0rem;
   }
 }/*# sourceMappingURL=main.css.map */

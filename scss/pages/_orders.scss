@@ -237,7 +237,7 @@ body {
         // border: solid 1px red;
         width: 25rem;
         height: 30rem;
-        margin-left: 5rem;
+        // margin-left: 5rem;
         margin-top: 5rem;
         text-align: center;
         overflow: hidden;
@@ -250,7 +250,7 @@ body {
     }
     &__container{
         flex-grow: 1;
-        width: 30rem;
+        width: 20rem;
     }
 
     &__descriptionLarge{
@@ -402,4 +402,40 @@ body {
     .table-container-order {
         overflow-x: auto;
     }
+
 }
+
+
+@media screen and (max-width: 500px) {
+    // .mainDetail{
+    //     width: 100vh;
+    // }
+    .containerDesc__cont {
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+    .containerDetail{
+        margin: auto 0;
+        flex-direction: column;
+        // width: 50vh;
+        &__image{
+            width: 20rem;
+            text-align: center;
+            justify-content: center;
+        }
+        &__description{
+            margin-right: 2rem;
+            width: 20rem;
+        }
+        &__imageContainer{
+            // border: solid 1px red;
+            text-align: center;
+            width: 20rem;
+            height: 25rem;
+            margin-left:2rem;
+            margin-top: 0rem;
+        }
+
+
+
+}}

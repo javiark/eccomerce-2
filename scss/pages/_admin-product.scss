@@ -218,7 +218,7 @@ body {
         // border: solid 1px red;
         width: 25rem;
         height: 30rem;
-        margin-left: 5rem;
+        // margin-left: 5rem;
         margin-top: 5rem;
         text-align: center;
         overflow: hidden;
@@ -288,18 +288,22 @@ body {
     }
 }
 .containerDesc{
-
     display: flex;
-    // flex-direction: column;
+    width: 100vw;
+
     justify-content: center;
-    width:100rem;
+    align-items: center;
+
+
+
 
 
 
     &__cont{
+        width: 43rem;
 
-        width: 52rem;
-        margin: 0 auto;
+        // width: 52rem;
+        // margin: 0 auto;
     }
     &__title{
         justify-content: center;
