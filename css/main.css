@@ -54,8 +54,7 @@ body {
 .card__img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .card__body {
   display: flex;
@@ -150,7 +149,7 @@ body {
 
 .alert-dialog {
   position: absolute;
-  top: 30%;
+  top: 80%;
   left: 50%;
   transform: translateX(-50%);
   background-color: #85a089;
@@ -450,8 +449,7 @@ body {
     width: 12rem;
     display: flex;
     justify-content: space-evenly;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 .main {
@@ -618,7 +616,6 @@ body {
 }
 .main2 {
   background-color: rgb(235, 234, 234);
-  min-height: 100vh;
   min-height: 100vh;
   padding-top: 50px;
 }
@@ -1055,8 +1052,7 @@ body {
   .imageAboutUs {
     height: 15.4rem;
     justify-content: center;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .section-info__title-container {
     display: flex;
@@ -1225,8 +1221,7 @@ body {
 
 .product__img {
   width: 50px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 50px;
   border-radius: 50%;
   display: block;
@@ -1531,8 +1526,7 @@ body {
 
 .user__img {
   width: 50px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 50px;
   border-radius: 50%;
   display: block;
@@ -1832,8 +1826,7 @@ body {
 
 .order__img {
   width: 50px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 50px;
   border-radius: 50%;
   display: block;
@@ -2112,4 +2105,4 @@ body {
     margin-left: 2rem;
     margin-top: 0rem;
   }
-}/*# sourceMappingURL=main.css.map */
+}

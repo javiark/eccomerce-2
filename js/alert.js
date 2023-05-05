@@ -8,15 +8,15 @@ function showAlert(text, type = 'sucess') {
     alertDialog.innerText = text;
     document.body.appendChild(alertDialog);
     if(type === 'succes') {
-        alertDialog.style.backgroundColor = ' #85a089';
+        alertDialog.style.backgroundColor = ' #1ad760';
     }
     
     
     if(type === 'error') {
-        alertDialog.style.backgroundColor = '#ff9944';
+        alertDialog.style.backgroundColor = '#d9544d';
     }
     if(type === 'warning') {
-        alertDialog.style.backgroundColor =  '#f4c198'
+        alertDialog.style.backgroundColor =  '#f0ac4b'
     }
     // Para demorar su aparición luego de haberlo creado lineas anterior con document createElement
     setTimeout(() => alertDialog.classList.add('show'), 10)
