@@ -1361,6 +1361,7 @@ body {
   text-align: center;
   font-weight: 500;
   margin-bottom: 0.3rem;
+  pointer-events: none;
 }
 .containerDetail__btn-add:hover {
   box-shadow: 0 0 4px #858585;
@@ -1687,6 +1688,7 @@ body {
   font-size: 1rem;
   height: 1.8rem;
   text-align: center;
+  pointer-events: none;
 }
 .containerDetail__btn-buy:hover {
   box-shadow: 0 0 5px #858585;

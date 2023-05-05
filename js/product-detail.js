@@ -48,7 +48,7 @@ cardContainer1.innerHTML = `
                 <img src=${product.image} alt=${product.name} class="containerDetail__image">
             </div>
 
-                 <div class="containerDetail__description">
+                 <div class="containerDetail__description" onclick="showNotUser()" >
                     <div class="containerDetail__container">
                             <div class="card__title">
                                 <p>${product.name}</p>

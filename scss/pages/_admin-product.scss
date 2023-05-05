@@ -263,6 +263,8 @@ body {
         text-align:center;
         font-weight: 500;
         margin-bottom: 0.3rem;
+        pointer-events: none;   
+
     }
     &__btn-add:hover {
         box-shadow: 0 0 4px #858585;
