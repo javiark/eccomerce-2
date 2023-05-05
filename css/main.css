@@ -618,6 +618,7 @@ body {
 .main2 {
   background-color: rgb(235, 234, 234);
   min-height: 100vh;
+  min-height: 100vh;
   padding-top: 50px;
 }
 
