@@ -374,6 +374,7 @@ body {
   background-color: rgb(168, 165, 165);
   justify-content: space-between;
   width: 100%;
+  position: absolute;
   bottom: 0;
   padding-right: 5rem;
 }
