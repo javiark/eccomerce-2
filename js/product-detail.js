@@ -99,8 +99,9 @@ let productsDetail =[]
 
 
 function restCount(index)
-{
+{   console.log(index)
     let orderDetail1=[orderFinal1[index]]
+    console.log(orderDetail1)
 
     console.log(index)
     let countNumber=0;

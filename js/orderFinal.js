@@ -5,6 +5,7 @@ const products = [];
 badgeHTMLbuy=document.getElementById("cart-count");
 
 let productsOrder = JSON.parse(localStorage.getItem("products"))
+
 let productsUser = JSON.parse(localStorage.getItem("users"))
 let orderUser = JSON.parse(localStorage.getItem("currentUser"))
 let orderFinal = JSON.parse(localStorage.getItem("orderArrayFinal"))
@@ -120,8 +121,9 @@ cartUpdate()
 
 
 //---------------------AGREGAR PRODUCTO COMPRADO-------------------------//
-
+console.log(products)
 function addToOrder(index){
+
 
 
     let count1 = 0;
@@ -142,7 +144,7 @@ function addToOrder(index){
     products.forEach(products => {
     count1 += parseInt(products.quantity)
     })
-
+    showAlert("Producto agregado a carrito", "succes" )
     badgeHTMLbuy.innerText=count1;
     sessionStorage.setItem("order", JSON.stringify(products))
 }
@@ -176,17 +178,18 @@ function deleteProductBuy(indice){
         let valorTotal =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
         total.innerHTML = `$ ${valorTotal}`
     console.log(productOrder)
+    showAlert("Su producto se ha borrado", "succes")
     renderizarTablaOrdenes()
 }
 //----------------RESTAR CANTIDAD PRODUCTO--------------
 
 function restToOrderQuantity(index){
-    console.log("funcionaboton")
+    // console.log("funcionaboton")
     let count2=0
     console.log(productOrder)
 
     productOrder.forEach((idx)=>{
-        if( idx.quantity>0) {
+        if(index===idx.productID & idx.quantity>0) {
             idx.quantity--;
 
         }   
@@ -213,15 +216,15 @@ function restToOrderQuantity(index){
 
     function AccToOrderQuantity(index){
         console.log(index)
-        console.log("funcionaboton")
+        // console.log("funcionaboton")
         let count2=0
-        console.log(productOrder)
+        // console.log(productOrder)
 
         productOrder.forEach((idx)=>{
-            idx.quantity++;
-            // if(index===idx.productID ) {
-            //     idx.quantity++;
-            // }   
+            // idx.quantity++;
+            if(index===idx.productID ) {
+                idx.quantity++;
+            }   
         })
 
         productOrder.forEach(productOrder => {
@@ -266,13 +269,14 @@ function restToOrderQuantity(index){
             },3000) 
         }
 
+
+        }
         function showNotUser(){
             console.log("anda boton")
             if(!orderUser){
                 showAlert("Deberia lograrse para comprar", 'error')
 
             }
-        }
         }
 
 
