@@ -255,12 +255,20 @@ function restToOrderQuantity(index){
             
             showAlert("Gracias por su compra", "succes")
 
-            sessionStorage.clear("order");
+            sessionStorage.removeItem("order");
 
             setTimeout(()=>{
             window.location.href = "/index.html"
         
             },3000) 
+        }
+
+        function showNotUser(){
+            console.log("anda boton")
+            if(!orderUser){
+                showAlert("Deberia lograrse para comprar", 'error')
+
+            }
         }
 
 

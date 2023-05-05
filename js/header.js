@@ -85,7 +85,7 @@ function logout(){
 
 }
 localStorage.removeItem("currentUser");
-sessionStorage.clear("order");
+sessionStorage.removeItem("order");
 
     renderHeaderLinks();
     btnBuy();

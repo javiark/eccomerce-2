@@ -38,10 +38,12 @@ function renderizarProductos(products){
             </div>
         </div>
     </div>
-    <div class="card__footerCard">
+    <div class="card__footerCard" onclick="showNotUser()" >
+        
         <button class="card__btn-buy1"  onclick="addToOrder(${index}) " id=${index}>
             Comprar
         </button>
+
         <div class="card__btn-container">
             <a class="card__btn" href="/pages/product-detail/product-detail.html?id=${index}" >
                 Ver mas
