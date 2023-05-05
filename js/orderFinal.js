@@ -171,18 +171,19 @@ total.innerHTML = `$ ${valorTotal}`
 
 function deleteProductBuy(indice){
     let count2=0;
-    productOrder.splice(indice, 1);
-    sessionStorage.setItem("order",JSON.stringify(productOrder));
+    productOrderFF.splice(indice, 1);
+    sessionStorage.setItem("order",JSON.stringify(productOrderFF));
 
-    productOrder.forEach(productOrder => {
-        count2 += parseInt(productOrder.quantity)
+    productOrderFF.forEach(productOrderFF => {
+        count2 += parseInt(productOrderFF.quantity)
         })
         badgeHTMLbuy.innerText=count2;
-        let valorTotal =productOrder.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
+        let valorTotal =productOrderFF.reduce((acc,prod) => acc + prod.quantity * prod.priceOrder,0 )
         total.innerHTML = `$ ${valorTotal}`
-    console.log(productOrder)
+    console.log(productOrderFF)
     showAlert("Su producto se ha borrado", "succes")
     renderizarTablaOrdenes()
+
 }
 
 

@@ -19,7 +19,7 @@ let editIndex;
 function renderizarTablaUser() {
     tableBody.innerHTML = '';
     if(users.length===0){
-        tableBody.innerHTML="<p class='disabled'>NO SE ENCONTRARON PRODUCTOS</p>"
+        tableBody.innerHTML="<p class='disabled'>NO SE ENCONTRARON USUARIOS</p>"
         return
     }
     //3- Iterar el array para acceder a cada producto
