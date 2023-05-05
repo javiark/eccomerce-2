@@ -7,6 +7,9 @@ function showAlert(text, type = 'sucess') {
     alertDialog.classList.add('alert-dialog');
     alertDialog.innerText = text;
     document.body.appendChild(alertDialog);
+    if(type === 'succes') {
+        alertDialog.style.backgroundColor = '#4370c3';
+    }
     
     if(type === 'error') {
         alertDialog.style.backgroundColor = '#c04641';

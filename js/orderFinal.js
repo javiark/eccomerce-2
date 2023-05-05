@@ -251,6 +251,9 @@ function restToOrderQuantity(index){
         }
 
         function buyEnd(){
+            if(!productOrder){
+                showAlert("Su carrito esta vacio", "warning")
+            }else{
 
             
             showAlert("Gracias por su compra", "succes")
@@ -269,6 +272,7 @@ function restToOrderQuantity(index){
                 showAlert("Deberia lograrse para comprar", 'error')
 
             }
+        }
         }
 
 
