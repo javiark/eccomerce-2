@@ -201,6 +201,8 @@ body {
     background-color: rgb(235, 234, 234);
     flex-grow: 1;
 }
+
+
 .containerDetail{
 
     display: flex;
@@ -265,6 +267,9 @@ body {
         margin-bottom: 0.3rem;
         pointer-events: none;   
 
+    }
+    .enable2{
+        pointer-events: all;  
     }
     &__btn-add:hover {
         box-shadow: 0 0 4px #858585;

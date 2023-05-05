@@ -289,6 +289,7 @@ body {
         width: 6rem;
         border: 1px solid rgba(20, 20, 20, 0.3);
         background-color: white;
+        pointer-events: none;
 
     }
     &__containerBtn{
@@ -296,6 +297,7 @@ body {
         background-color: white;
         width: 2rem;
         border: none;
+
     }
     &__containerNumber{
         padding-top: 0.4rem;

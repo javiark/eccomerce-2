@@ -61,7 +61,7 @@ cardContainer1.innerHTML = `
                     </div>
                 </div>
                     <div class="containerDetail__containerAdd"><div class="containerDetail__containerBtn1"><button class="containerDetail__containerBtn" onclick=" restCount(indice) ">-</button><div class="containerDetail__containerNumber" id="countNumber"> 1</div><button  class="containerDetail__containerBtn" onclick=" addCount(indice) "> +</button></div></div>
-                    <button class="containerDetail__btn-add" onclick="addToCart(index)">
+                    <button class="containerDetail__btn-add" onclick="addToCart(index)" id="btn-add-detail">
                              Añadir a carrito
                      </button>
 
