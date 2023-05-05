@@ -119,6 +119,7 @@ function restCount(index)
 
     console.log(orderDetail1)
     sessionStorage.setItem("order", JSON.stringify(orderDetail1))
+    showAlert("Producto quitado de carrito", "succes" )
 
 }
 
@@ -141,6 +142,7 @@ function addCount(index)
 
     console.log(orderDetail1)
     sessionStorage.setItem("order", JSON.stringify(orderDetail1))
+    showAlert("Producto agregado a carrito", "succes" )
 
 }
 
@@ -159,6 +161,7 @@ function addToCart(index){
 
         console.log(orderDetail2)
         sessionStorage.setItem("order", JSON.stringify(orderDetail2))
+        showAlert("Producto agregado a carrito", "succes" )
 
     }  
     console.log(idx.quantity)

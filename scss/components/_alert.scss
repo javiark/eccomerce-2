@@ -1,6 +1,6 @@
 .alert-dialog {
     position: absolute;
-    bottom: 15px;
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
     background-color: #85a089;
@@ -12,7 +12,8 @@
     visibility: hidden;
     opacity: 0;
     border-radius: 1rem;
-    margin-bottom: 30rem;
+    // margin-top: 30rem;
+    // margin-bottom: 30rem;
     transition:  visibility linear 0.5s, opacity 0.5s linear;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     &.show {
