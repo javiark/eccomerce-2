@@ -1,30 +1,46 @@
 //1-a guardo el formulario en una variable
 const loginForm=document.getElementById("loginForm");
+const URL = "http://localhost:4000/api";
 
 //1 - Obtener los datos del formulario
-loginForm.addEventListener("submit",(event)=>{
+loginForm.addEventListener("submit",async (event)=>{
     event.preventDefault();
     console.dir(loginForm)
     // con la destructuracoin genero dos variables, email y password
     //const el= loginForm.elements;
-    const { email,password} = loginForm.elements;
+    // const { email,password} = loginForm.elements;
+    console.log(loginForm.elements);
 
-    console.log(email.value, password.value)
+    // console.log(email.value, password.value)
     //2- Checkear datos ingresdos con los usuarios que tengo
     //2a-Obtener los usuarios almacenados
-    const users=JSON.parse(localStorage.getItem("users")) || []; // las comillas verticales son por si no encuentra nada, toma un array vacio y no va a ser null. Un array vacio es null
-    console.log(users)
-    const elements1 = users.elements;
-    console.dir(elements1)
-    // const elements1 = elements.value;
-    // console.dir(elements1.age)
+    // const users=JSON.parse(localStorage.getItem("users")) || []; // las comillas verticales son por si no encuentra nada, toma un array vacio y no va a ser null. Un array vacio es null
+    // console.log(users)
+    // const elements1 = users.elements;
+    // console.dir(elements1)
+    // // const elements1 = elements.value;
+    // // console.dir(elements1.age)
 
-    const user = users.find((usr)=>{
-        if (usr.email ===email.value){
-            return true;        
+    // const user = users.find((usr)=>{
+    //     if (usr.email ===email.value){
+    //         return true;        
+    //     }
+    //     return false;
+    // }) //objeto { name, password, email}
+
+    try{
+        const dataBody = { 
+            email:loginForm.elements.email.value,
+            password:loginForm.elements.password.value,
         }
-        return false;
-    }) //objeto { name, password, email}
+        const resp  = await axios.post(`${URL}/login`, dataBody);
+
+        console.log(resp.data)
+
+    } catch(error){
+        console.log(error)
+    }
+    return
 
     if(!user){ //sino existe usuario
         alert("Los datos ingresados son incorrectos");
