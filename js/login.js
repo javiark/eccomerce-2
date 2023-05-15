@@ -34,8 +34,21 @@ loginForm.addEventListener("submit",async (event)=>{
             password:loginForm.elements.password.value,
         }
         const resp  = await axios.post(`${URL}/login`, dataBody);
+        console.log(resp)
 
-        console.log(resp.data)
+        // console.log(resp.data)
+        const {token, user, msg} = resp.data;
+        localStorage.setItem("token",token) // no hace falta hacerle stringify pq es un string
+        localStorage.setItem("currentUser", JSON.stringify(user))
+
+        showAlert(`Bienvenido ${user.fullName}`, "succes" )
+        setTimeout(()=>{
+            window.location.href="/index.html"
+        }, 2000)
+
+
+
+
 
     } catch(error){
         console.log(error)
