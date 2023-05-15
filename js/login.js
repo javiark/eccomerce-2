@@ -34,7 +34,7 @@ loginForm.addEventListener("submit",(event)=>{
     if(user.password ===password.value){
         localStorage.setItem("currentUser", JSON.stringify(user));
         // document.getElementById("loginLogo").classList.add('loginColor')
-        showAlert(`Bienvenido ${user.fullName} `, "succes" )
+        showAlert(msg, "succes" )
         // alert(`Bienvenido ${user.fullName} `)
 
 
