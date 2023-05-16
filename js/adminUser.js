@@ -74,7 +74,7 @@ function prodDefault(){
             image:"https://snipboard.io/MmdZsV.jpg",
             price: parseInt(850),
             description :"Bolsa de tela 30 x 40 cm",
-            detail:"Bolsa reciclabl"  
+            detail:"Bolsa reciclable"  
         },
     ]
         

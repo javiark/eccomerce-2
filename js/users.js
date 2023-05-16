@@ -8,7 +8,7 @@ async function obtenerUsuarios(){
         const response = await axios.get(`${URL}/users`,{
             headers: {
                 Authorization: token
-            }
+            },
         })
         users=response.data.users;
         console.log(users)
