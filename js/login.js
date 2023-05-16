@@ -5,28 +5,8 @@ const URL = "http://localhost:4000/api";
 //1 - Obtener los datos del formulario
 loginForm.addEventListener("submit",async (event)=>{
     event.preventDefault();
-    console.dir(loginForm)
-    // con la destructuracoin genero dos variables, email y password
-    //const el= loginForm.elements;
-    // const { email,password} = loginForm.elements;
-    console.log(loginForm.elements);
-
-    // console.log(email.value, password.value)
-    //2- Checkear datos ingresdos con los usuarios que tengo
-    //2a-Obtener los usuarios almacenados
-    // const users=JSON.parse(localStorage.getItem("users")) || []; // las comillas verticales son por si no encuentra nada, toma un array vacio y no va a ser null. Un array vacio es null
-    // console.log(users)
-    // const elements1 = users.elements;
-    // console.dir(elements1)
-    // // const elements1 = elements.value;
-    // // console.dir(elements1.age)
-
-    // const user = users.find((usr)=>{
-    //     if (usr.email ===email.value){
-    //         return true;        
-    //     }
-    //     return false;
-    // }) //objeto { name, password, email}
+    // console.dir(loginForm)
+    // console.log(loginForm.elements);
 
     try{
         const dataBody = { 
@@ -38,7 +18,7 @@ loginForm.addEventListener("submit",async (event)=>{
 
         // console.log(resp.data)
         const {token, user, msg} = resp.data;
-        localStorage.setItem("token",token) // no hace falta hacerle stringify pq es un string
+        localStorage.setItem("token",token) // no hace falta hacerle stringify pq es un string. Guardo el Token en el local storage
         localStorage.setItem("currentUser", JSON.stringify(user))
 
         showAlert(`Bienvenido ${user.fullName}`, "succes" )
@@ -52,38 +32,16 @@ loginForm.addEventListener("submit",async (event)=>{
 
     } catch(error){
         console.log(error)
+        showAlert("Login incorrecto", "error" )
     }
     return
 
-    if(!user){ //sino existe usuario
-        alert("Los datos ingresados son incorrectos");
-        return;
-    }
-
-    if(user.password ===password.value){
-        localStorage.setItem("currentUser", JSON.stringify(user));
-        // document.getElementById("loginLogo").classList.add('loginColor')
-        showAlert(`Bienvenido ${user.fullName} `, "succes" )
-        // alert(`Bienvenido ${user.fullName} `)
-
-
-        setTimeout(()=>{
-            window.location.href="/index.html"
-        }, 2000)
-        // const loginUser= document.getElementById("loginName")
-
-        // // console.log(`${user.fullName}`)
-        // loginUser.innerHTML = `${user.fullName}`
-
-        // console.log(user.fullName)
-    } 
-    else {
-        showAlert("Login incorrecto", "error" )
-        return;}
     });
 
     function cleanOrder(){
         sessionStorage.clear("order");
+
+
     }
 
 

@@ -86,6 +86,7 @@ function logout(){
 }
 localStorage.removeItem("currentUser");
 sessionStorage.removeItem("order");
+localStorage.removeItem("token")
 
     renderHeaderLinks();
     btnBuy();
